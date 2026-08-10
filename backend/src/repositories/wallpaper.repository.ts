@@ -209,4 +209,61 @@ export class WallpaperRepository {
     }
     return result;
   }
+
+  /**
+   * 全文搜索(#6): GIN to_tsvector('simple', search_text) @@ tsquery + 分类/标签过滤。
+   * - query: 已分词的查询串(空格分隔,jieba 在路由层完成);'' = 不限(纯过滤)
+   * - plainto_tsquery: 对用户输入安全(无 tsquery 语法注入面),AND 语义
+   * - 排序: 有 query 按 ts_rank DESC + id DESC;无 query rank 恒 0 → 纯 id DESC
+   * - 复合 keyset 游标 (rank, id): rank 排序下 id 游标会重复/遗漏,必须两个字段一起
+   *   才能保证翻页无重复无遗漏(rank 相同时退化为 id 游标)
+   * - 精度陷阱(实测): ts_rank 返回 real(float4),pg 驱动把 float4 以文本往返(丢精度),
+   *   导致游标参数与库里 rank 的等值比较失败(相差 ~1e-17)→ 翻页漏数据。
+   *   修复: CTE 内把 rank 升为 double precision,float8 的文本往返是精确的,等值成立。
+   * - 已知取舍: buildSearchText 去重 + AND 语义下,单词查询所有结果都命中全部词,
+   *   ts_rank 打平 → 退化为 id DESC;多词查询按命中度排序仍有效
+   */
+  async search(options: SearchOptions): Promise<SearchResult> {
+    const { query, category = null, tag = null, limit = 20, cursor = null } = options;
+    const q = query ?? '';
+    const { rows } = await this.pool.query(
+      `WITH ranked AS (
+         SELECT w.*,
+                CASE WHEN $1 = '' THEN 0::double precision
+                     ELSE ts_rank(to_tsvector('simple', w.search_text), plainto_tsquery('simple', $1))::double precision END AS rank
+         FROM wallpapers w
+         WHERE w.status = 'active'
+           AND ($1 = '' OR to_tsvector('simple', w.search_text) @@ plainto_tsquery('simple', $1))
+           AND ($2::text IS NULL OR w.category = $2)
+           AND ($3::text IS NULL OR w.tags @> ARRAY[$3]::text[])
+       )
+       SELECT ${ROW_COLUMNS}, rank FROM ranked
+       WHERE ($4::double precision IS NULL
+              OR rank < $4
+              OR (rank = $4 AND id < $5))
+       ORDER BY rank DESC, id DESC
+       LIMIT $6`,
+      [q, category, tag, cursor?.rank ?? null, cursor?.id ?? null, limit],
+    );
+    const items = rows.map(mapRow);
+    const lastRank = items.length > 0 ? Number(rows[rows.length - 1].rank) : 0;
+    return { items, lastRank };
+  }
+}
+
+export interface SearchOptions {
+  /** 已分词的查询串(空格分隔);'' = 不限(纯分类/标签过滤) */
+  query: string | null;
+  category?: string | null;
+  tag?: string | null;
+  /** 页大小,默认 20;路由层限制 1-50 */
+  limit?: number;
+  /** 复合 keyset 游标: (rank, id);无查询时 rank=0(纯 id 游标) */
+  cursor?: { rank: number; id: number } | null;
+}
+
+export interface SearchResult {
+  items: WallpaperRow[];
+  /** 本页最后一条的 rank(路由用它构造 nextCursor 复合游标) */
+  lastRank: number;
 }

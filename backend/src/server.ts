@@ -1,13 +1,24 @@
 import Fastify from 'fastify';
+import type pg from 'pg';
 import { config } from './config';
+import { createPool } from './db';
 import { registerErrorHandler } from './plugins/error-handler';
 import { registerRoutes } from './routes';
 
-/** 可测试的服务器工厂: 测试通过 await buildServer() 后 app.inject 调用,无需真实端口 */
-export async function buildServer() {
+/**
+ * 可测试的服务器工厂: 测试通过 await buildServer() 后 app.inject 调用,无需真实端口。
+ * 业务路由需要 DB,默认按 config 自建连接池(app 关闭时回收);测试可注入共享 pool。
+ */
+export async function buildServer(options: { pool?: pg.Pool } = {}) {
   const app = Fastify({ logger: true });
+  const pool = options.pool ?? createPool(config);
   registerErrorHandler(app);
-  await registerRoutes(app);
+  await registerRoutes(app, { pool });
+  if (!options.pool) {
+    app.addHook('onClose', async () => {
+      await pool.end();
+    });
+  }
   return app;
 }
 
