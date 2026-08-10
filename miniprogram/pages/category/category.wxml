@@ -1,0 +1,59 @@
+<view class="root {{themeClass}}">
+  <!-- 顶部横向分类 chips(设计文档 §4.2: 全宽图片保留) -->
+  <scroll-view class="chips" scroll-x enhanced show-scrollbar="{{false}}">
+    <view class="chips__inner">
+      <view
+        wx:for="{{chips}}"
+        wx:key="name"
+        class="chip {{active === item.name ? 'chip--active' : ''}}"
+        data-name="{{item.name}}"
+        bindtap="onChipTap"
+      >
+        <text>{{item.name}}</text>
+        <text wx:if="{{item.count !== null}}" class="chip__count">{{item.count}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 骨架屏 -->
+  <view wx:if="{{skeleton}}" class="skeleton">
+    <view class="skeleton__col">
+      <view class="skeleton__block" style="height: 340rpx"></view>
+      <view class="skeleton__block" style="height: 460rpx"></view>
+    </view>
+    <view class="skeleton__col">
+      <view class="skeleton__block" style="height: 440rpx"></view>
+      <view class="skeleton__block" style="height: 320rpx"></view>
+    </view>
+  </view>
+
+  <!-- 双列瀑布流 -->
+  <view wx:elif="{{!error && !empty}}" class="waterfall">
+    <view class="waterfall__col">
+      <wallpaper-card wx:for="{{left}}" wx:key="id" item="{{item}}" bind:tap="onCardTap" />
+    </view>
+    <view class="waterfall__col">
+      <wallpaper-card wx:for="{{right}}" wx:key="id" item="{{item}}" bind:tap="onCardTap" />
+    </view>
+  </view>
+
+  <view wx:if="{{loading && !skeleton && !error}}" class="state state--loading">
+    <text class="spinner"></text><text>加载中…</text>
+  </view>
+
+  <view wx:if="{{finished && !error && !empty}}" class="state">— 已经到底啦 —</view>
+
+  <!-- 空分类 -->
+  <view wx:if="{{empty}}" class="state state--empty">
+    <text class="state__emoji">🗂️</text>
+    <text>该分类暂无壁纸</text>
+    <button class="state__btn" bindtap="onSeeAll">看看其他分类</button>
+  </view>
+
+  <!-- 错误 -->
+  <view wx:if="{{error}}" class="state state--error">
+    <text class="state__emoji">📡</text>
+    <text>网络开小差了</text>
+    <button class="state__btn" bindtap="onRetry">点击重试</button>
+  </view>
+</view>

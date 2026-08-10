@@ -1,0 +1,9 @@
+{
+  "desc": "WallFlow 开源壁纸 sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

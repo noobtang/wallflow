@@ -1,0 +1,64 @@
+<view class="root {{themeClass}}">
+  <!-- 顶部搜索条: 仅入口,点击 push 搜索页(设计文档 §3.2) -->
+  <view class="search-bar" bindtap="onSearchTap">
+    <text class="search-bar__icon">🔍</text>
+    <text class="search-bar__placeholder">搜索壁纸、风格、关键词…</text>
+  </view>
+
+  <!-- 今日精选: 静态运营位(人工配置单张精选图;当前取精选分类/最新一张) -->
+  <view wx:if="{{featured}}" class="featured" bindtap="onFeaturedTap">
+    <image class="featured__img" src="{{featured.thumbUrl}}" mode="aspectFill" />
+    <view class="featured__mask"></view>
+    <view class="featured__info">
+      <text class="featured__label">今日精选</text>
+      <text class="featured__title">{{featured.title || '精选开源壁纸'}}</text>
+      <text class="featured__license">{{featured.license}}</text>
+    </view>
+  </view>
+
+  <!-- 首载骨架屏 -->
+  <view wx:if="{{skeleton}}" class="skeleton">
+    <view class="skeleton__col">
+      <view class="skeleton__block" style="height: 340rpx"></view>
+      <view class="skeleton__block" style="height: 460rpx"></view>
+      <view class="skeleton__block" style="height: 380rpx"></view>
+    </view>
+    <view class="skeleton__col">
+      <view class="skeleton__block" style="height: 440rpx"></view>
+      <view class="skeleton__block" style="height: 320rpx"></view>
+      <view class="skeleton__block" style="height: 480rpx"></view>
+    </view>
+  </view>
+
+  <!-- 双列瀑布流 -->
+  <view wx:elif="{{!error && !empty}}" class="waterfall">
+    <view class="waterfall__col">
+      <wallpaper-card wx:for="{{left}}" wx:key="id" item="{{item}}" bind:tap="onCardTap" />
+    </view>
+    <view class="waterfall__col">
+      <wallpaper-card wx:for="{{right}}" wx:key="id" item="{{item}}" bind:tap="onCardTap" />
+    </view>
+  </view>
+
+  <!-- 分页加载中 -->
+  <view wx:if="{{loading && !skeleton && !error}}" class="state state--loading">
+    <text class="spinner"></text><text>加载中…</text>
+  </view>
+
+  <!-- 到底 -->
+  <view wx:if="{{finished && !error && !empty}}" class="state">— 已经到底啦 —</view>
+
+  <!-- 空态 -->
+  <view wx:if="{{empty}}" class="state state--empty">
+    <text class="state__emoji">🖼️</text>
+    <text>这里还没有壁纸</text>
+    <button class="state__btn" bindtap="onRetry">刷新看看</button>
+  </view>
+
+  <!-- 网络错误 -->
+  <view wx:if="{{error}}" class="state state--error">
+    <text class="state__emoji">📡</text>
+    <text>网络开小差了</text>
+    <button class="state__btn" bindtap="onRetry">点击重试</button>
+  </view>
+</view>

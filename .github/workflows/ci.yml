@@ -54,3 +54,27 @@ jobs:
       - name: Manifest dry-run
         working-directory: backend
         run: npm run import:dry-run
+
+  # 小程序前端(#10): TypeScript 类型检查 + utils 单测(api/auth/保存状态机/埋点)
+  miniprogram:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: miniprogram/package-lock.json
+
+      - name: Install
+        working-directory: miniprogram
+        run: npm ci
+
+      - name: Typecheck
+        working-directory: miniprogram
+        run: npm run typecheck
+
+      - name: Unit tests
+        working-directory: miniprogram
+        run: npm test

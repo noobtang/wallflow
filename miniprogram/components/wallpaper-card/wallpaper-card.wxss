@@ -1,0 +1,92 @@
+.card {
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  margin-bottom: 20rpx;
+}
+
+.card--pressed {
+  transform: scale(0.97);
+  transition: transform 0.12s;
+}
+
+.card__thumb {
+  position: relative;
+  width: 100%;
+  background: var(--skeleton);
+}
+
+.card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__img--error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2);
+  font-size: 22rpx;
+  gap: 8rpx;
+  background: var(--skeleton);
+}
+
+.card__retry {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* 许可文字徽章(设计决策: 文字徽章,时刻可见) */
+.card__badge {
+  position: absolute;
+  right: 12rpx;
+  bottom: 12rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  font-size: 20rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+.badge--cc0 {
+  background: var(--cc0);
+}
+
+.badge--ccby {
+  background: var(--ccby);
+}
+
+.badge--pd {
+  background: var(--pd);
+}
+
+.badge--default {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12rpx 16rpx;
+}
+
+.card__title {
+  font-size: 24rpx;
+  color: var(--text1);
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card__category {
+  font-size: 20rpx;
+  color: var(--text2);
+  margin-left: 12rpx;
+  flex-shrink: 0;
+}

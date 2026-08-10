@@ -1,0 +1,100 @@
+.root {
+  padding: 20rpx 24rpx 40rpx;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.search-box__field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 76rpx;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
+  background: var(--card);
+  border: 1rpx solid var(--border);
+}
+
+.search-box__icon {
+  margin-right: 12rpx;
+  font-size: 28rpx;
+}
+
+.search-box__input {
+  flex: 1;
+  font-size: 27rpx;
+  color: var(--text1);
+}
+
+.search-box__clear {
+  color: var(--text2);
+  font-size: 28rpx;
+  padding: 0 8rpx;
+}
+
+.search-box__btn {
+  color: var(--primary);
+  font-size: 27rpx;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* 建议区 */
+.suggest__section {
+  margin-bottom: 40rpx;
+}
+
+.suggest__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.suggest__title {
+  font-size: 26rpx;
+  color: var(--text2);
+}
+
+.suggest__clear {
+  font-size: 24rpx;
+  color: var(--primary);
+}
+
+.suggest__words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.suggest__word {
+  padding: 12rpx 28rpx;
+  border-radius: 999rpx;
+  font-size: 26rpx;
+  color: var(--text1);
+  background: var(--card);
+  border: 1rpx solid var(--border);
+}
+
+.suggest__word--hot {
+  color: var(--primary);
+  border-color: transparent;
+  background: rgba(74, 108, 255, 0.08);
+}
+
+/* 结果流 */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.state__hint {
+  font-size: 24rpx;
+  color: var(--text2);
+}

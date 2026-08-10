@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "wallpaper-card": "/components/wallpaper-card/wallpaper-card"
+  }
+}

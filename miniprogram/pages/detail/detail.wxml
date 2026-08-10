@@ -1,0 +1,84 @@
+<view class="root {{themeClass}}" style="padding-top: {{statusBarHeight}}px">
+  <!-- 加载骨架 -->
+  <view wx:if="{{loading}}" class="state state--loading">
+    <text class="spinner"></text><text>加载中…</text>
+  </view>
+
+  <!-- 错误 / 不存在 -->
+  <view wx:elif="{{error}}" class="state state--error">
+    <text class="state__emoji">📡</text>
+    <text>{{notFound ? '壁纸不存在' : '加载失败'}}</text>
+    <button class="state__btn" bindtap="onRetry">点击重试</button>
+  </view>
+
+  <block wx:elif="{{detail}}">
+    <!-- 返回 -->
+    <view class="nav-back" bindtap="goBack"><text class="nav-back__arrow">‹</text></view>
+
+    <!-- 沉浸大图区 -->
+    <view class="hero" bindtap="onPreview">
+      <image
+        wx:if="{{!imgError}}"
+        class="hero__img"
+        src="{{detail.fullUrl}}"
+        mode="aspectFit"
+        binderror="onImgError"
+      />
+      <view wx:else class="hero__img hero__img--error">
+        <text>图片加载失败</text>
+        <text class="hero__retry" catchtap="onImgRetry">重试</text>
+      </view>
+    </view>
+
+    <!-- 信息区 -->
+    <view class="body">
+      <view class="title-row">
+        <text class="title">{{detail.title || '未命名壁纸'}}</text>
+        <view class="badge {{badgeClass}}">{{detail.license}}</view>
+      </view>
+
+      <view class="tags">
+        <text class="tag" wx:for="{{detail.tags}}" wx:key="*this">{{item}}</text>
+      </view>
+
+      <view class="meta" bindtap="onLicenseTap">
+        <text class="meta__creator" wx:if="{{detail.creator}}">由 {{detail.creator}} 创作</text>
+        <text class="meta__license">查看许可协议 ›</text>
+      </view>
+
+      <!-- 相似推荐 -->
+      <view wx:if="{{similar.length > 0}}" class="similar">
+        <text class="similar__title">更多同风格</text>
+        <scroll-view class="similar__scroll" scroll-x enhanced show-scrollbar="{{false}}">
+          <view
+            class="similar__item"
+            wx:for="{{similar}}"
+            wx:key="id"
+            data-id="{{item.id}}"
+            bindtap="onSimilarTap"
+          >
+            <image class="similar__img" src="{{item.thumbUrl}}" mode="aspectFill" lazy-load />
+            <view class="similar__badge">{{item.license}}</view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+
+    <!-- 底部固定操作栏(拇指热区,设计文档 §4.3) -->
+    <view class="actionbar">
+      <view class="action" bindtap="onToggleFavorite">
+        <text class="action__icon {{favorited ? 'action__icon--active' : ''}}">{{favorited ? '♥' : '♡'}}</text>
+        <text class="action__label">{{favorited ? '已收藏' : '收藏'}}</text>
+      </view>
+      <button class="cta" bindtap="onSave" disabled="{{saveState === 'saving'}}">
+        <text wx:if="{{saveState === 'saving'}}">保存中…</text>
+        <text wx:elif="{{saveState === 'success'}}">✓ 已保存</text>
+        <text wx:else>保存壁纸</text>
+      </button>
+      <view class="action" bindtap="onMore">
+        <text class="action__icon">⋯</text>
+        <text class="action__label">更多</text>
+      </view>
+    </view>
+  </block>
+</view>

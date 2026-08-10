@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "wallpaper-card": "/components/wallpaper-card/wallpaper-card"
+  }
+}

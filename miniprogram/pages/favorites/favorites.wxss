@@ -1,0 +1,60 @@
+.root {
+  padding: 20rpx 24rpx 40rpx;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+  padding: 0 4rpx;
+}
+
+.header__title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--text1);
+}
+
+.header__actions {
+  display: flex;
+  gap: 28rpx;
+}
+
+.header__link {
+  font-size: 26rpx;
+  color: var(--primary);
+}
+
+.waterfall {
+  display: flex;
+  gap: 20rpx;
+}
+
+.waterfall__col {
+  flex: 1;
+  min-width: 0;
+}
+
+.skeleton {
+  display: flex;
+  gap: 20rpx;
+}
+
+.skeleton__col {
+  flex: 1;
+  min-width: 0;
+}
+
+.skeleton__block {
+  border-radius: 16rpx;
+  background: var(--skeleton);
+  margin-bottom: 20rpx;
+}
+
+.empty__hint {
+  font-size: 24rpx;
+  color: var(--text2);
+  text-align: center;
+  padding: 0 60rpx;
+}

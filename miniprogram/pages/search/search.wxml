@@ -1,0 +1,76 @@
+<view class="root {{themeClass}}">
+  <!-- 搜索输入 -->
+  <view class="search-box">
+    <view class="search-box__field">
+      <text class="search-box__icon">🔍</text>
+      <input
+        class="search-box__input"
+        value="{{keyword}}"
+        placeholder="搜索壁纸、风格、关键词…"
+        confirm-type="search"
+        focus="{{true}}"
+        bindinput="onInput"
+        bindconfirm="onConfirm"
+      />
+      <text wx:if="{{keyword}}" class="search-box__clear" bindtap="onClearKeyword">✕</text>
+    </view>
+    <text class="search-box__btn" bindtap="onConfirm">搜索</text>
+  </view>
+
+  <!-- 未搜索: 历史 + 热门词 -->
+  <view wx:if="{{!searched}}" class="suggest">
+    <view wx:if="{{history.length > 0}}" class="suggest__section">
+      <view class="suggest__head">
+        <text class="suggest__title">搜索历史</text>
+        <text class="suggest__clear" bindtap="clearHistory">清空</text>
+      </view>
+      <view class="suggest__words">
+        <text
+          wx:for="{{history}}"
+          wx:key="*this"
+          class="suggest__word"
+          data-word="{{item}}"
+          bindtap="onHistoryTap"
+        >{{item}}</text>
+      </view>
+    </view>
+
+    <view class="suggest__section">
+      <text class="suggest__title">热门搜索</text>
+      <view class="suggest__words">
+        <text
+          wx:for="{{hotWords}}"
+          wx:key="*this"
+          class="suggest__word suggest__word--hot"
+          data-word="{{item}}"
+          bindtap="onHotTap"
+        >{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索结果流(单列卡片即可,双列同首页组件亦可) -->
+  <view wx:if="{{searched && !error && !empty}}" class="results">
+    <wallpaper-card wx:for="{{results}}" wx:key="id" item="{{item}}" bind:tap="onCardTap" />
+  </view>
+
+  <view wx:if="{{loading && searched}}" class="state state--loading">
+    <text class="spinner"></text><text>搜索中…</text>
+  </view>
+
+  <view wx:if="{{finished && searched && !error && !empty}}" class="state">— 已经到底啦 —</view>
+
+  <!-- 空结果 -->
+  <view wx:if="{{empty}}" class="state state--empty">
+    <text class="state__emoji">🔎</text>
+    <text>没有找到相关壁纸</text>
+    <text class="state__hint">试试「风景」「星空」「极简」等词</text>
+  </view>
+
+  <!-- 错误 -->
+  <view wx:if="{{error}}" class="state state--error">
+    <text class="state__emoji">📡</text>
+    <text>网络开小差了</text>
+    <button class="state__btn" bindtap="onRetry">点击重试</button>
+  </view>
+</view>

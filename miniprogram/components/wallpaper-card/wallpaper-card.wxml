@@ -1,0 +1,21 @@
+<view class="card" hover-class="card--pressed" bindtap="onTap" bindlongpress="onLongPress">
+  <view class="card__thumb" style="padding-bottom: {{aspect}}%">
+    <image
+      wx:if="{{!imgError}}"
+      class="card__img"
+      src="{{item.thumbUrl}}"
+      mode="aspectFill"
+      lazy-load="{{true}}"
+      binderror="onImgError"
+    />
+    <view wx:else class="card__img card__img--error">
+      <text>图片加载失败</text>
+      <text class="card__retry" catchtap="onImgRetry">重试</text>
+    </view>
+    <view class="card__badge {{badgeClass}}">{{item.license}}</view>
+  </view>
+  <view class="card__meta">
+    <text class="card__title">{{item.title || '未命名壁纸'}}</text>
+    <text class="card__category">{{item.category}}</text>
+  </view>
+</view>

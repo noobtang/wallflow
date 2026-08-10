@@ -1,0 +1,73 @@
+.root {
+  padding-bottom: 40rpx;
+}
+
+/* chips 栏 */
+.chips {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  padding: 16rpx 24rpx 8rpx;
+  white-space: nowrap;
+}
+
+.chips__inner {
+  display: inline-flex;
+  gap: 16rpx;
+  padding-right: 24rpx;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8rpx;
+  height: 64rpx;
+  padding: 0 28rpx;
+  border-radius: 999rpx;
+  font-size: 26rpx;
+  color: var(--text1);
+  background: var(--card);
+  border: 1rpx solid var(--border);
+}
+
+.chip--active {
+  background: linear-gradient(135deg, var(--grad1), var(--grad2));
+  color: #fff;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.chip__count {
+  font-size: 20rpx;
+  opacity: 0.7;
+}
+
+/* 瀑布流 */
+.waterfall {
+  display: flex;
+  gap: 20rpx;
+  padding: 16rpx 24rpx 0;
+}
+
+.waterfall__col {
+  flex: 1;
+  min-width: 0;
+}
+
+.skeleton {
+  display: flex;
+  gap: 20rpx;
+  padding: 16rpx 24rpx 0;
+}
+
+.skeleton__col {
+  flex: 1;
+  min-width: 0;
+}
+
+.skeleton__block {
+  border-radius: 16rpx;
+  background: var(--skeleton);
+  margin-bottom: 20rpx;
+}
