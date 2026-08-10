@@ -12,7 +12,8 @@
 
 - [x] 选定首源:Wikimedia Commons(2026-08-10 调研)→ **二次修正(2026-08-10): 精选 CC0 语料转存国内 COS**(Wikimedia 大陆不可达,jsDelivr/Gitee 实测不可靠)
 - [ ] 开通腾讯云 COS(或阿里云 OSS)+ 私有读 bucket + 子账号密钥(COS 方案已消除 Wikimedia 可达性依赖)
-- [ ] manifest 精选清单:从 GitHub CC0 仓库/CC0 图库精选 100-300 张,核实许可,手写中文标签
+- [x] manifest 精选清单原型(2026-08-10): `data/manifest.json` 20 张样例(Commons CC0/CC BY/PD 精选 + 手写中文标签),`npm run import:dry-run` 跑通 → 扩量 100-300 张待做
+- [ ] manifest 扩量:从 GitHub CC0 仓库/CC0 图库精选至 100-300 张,逐张核实许可(注意: upload.wikimedia.org 原图高频下载会 429 限流,导入须限速+退避,见 data/README.md)
 - [ ] 精选 100-300 张壁纸 + 中文分类标签
 - [ ] 核实微信小程序注册主体(个人 vs 企业/个体户,流量主资格)
 - [ ] 国内服务器 + 域名备案 + HTTPS

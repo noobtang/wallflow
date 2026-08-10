@@ -27,6 +27,7 @@ interface SourcePort {
   read(manifest: Manifest): AsyncIterable<NormalizedWallpaper>;
 }
 interface NormalizedWallpaper {
+  source: string;       // 内容源标识(CuratedImport 固定 'curated';配合 sourceId 组成 (source, source_id) 入库键)
   sourceId: string; title: string;
   license: string; licenseUrl: string;
   creator: string; creatorUrl: string;
@@ -52,7 +53,7 @@ interface NormalizedWallpaper {
 ```
 
 - **CuratedImport**(`src/sources/curated.import.ts`): 读 manifest → zod 逐条校验(字段缺失/类型错 → 跳过 + 告警)→ 许可白名单校验(仅 CC0/CC BY/PD,带 licenseUrl)→ 输出 NormalizedWallpaper 流
-- **标签来源(已定)**: 人工精选时在 manifest 中手写中文标签(分类词表: 风景/极简/萌宠/动漫/城市/星空/自然/艺术)
+- **标签来源(已定)**: 人工精选时在 manifest 中手写中文标签;`category` 由 schema 用 `z.enum` 约束到分类词表(风景/极简/萌宠/动漫/城市/星空/自然/艺术),越界条目直接拒收
 - **内容输入源**: GitHub 开源壁纸仓库(如 dharmx/walls 等 CC0/MIT 仓库,仅供精选取材)+ 各 CC0 图库 + 原创挑选;收录前核实许可
 
 ## Acceptance Criteria

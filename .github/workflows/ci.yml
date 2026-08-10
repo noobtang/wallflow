@@ -49,3 +49,8 @@ jobs:
         run: npm test
         env:
           DATABASE_URL: postgres://wallflow:wallflow@localhost:5432/wallflow_test
+
+      # 内容管道自检(#3): 本地 manifest 导入校验,零上游依赖,防 manifest 回归
+      - name: Manifest dry-run
+        working-directory: backend
+        run: npm run import:dry-run
