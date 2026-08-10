@@ -1,0 +1,19 @@
+# Node
+node_modules/
+dist/
+
+# Env / secrets
+.env
+.env.local
+*.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
