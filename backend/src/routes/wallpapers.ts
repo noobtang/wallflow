@@ -1,10 +1,14 @@
 import type { FastifyInstance } from 'fastify';
 import type pg from 'pg';
 import { z } from 'zod';
+import type { AuthContext } from '../plugins/auth';
+import { FavoriteRepository } from '../repositories/favorite.repository';
 import type { WallpaperRow } from '../repositories/wallpaper.repository';
 import { WallpaperRepository } from '../repositories/wallpaper.repository';
 import { tokenizeQuery } from '../search/segmenter';
 import { CATEGORIES } from '../sources/manifest.schema';
+import type { ObjectStorage } from '../storage/object-storage';
+import { decodeTsCursor, encodeTsCursor } from './cursor';
 
 /** 抛出 4xx(错误处理器按 statusCode 透传 message,统一 { error } 响应形状) */
 export function badRequest(message: string): Error & { statusCode: number } {
@@ -37,27 +41,6 @@ function decodeCursor(raw: string): { rank: number; id: number } | null {
   }
 }
 
-/** 信息流游标(规格 #7): base64url("{createdAtUnixMs},{id}") — (created_at, id) keyset */
-function encodeTsCursor(createdAtMs: number, id: number): string {
-  return Buffer.from(`${createdAtMs},${id}`).toString('base64url');
-}
-
-function decodeTsCursor(raw: string): { createdAtMs: number; id: number } | null {
-  try {
-    const [tsStr, idStr] = Buffer.from(raw, 'base64url').toString().split(',');
-    const createdAtMs = Number(tsStr);
-    const id = Number(idStr);
-    // 安全整数 + 上界(2100-01-01): 防构造出超出 Date 有效范围的 ms → Invalid Date
-    // 在 node-pg 序列化时抛 RangeError 变 500(应为 400)
-    if (!Number.isSafeInteger(createdAtMs) || createdAtMs <= 0 || createdAtMs > 4102444800000) {
-      return null;
-    }
-    if (!Number.isInteger(id) || id <= 0) return null;
-    return { createdAtMs, id };
-  } catch {
-    return null;
-  }
-}
 
 /** 对外响应形状(对齐规格 06 统一形状;不泄漏 status/searchText/source 等内部字段) */
 export interface WallpaperListItem {
@@ -92,6 +75,15 @@ function toListItem(row: WallpaperRow): WallpaperListItem {
   };
 }
 
+/** 对外列表项: DB 存对象 key → 签名直链(#9);Mock 返回 {baseUrl}/{key};供收藏列表复用 */
+export function toSignedListItem(row: WallpaperRow, storage: ObjectStorage): WallpaperListItem {
+  return {
+    ...toListItem(row),
+    thumbUrl: storage.getSignedUrl(row.thumbUrl),
+    fullUrl: storage.getSignedUrl(row.url),
+  };
+}
+
 const searchQuerySchema = z.object({
   // 空串/纯空白 → 分词后无 token,按纯过滤处理(前端清空输入框友好)
   q: z.string().trim().max(100).optional(),
@@ -115,16 +107,18 @@ const similarQuerySchema = z.object({
   limit: z.coerce.number().int().min(1).max(20).default(8),
 });
 
-/** 详情响应 = 列表项 + is_favorited(#7: 无登录态,MVP 恒 false) */
+/** 详情响应 = 列表项 + is_favorited(#10: 带 token 返回真实收藏态,匿名 false) */
 interface WallpaperDetail extends WallpaperListItem {
   is_favorited: boolean;
 }
 
 export async function wallpapersRoutes(
   app: FastifyInstance,
-  deps: { pool: pg.Pool },
+  deps: { pool: pg.Pool; storage: ObjectStorage; auth: AuthContext },
 ): Promise<void> {
   const repo = new WallpaperRepository(deps.pool);
+  const favRepo = new FavoriteRepository(deps.pool);
+  const { storage } = deps;
 
   /**
    * 全文搜索(#6): GET /wallpapers/search?q=&category=&tag=&cursor=&limit=
@@ -158,7 +152,7 @@ export async function wallpapersRoutes(
       cursor,
       limit,
     });
-    const mapped = items.map(toListItem);
+    const mapped = items.map((row) => toSignedListItem(row, storage));
     const nextCursor =
       mapped.length === limit && mapped.length > 0
         ? encodeCursor(lastRank, mapped[mapped.length - 1].id)
@@ -186,7 +180,7 @@ export async function wallpapersRoutes(
       if (!cursor) throw badRequest('cursor 非法');
     }
     const rows = await repo.listFeed(category ?? null, { limit, cursor });
-    const mapped = rows.map(toListItem);
+    const mapped = rows.map((row) => toSignedListItem(row, storage));
     const last = rows[rows.length - 1];
     const nextCursor =
       mapped.length === limit && mapped.length > 0
@@ -197,17 +191,20 @@ export async function wallpapersRoutes(
   });
 
   /**
-   * 详情(#7): GET /wallpapers/:id
+   * 详情(#7/#10): GET /wallpapers/:id
    * - 完整署名 + 许可字段;非 active(blocked/pending_review)与未知 id 一律 404
-   * - is_favorited: MVP 无登录态恒 false(#10 用户 API 后接入);详情缓存 300s
+   * - is_favorited: 带 token 返回真实收藏态(optionalAuth,坏 token 视为匿名);匿名 false;详情缓存 300s
    */
-  app.get('/wallpapers/:id', async (request, reply) => {
+  app.get('/wallpapers/:id', { preHandler: deps.auth.optionalAuth }, async (request, reply) => {
     const parsed = idParamsSchema.safeParse(request.params);
     if (!parsed.success) throw badRequest('id 必须为正整数');
     const row = await repo.findById(parsed.data.id);
     if (!row || row.status !== 'active') throw notFound('壁纸不存在');
-    const detail: WallpaperDetail = { ...toListItem(row), is_favorited: false };
-    reply.header('Cache-Control', 'public, max-age=300');
+    const isFavorited = request.user ? await favRepo.isFavorited(request.user.sub, row.id) : false;
+    const detail: WallpaperDetail = { ...toSignedListItem(row, storage), is_favorited: isFavorited };
+    // 详情已个性化(is_favorited): 带 token 时禁共享缓存(RFC 9111: public 允许缓存带 Authorization 的响应,
+    // 会把用户 A 的收藏态透给用户 B);匿名响应人人相同才可 public
+    reply.header('Cache-Control', request.user ? 'private, max-age=300' : 'public, max-age=300');
     return detail;
   });
 
@@ -226,7 +223,7 @@ export async function wallpapersRoutes(
     const items =
       tags.length > 0 ? await repo.findSimilarByTags(params.data.id, tags, query.data.limit) : [];
     reply.header('Cache-Control', 'public, max-age=60');
-    return { items: items.map(toListItem) };
+    return { items: items.map((row) => toSignedListItem(row, storage)) };
   });
 
   /** 分类列表(带计数,#7): GET /categories — 只返回有 active 壁纸的分类,按计数降序 */

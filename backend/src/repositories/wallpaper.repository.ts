@@ -68,13 +68,13 @@ export function fromNormalizedWallpaper(w: NormalizedWallpaper): WallpaperUpsert
   };
 }
 
-const ROW_COLUMNS = `id, source, source_id AS "sourceId", title, url, thumb_url AS "thumbUrl",
+export const ROW_COLUMNS = `id, source, source_id AS "sourceId", title, url, thumb_url AS "thumbUrl",
   license, license_url AS "licenseUrl", creator, creator_url AS "creatorUrl",
   width, height, tags, search_text AS "searchText", category, status,
   created_at AS "createdAt", updated_at AS "updatedAt"`;
 
-/** 行 → 领域类型(列已别名映射,这里做显式收尾与空值处理) */
-function mapRow(row: pg.QueryResultRow): WallpaperRow {
+/** 行 → 领域类型(列已别名映射,这里做显式收尾与空值处理);供 join 场景(FavoriteRepository)复用 */
+export function mapRow(row: pg.QueryResultRow): WallpaperRow {
   return {
     id: row.id,
     source: row.source,

@@ -111,8 +111,8 @@ describe('ImportJob(#4 导入流水线)', () => {
     expect(row?.width).toBe(1600);
     expect(row?.height).toBe(900);
     // 上传后 URL 指向存储对象
-    expect(row?.url).toBe('https://cos-mock.local/wallpapers/cc-int-1.jpg');
-    expect(row?.thumbUrl).toBe('https://cos-mock.local/wallpapers/cc-int-1_thumb.jpg');
+    expect(row?.url).toBe('wallpapers/cc-int-1.jpg'); // #9: DB 存对象 key
+    expect(row?.thumbUrl).toBe('wallpapers/cc-int-1_thumb.jpg');
 
     // 原图 + 缩略图均上传
     expect(storage.objects.size).toBe(6);

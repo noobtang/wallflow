@@ -193,12 +193,13 @@ export class ImportJob {
     // 5) 幂等入库(ON CONFLICT (source, source_id));检测不可用 → pending_review(降级策略)
     const status = safety.status === 'unavailable' ? 'pending_review' : 'active';
     // #6 搜索: 入库时用 jieba 预分词生成 search_text(标题+标签+分类+同义词)
+    // #9 语义: DB 存「对象 key」(规格 #8),内容 API 读取时经 getSignedUrl 生成签名直链
     const searchText = buildSearchText(w.title, w.tags, w.category);
     await this.deps.repository.upsert({
       ...fromNormalizedWallpaper(w),
       searchText,
-      url: original.url,
-      thumbUrl: thumbUpload.url,
+      url: original.key,
+      thumbUrl: thumbUpload.key,
       width: image.width,
       height: image.height,
       status,

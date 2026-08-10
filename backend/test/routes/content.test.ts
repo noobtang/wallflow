@@ -18,8 +18,9 @@ function seed(w: SeedInput) {
     source: 'curated',
     sourceId: w.sourceId,
     title: w.title,
-    url: `https://cos-mock.local/wallpapers/${w.sourceId}.jpg`,
-    thumbUrl: `https://cos-mock.local/wallpapers/${w.sourceId}_thumb.jpg`,
+    // #9 语义: DB 存对象 key,API 层经 getSignedUrl 生成签名直链(Mock → cos-mock.local)
+    url: `wallpapers/${w.sourceId}.jpg`,
+    thumbUrl: `wallpapers/${w.sourceId}_thumb.jpg`,
     license: 'CC0',
     licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',
     creator: `Creator-${w.sourceId}`,
@@ -184,6 +185,32 @@ describe('内容 API(#7 路由)', () => {
     expect(body.status).toBeUndefined();
     expect(body.searchText).toBeUndefined();
     expect(body.sourceId).toBeUndefined();
+  });
+
+  it('is_favorited(#10): 匿名 false;登录并收藏后 → true;换用户不可见', async () => {
+    const anon = await app.inject({
+      method: 'POST',
+      url: '/auth/anon',
+      payload: { device_id: '00000000-0000-4000-8000-00000000f001' },
+    });
+    expect(anon.statusCode).toBe(200);
+    const token = anon.json().token as string;
+    const headers = { authorization: `Bearer ${token}` };
+
+    const listRes = await app.inject({ method: 'GET', url: '/wallpapers?category=风景&limit=1' });
+    const { id } = listRes.json().items[0] as { id: number };
+
+    const before = await app.inject({ method: 'GET', url: `/wallpapers/${id}`, headers });
+    expect(before.json().is_favorited).toBe(false);
+
+    const fav = await app.inject({ method: 'POST', url: '/favorites', payload: { wallpaper_id: id }, headers });
+    expect(fav.statusCode).toBe(200);
+
+    const after = await app.inject({ method: 'GET', url: `/wallpapers/${id}`, headers });
+    expect(after.json().is_favorited).toBe(true);
+
+    const anonView = await app.inject({ method: 'GET', url: `/wallpapers/${id}` });
+    expect(anonView.json().is_favorited).toBe(false);
   });
 
   it('详情 404: 未知 id / blocked;400: 非数字 id', async () => {
