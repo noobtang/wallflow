@@ -15,8 +15,9 @@ mkdir -p "$BACKUP_DIR"
 DATE="$(date +%Y%m%d_%H%M%S)"
 OUT="$BACKUP_DIR/pg_${DATE}.sql.gz"
 
+# 注意: cron 无 TTY,不用 -t;账号/库名从环境变量读(默认 wallflow),若 deploy/.env 改过需在 crontab 行带上
 echo "[backup] dumping ${DB_NAME} -> ${OUT}"
-docker exec -t "$CONTAINER" pg_dump -U "$DB_USER" "$DB_NAME" | gzip > "$OUT"
+docker exec "$CONTAINER" pg_dump -U "$DB_USER" "$DB_NAME" | gzip > "$OUT"
 
 # 可选: 上传 COS(需安装 coscli 并配置,见 https://github.com/tencentyun/coscli)
 if [ -n "${COS_BUCKET:-}" ]; then

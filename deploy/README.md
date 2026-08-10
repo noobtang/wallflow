@@ -58,19 +58,23 @@ vi deploy/.env        # 填写 DOMAIN/POSTGRES_PASSWORD/JWT_SECRET/WECHAT_*/COS_
 cd deploy
 docker compose -f docker-compose.prod.yml up -d --build
 # 启动顺序: postgres(健康)→ migrate(一次性,node-pg-migrate up)→ api → nginx
-docker compose -f docker-compose.prod.yml ps          # 全部 Up/healthy
+# ⚠️ migrate 是一次性服务: 成功后为 Exited(0),属正常;重启用 up -d 即可
+# ⚠️ 生产启动硬依赖: 未配置对象存储(COS_*)与微信(WECHAT_*)密钥时 api 会启动即崩
+#    (ObjectStorage 工厂设计为生产不静默降级;微信登录未配置时 /auth/login 返回 503)
+docker compose -f docker-compose.prod.yml ps --status running   # postgres/api/nginx 应为 Up
+docker compose -f docker-compose.prod.yml ps -a | grep migrate  # Exited(0) = 迁移成功
 # 验证(本机): 
 curl -s http://localhost/health   # → {"status":"ok"}
 ```
 
-**首次上线数据初始化**:
+**首次上线数据初始化**(注意: 生产镜像只含 dist/ 编译产物,CLI 用 `node dist/cli/*.js` 而非 npm scripts):
 
 ```bash
-# 1. 导入精选壁纸(需先配好 COS 密钥,或先 mock 再补):
-docker compose -f docker-compose.prod.yml run --rm api npm run import -- --dry-run   # 先 dry-run
-docker compose -f docker-compose.prod.yml run --rm api npm run import                # 全量导入
+# 1. 导入精选壁纸(需已配置对象存储密钥;未配置则跳过,后续补):
+docker compose -f docker-compose.prod.yml run --rm api node dist/cli/import.js -- --dry-run   # 先 dry-run
+# ⚠️ import.js 的 --dry-run 子命令以实际 CLI 参数为准;不带参数即全量导入
 # 2. 若此前用 mock 存了完整 URL,规整为对象 key:
-docker compose -f docker-compose.prod.yml run --rm api npm run backfill:cos-keys
+docker compose -f docker-compose.prod.yml run --rm api node dist/cli/backfill-cos-keys.js
 ```
 
 ## 5️⃣ DNS + HTTPS
@@ -79,6 +83,8 @@ docker compose -f docker-compose.prod.yml run --rm api npm run backfill:cos-keys
 # 1. 域名解析: A 记录 → 服务器公网 IP(等待生效,dig 验证)
 # 2. 证书: 推荐 acme.sh + Let's Encrypt(DNSPod API 可自动续期;或腾讯云免费证书手动替换)
 curl https://get.acme.sh | sh
+# 注意: dns_dp 模式需先配置 DNSPod API 凭证(export DP_Id=... DP_Key=...);
+# 也可 DNS A 记录生效后改用 --nginx 或 webroot 模式,或直接申请腾讯云免费证书
 acme.sh --issue --dns dns_dp -d api.wallflow.example.com   # 泛域名可选 -d '*.example.com'
 mkdir -p /data/wallflow/deploy/nginx/certs
 acme.sh --install-cert -d api.wallflow.example.com \
@@ -110,6 +116,9 @@ acme.sh --install-cert -d api.wallflow.example.com \
 
 ```bash
 # 备份 cron(每日 3 点):
+# ⚠️ 脚本从进程环境读 POSTGRES_USER/POSTGRES_DB(默认 wallflow/wallflow);
+#    若你在 deploy/.env 里改了账号/库名,把对应 export 加进 crontab 行:
+#    0 3 * * * POSTGRES_USER=xxx POSTGRES_DB=xxx /data/wallflow/deploy/pg_backup.sh
 chmod +x /data/wallflow/deploy/pg_backup.sh
 (crontab -l 2>/dev/null; echo "0 3 * * * /data/wallflow/deploy/pg_backup.sh") | crontab -
 ```
