@@ -150,8 +150,8 @@ describe('GET /wallpapers/search(#6 路由)', () => {
     expect(res.json().items.length).toBeGreaterThanOrEqual(1);
   });
 
-  it('未知路由 → 404 统一错误形状', async () => {
-    const res = await app.inject({ method: 'GET', url: '/wallpapers/nope' });
+  it('未知路由 → 404 统一错误形状(#7 后 /wallpapers/:id 已注册,/nope 会命中 :id 参数路由)', async () => {
+    const res = await app.inject({ method: 'GET', url: '/nonexistent' });
     expect(res.statusCode).toBe(404);
     expect(res.json()).toMatchObject({ error: { code: 'NOT_FOUND' } });
   });

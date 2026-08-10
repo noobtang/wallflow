@@ -194,6 +194,30 @@ export class WallpaperRepository {
     return this.listByCategory(null, options);
   }
 
+  /**
+   * 信息流/分类页(#7): (created_at, id) 复合 keyset 分页。
+   * - 排序 created_at DESC, id DESC;游标 (created_at, id) 保证翻页无重复无遗漏
+   * - 精度前提: created_at 已由迁移截断到毫秒,与 JS Date 无损往返
+   *   (若保留 µs,同毫秒连续插入的行会被游标比较漏掉)
+   */
+  async listFeed(
+    category: string | null,
+    options: { limit: number; cursor?: FeedCursor | null },
+  ): Promise<WallpaperRow[]> {
+    const { limit, cursor = null } = options;
+    const { rows } = await this.pool.query(
+      `SELECT ${ROW_COLUMNS} FROM wallpapers
+       WHERE status = 'active'
+         AND ($1::text IS NULL OR category = $1)
+         AND ($2::timestamptz IS NULL
+              OR (created_at, id) < ($2::timestamptz, $3::bigint))
+       ORDER BY created_at DESC, id DESC
+       LIMIT $4`,
+      [category, cursor ? new Date(cursor.createdAtMs) : null, cursor?.id ?? null, limit],
+    );
+    return rows.map(mapRow);
+  }
+
   /** 分类计数(供 #6 GET /categories) */
   async countByCategory(): Promise<Record<string, number>> {
     const { rows } = await this.pool.query(
@@ -208,6 +232,28 @@ export class WallpaperRepository {
       result[row.category] = row.count;
     }
     return result;
+  }
+
+  /**
+   * 相似推荐(#7): 同标签壁纸按重叠标签数降序(id 倒序打平),排除自身。
+   * tags && $2 走 GIN 索引;无标签时调用方不应调用本方法。
+   */
+  async findSimilarByTags(
+    id: number,
+    tags: string[],
+    limit: number,
+  ): Promise<WallpaperRow[]> {
+    const { rows } = await this.pool.query(
+      `SELECT ${ROW_COLUMNS} FROM wallpapers w
+       WHERE w.status = 'active'
+         AND w.id <> $1
+         AND w.tags && $2::text[]
+       ORDER BY (SELECT count(*) FROM unnest(w.tags) AS t WHERE t = ANY($2::text[])) DESC,
+                w.id DESC
+       LIMIT $3`,
+      [id, tags, limit],
+    );
+    return rows.map(mapRow);
   }
 
   /**
@@ -260,6 +306,12 @@ export interface SearchOptions {
   limit?: number;
   /** 复合 keyset 游标: (rank, id);无查询时 rank=0(纯 id 游标) */
   cursor?: { rank: number; id: number } | null;
+}
+
+/** 信息流 keyset 游标(#7): (created_at, id),createdAtMs 为 Unix 毫秒 */
+export interface FeedCursor {
+  createdAtMs: number;
+  id: number;
 }
 
 export interface SearchResult {
