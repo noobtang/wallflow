@@ -3,6 +3,7 @@ import type pg from 'pg';
 import type { WechatClient } from '../auth/wechat';
 import type { AuthContext } from '../plugins/auth';
 import type { ObjectStorage } from '../storage/object-storage';
+import { actionsRoutes } from './actions';
 import { authRoutes } from './auth';
 import { favoritesRoutes } from './favorites';
 import { healthRoutes } from './health';
@@ -16,7 +17,7 @@ export interface RouteDeps {
   jwtSecret: string;
 }
 
-/** 注册全部路由(骨架 + 内容/搜索 + 鉴权 + 收藏;unlock/reports/events 后续任务加入) */
+/** 注册全部路由(骨架 + 内容/搜索 + 鉴权 + 收藏 + 解锁/举报/埋点) */
 export async function registerRoutes(
   app: FastifyInstance,
   deps: RouteDeps,
@@ -25,4 +26,5 @@ export async function registerRoutes(
   await app.register(wallpapersRoutes, deps);
   await app.register(authRoutes, { jwtSecret: deps.jwtSecret, wechat: deps.wechat });
   await app.register(favoritesRoutes, deps);
+  await app.register(actionsRoutes, deps); // 解锁/举报/埋点(#8 剩余)
 }
