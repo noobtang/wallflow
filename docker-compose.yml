@@ -1,0 +1,21 @@
+# 本地开发数据库(#3): docker compose up -d postgres
+services:
+  postgres:
+    image: postgres:16
+    container_name: wallflow-postgres
+    environment:
+      POSTGRES_USER: wallflow
+      POSTGRES_PASSWORD: wallflow
+      POSTGRES_DB: wallflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wallflow"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  pgdata:

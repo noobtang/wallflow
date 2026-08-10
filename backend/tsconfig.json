@@ -4,6 +4,11 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "lib": ["ES2022"],
+    "baseUrl": ".",
+    "paths": {
+      // node-pg-migrate v9 是 ESM 包(exports map 在 Node 解析下不可达),直指其类型声明
+      "node-pg-migrate": ["node_modules/node-pg-migrate/dist/bundle/index.d.ts"]
+    },
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
