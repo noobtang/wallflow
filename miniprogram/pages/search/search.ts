@@ -22,6 +22,8 @@ Page({
     finished: false,
     hasMore: true,
     cursor: null as string | null,
+    /** 请求序号: 防抖与手动确认并发时丢弃过期响应 */
+    searchSeq: 0,
   },
 
   debounceTimer: null as ReturnType<typeof setTimeout> | null,
@@ -109,11 +111,24 @@ Page({
   async doSearch(keyword: string, recordHistory: boolean): Promise<void> {
     track('search_click', { extra: { q: keyword } });
     if (recordHistory) this.saveHistory(keyword);
-    this.setData({ searched: true, loading: true, error: false, empty: false, results: [], cursor: null, finished: false, hasMore: true });
+    const seq = this.data.searchSeq + 1;
+    this.setData({
+      searchSeq: seq,
+      searched: true,
+      loading: true,
+      error: false,
+      empty: false,
+      results: [],
+      cursor: null,
+      finished: false,
+      hasMore: true,
+    });
     try {
       const res = await request<FeedResponse>({
         path: `/wallpapers/search?limit=${PAGE_SIZE}&q=${encodeURIComponent(keyword)}`,
       });
+      // 期间关键词已变化/有更新的搜索 → 丢弃过期响应
+      if (seq !== this.data.searchSeq) return;
       this.setData({
         results: res.items,
         cursor: res.nextCursor,
@@ -123,6 +138,7 @@ Page({
         loading: false,
       });
     } catch {
+      if (seq !== this.data.searchSeq) return;
       this.setData({ error: true, loading: false });
     }
   },

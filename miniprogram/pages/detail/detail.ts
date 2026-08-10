@@ -65,7 +65,8 @@ Page({
       });
       wx.setNavigationBarTitle({ title: detail.title || '壁纸详情' });
     } catch (err) {
-      const notFound = err instanceof ApiError && err.statusCode === 404;
+      // 404 = 不存在;400 = id 非法(Number 解析 NaN 等情况),同样按「壁纸不存在」处理
+      const notFound = err instanceof ApiError && (err.statusCode === 404 || err.statusCode === 400);
       this.setData({ loading: false, error: true, notFound });
     }
   },

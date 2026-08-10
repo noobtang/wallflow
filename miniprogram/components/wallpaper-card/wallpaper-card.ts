@@ -10,6 +10,8 @@ Component({
     aspect: 100,
     badgeClass: 'badge--default',
     imgError: false,
+    /** 长按标记: 抑制长按松手后跟随触发的 tap(微信中 longpress 与 tap 都会触发) */
+    longPressed: false,
   },
   observers: {
     'item': (item: unknown) => {
@@ -29,12 +31,20 @@ Component({
       return ((this.data as unknown as { item?: WallpaperItem }).item ?? null);
     },
     onTap() {
+      // 长按松手后 tap 会跟随触发,此处抑制避免「弹窗+跳转」双动作
+      if (this.data.longPressed) {
+        this.setData({ longPressed: false });
+        return;
+      }
       const item = this.current();
       if (item) this.triggerEvent('tap', { id: item.id });
     },
     onLongPress() {
       const item = this.current();
-      if (item) this.triggerEvent('longpress', { id: item.id });
+      if (item) {
+        this.setData({ longPressed: true });
+        this.triggerEvent('longpress', { id: item.id });
+      }
     },
     onImgError() {
       this.setData({ imgError: true });

@@ -1,5 +1,5 @@
 import { BASE_URL, REQUEST_TIMEOUT } from './config';
-import { getToken } from './token';
+import { clearToken, getToken } from './token';
 
 /** 统一 API 错误: statusCode=0 表示网络层失败 */
 export class ApiError extends Error {
@@ -47,6 +47,8 @@ export function request<T>(options: RequestOptions): Promise<T> {
           resolve(res.data as T);
           return;
         }
+        // 401 = token 失效/过期: 清除本地 token,下次 ensureLogin 会重新登录
+        if (res.statusCode === 401) clearToken();
         const body = res.data as ApiErrorBody | undefined;
         reject(
           new ApiError(

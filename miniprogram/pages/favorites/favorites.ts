@@ -31,12 +31,10 @@ Page({
 
   onShow() {
     this.setData({ themeClass: currentThemeClass() });
-    // 详情页可能取消了收藏,回来时静默刷新(有数据时不闪骨架屏)
-    if (this.data.left.length === 0 && this.data.right.length === 0) {
-      this.loadFirst();
-    } else {
-      this.loadFirst(true);
-    }
+    // 详情页可能取消了收藏: 已有数据时静默重载会折叠列表/丢滚动位置,且与 loadNext 竞态,
+    // 故有数据时跳过(本地 removeFavorite 已即时移除,下拉刷新/重新进入兜底)
+    if (this.data.left.length > 0 || this.data.right.length > 0) return;
+    void this.loadFirst();
   },
 
   onPullDownRefresh() {
@@ -106,22 +104,18 @@ Page({
     void this.loadFirst();
   },
 
-  async loadFirst(silent = false): Promise<void> {
-    if (silent && !this.data.error) {
-      this.setData({ loading: true });
-    } else {
-      this.setData({
-        loading: true,
-        error: false,
-        empty: false,
-        skeleton: true,
-        left: [],
-        right: [],
-        cursor: null,
-        finished: false,
-        hasMore: true,
-      });
-    }
+  async loadFirst(): Promise<void> {
+    this.setData({
+      loading: true,
+      error: false,
+      empty: false,
+      skeleton: true,
+      left: [],
+      right: [],
+      cursor: null,
+      finished: false,
+      hasMore: true,
+    });
     try {
       const res = await request<FeedResponse>({ path: `/favorites?limit=${PAGE_SIZE}` });
       const cols = this.distribute(res.items);
