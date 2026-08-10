@@ -11,15 +11,15 @@
 ## Pre-launch checklist
 
 - [x] 选定首源:Wikimedia Commons(2026-08-10 调研)→ **二次修正(2026-08-10): 精选 CC0 语料转存国内 COS**(Wikimedia 大陆不可达,jsDelivr/Gitee 实测不可靠)
-- [ ] 开通腾讯云 COS(或阿里云 OSS)+ 私有读 bucket + 子账号密钥(COS 方案已消除 Wikimedia 可达性依赖)
+- [ ] 开通对象存储(用户 2026-08-11 搁置 COS 凭证,后期可能换供应商;接口已抽象 `ObjectStorage`,更换只改实现 + downloadFile 域名白名单)
 - [x] manifest 精选清单原型(2026-08-10): `data/manifest.json` 20 张样例(Commons CC0/CC BY/PD 精选 + 手写中文标签),`npm run import:dry-run` 跑通 → 扩量 100-300 张待做
 - [ ] manifest 扩量:从 GitHub CC0 仓库/CC0 图库精选至 100-300 张,逐张核实许可(注意: upload.wikimedia.org 原图高频下载会 429 限流,导入须限速+退避,见 data/README.md)
 - [ ] 精选 100-300 张壁纸 + 中文分类标签
 - [ ] 核实微信小程序注册主体(个人 vs 企业/个体户,流量主资格)
-- [ ] 国内服务器 + 域名备案 + HTTPS
+- [x] 部署清单已产出(2026-08-11 #12): `deploy/README.md` 上线前清单 + docker-compose.prod.yml(postgres+迁移+api+nginx TLS)+ 备份脚本;实际购买服务器/备案待用户执行
 - [x] 内容安全检测已接入(2026-08-11 #5: allow/block/degrade → pending_review 接口 + mock;真实腾讯云内容安全待上线前配置)
-- [ ] downloadFile 合法域名配置
-- [ ] 激励视频广告组件接入(组件可提前接入,流量主开通后生效)
+- [x] 合法域名配置清单已覆盖(2026-08-11 #12 §6: request=api 域名 / downloadFile=图片域名)
+- [ ] 激励视频广告组件接入(组件可提前接入,流量主开通后生效;⚠️ 个人主体无流量主资格,广告变现需个体户/企业主体)
 
 ## From Outside Voice review (2026-08-10)
 

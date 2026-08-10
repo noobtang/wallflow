@@ -1,0 +1,72 @@
+# WallFlow 生产部署(#12): docker compose -f deploy/docker-compose.prod.yml up -d --build
+# - 所有密钥/域名放 deploy/.env(已被 .gitignore 覆盖,不入库)
+# - postgres/api 不暴露公网端口,仅 nginx 暴露 80/443
+# - api 启动前由 migrate 一次性服务完成 DB 迁移(自迁移,幂等)
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: wallflow-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    # 绝不映射 5432 到公网(仅容器网络内访问)
+
+  migrate:
+    build:
+      context: ../backend
+    command: ["npm", "run", "db:up"]
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    build:
+      context: ../backend
+    command: ["node", "dist/server.js"]
+    container_name: wallflow-api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: wallflow-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      # 官方镜像会自动对 /etc/nginx/templates/*.template 做 envsubst
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+      # acme.sh 证书放 deploy/nginx/certs/(fullchain.pem / privkey.pem)
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - api
+
+volumes:
+  pgdata:

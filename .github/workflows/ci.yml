@@ -44,6 +44,11 @@ jobs:
         working-directory: backend
         run: npm run typecheck
 
+      # 生产构建验证(#12): dist/ 为 Docker runtime 镜像产物
+      - name: Build
+        working-directory: backend
+        run: npm run build
+
       - name: Test
         working-directory: backend
         run: npm test
@@ -78,3 +83,19 @@ jobs:
       - name: Unit tests
         working-directory: miniprogram
         run: npm test
+
+  # 生产镜像构建验证(#12): 校验 Dockerfile(multi-stage build + runtime 自迁移)
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: backend
+          push: false
+          tags: wallflow-backend:ci
