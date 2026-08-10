@@ -11,6 +11,9 @@ dist/
 *.log
 npm-debug.log*
 
+# Dev file storage(#10 联调): 本地图片落盘目录,不入库
+.dev-storage/
+
 # OS
 .DS_Store
 

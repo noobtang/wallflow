@@ -69,6 +69,39 @@ export class MockObjectStorage implements ObjectStorage {
   }
 }
 
+export interface FileStorageOptions {
+  /** 对象落盘根目录(默认 backend/.dev-storage) */
+  dir: string;
+  /** URL 前缀(默认 http://127.0.0.1:<PORT>,配合 dev 静态服务 /dev-storage/*) */
+  baseUrl: string;
+}
+
+/**
+ * 开发用文件存储(#10 联调): 上传字节落盘到本地目录,URL 由本机 dev 服务器
+ * 的 /dev-storage/* 静态路由提供。让微信开发者工具在「不校验合法域名」下
+ * 能真实加载图片(替代 cos-mock.local 假域名,图片字节此前从未落盘)。
+ */
+export class FileObjectStorage implements ObjectStorage {
+  private readonly dir: string;
+  private readonly baseUrl: string;
+
+  constructor(options: FileStorageOptions) {
+    this.dir = options.dir;
+    this.baseUrl = options.baseUrl.replace(/\/+$/, '');
+  }
+
+  async uploadObject(key: string, data: Buffer, _contentType: string): Promise<UploadResult> {
+    const file = path.join(this.dir, key);
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, data);
+    return { key, url: `${this.baseUrl}/dev-storage/${key}` };
+  }
+
+  getSignedUrl(key: string): string {
+    return `${this.baseUrl}/dev-storage/${key}`;
+  }
+}
+
 export interface CosConfig {
   secretId: string;
   secretKey: string;
@@ -168,6 +201,9 @@ export function createObjectStorage(
     COS_SECRET_KEY?: string;
     COS_REGION?: string;
     NODE_ENV?: string;
+    PORT?: number;
+    DEV_STORAGE_DIR?: string;
+    DEV_STORAGE_BASE_URL?: string;
   },
   logger: { warn: (msg: string) => void } = console,
 ): ObjectStorage {
@@ -188,6 +224,14 @@ export function createObjectStorage(
   }
   if (hasBucket) {
     logger.warn('[object-storage] COS_BUCKET 已配置但缺少凭证,本次使用 mock 存储(生产环境会硬失败)');
+  }
+  // dev: 文件存储(图片字节落盘 + 本机 /dev-storage 静态服务),微信开发者工具可真实加载
+  if (!hasBucket && config.NODE_ENV === 'development') {
+    return new FileObjectStorage({
+      dir: config.DEV_STORAGE_DIR || path.resolve(process.cwd(), '.dev-storage'),
+      baseUrl:
+        config.DEV_STORAGE_BASE_URL || `http://127.0.0.1:${config.PORT ?? 3000}`,
+    });
   }
   return new MockObjectStorage();
 }

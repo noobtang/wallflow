@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 import {
   CosObjectStorage,
   createObjectStorage,
+  FileObjectStorage,
   MockObjectStorage,
   originalKey,
   thumbnailKey,
@@ -108,8 +109,32 @@ describe('对象存储(#4 key 约定 #8/#9)', () => {
     expect(() => s.getSignedUrl('wallpapers/cc-f.jpg')).toThrow(/未返回 URL/);
   });
 
+  it('FileObjectStorage: 上传落盘到 dir 并返回 /dev-storage URL(#10 联调)', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'wf-filestore-'));
+    const s = new FileObjectStorage({ dir, baseUrl: 'http://127.0.0.1:3100' });
+    const r = await s.uploadObject(originalKey('cc-dev'), Buffer.from('img-bytes'), 'image/jpeg');
+    expect(r.key).toBe('wallpapers/cc-dev.jpg');
+    expect(r.url).toBe('http://127.0.0.1:3100/dev-storage/wallpapers/cc-dev.jpg');
+    expect(fs.readFileSync(path.join(dir, 'wallpapers', 'cc-dev.jpg'))).toEqual(
+      Buffer.from('img-bytes'),
+    );
+    expect(s.getSignedUrl('wallpapers/cc-dev.jpg')).toBe(
+      'http://127.0.0.1:3100/dev-storage/wallpapers/cc-dev.jpg',
+    );
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('createObjectStorage: dev 无 COS 配置 → FileObjectStorage(联调可真实加载图片)', () => {
+    const s = createObjectStorage({ NODE_ENV: 'development', PORT: 3100 });
+    expect(s).toBeInstanceOf(FileObjectStorage);
+  });
+
+  it('createObjectStorage: test 环境无 COS 配置 → mock(测试零 IO)', () => {
+    expect(createObjectStorage({ NODE_ENV: 'test' })).toBeInstanceOf(MockObjectStorage);
+  });
+
   it('createObjectStorage: 未配置 → mock;配了 bucket 缺凭证(非生产)→ mock + 告警', () => {
-    expect(createObjectStorage({})).toBeInstanceOf(MockObjectStorage);
+    expect(createObjectStorage({ NODE_ENV: 'test' })).toBeInstanceOf(MockObjectStorage);
 
     const warns: string[] = [];
     const s = createObjectStorage(

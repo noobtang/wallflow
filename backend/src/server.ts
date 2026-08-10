@@ -1,3 +1,4 @@
+import path from 'node:path';
 import Fastify from 'fastify';
 import type pg from 'pg';
 import { createWechatClient, type WechatClient } from './auth/wechat';
@@ -6,7 +7,12 @@ import { createPool } from './db';
 import { createAuth, type AuthContext } from './plugins/auth';
 import { registerErrorHandler } from './plugins/error-handler';
 import { registerRoutes } from './routes';
-import { createObjectStorage, type ObjectStorage } from './storage/object-storage';
+import { registerDevStatic } from './routes/dev-static';
+import {
+  createObjectStorage,
+  FileObjectStorage,
+  type ObjectStorage,
+} from './storage/object-storage';
 
 /**
  * 可测试的服务器工厂: 测试通过 await buildServer() 后 app.inject 调用,无需真实端口。
@@ -27,6 +33,11 @@ export async function buildServer(
   const app = Fastify({ logger: true });
   const pool = options.pool ?? createPool(config);
   const storage = options.storage ?? createObjectStorage(config);
+  // dev 文件存储(#10 联调): 本机 /dev-storage/* 静态服务暴露落盘图片(路径遍历防护在路由内)
+  if (!options.storage && storage instanceof FileObjectStorage) {
+    const dir = config.DEV_STORAGE_DIR || path.resolve(process.cwd(), '.dev-storage');
+    registerDevStatic(app, dir);
+  }
   const jwtSecret = options.jwtSecret ?? config.JWT_SECRET;
   const wechat = options.wechat !== undefined ? options.wechat : createWechatClient(config);
   const auth = options.auth ?? createAuth({ jwtSecret });

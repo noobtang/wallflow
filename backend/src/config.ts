@@ -19,6 +19,9 @@ const envSchema = z.object({
   COS_SECRET_KEY: z.string().default(''),
   COS_BUCKET: z.string().default(''),
   COS_REGION: z.string().default('ap-guangzhou'),
+  // dev 文件存储(#10 联调): 空 → 默认 http://127.0.0.1:<PORT> + backend/.dev-storage
+  DEV_STORAGE_BASE_URL: z.string().default(''),
+  DEV_STORAGE_DIR: z.string().default(''),
 });
 
 export type AppConfig = z.infer<typeof envSchema>;
