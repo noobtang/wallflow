@@ -64,9 +64,8 @@ function missingEntries(manifest) {
   });
 }
 
-async function main() {
-  const roundsArg = process.argv.find((a) => a.startsWith('--rounds='));
-  const maxRounds = roundsArg ? Number(roundsArg.split('=')[1]) : 6;
+async function main() {    const roundsArg = process.argv.find((a) => a.startsWith('--rounds=') || a.startsWith('--rounds '));
+    const maxRounds = roundsArg ? Number(roundsArg.split(/[= ]/)[1]) : 6;
   const ua = 'wallflow-assets/0.3 (curated manifest; github.com/noobtang/wallflow)';
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
@@ -87,7 +86,12 @@ async function main() {
     let ok = 0;
     for (const e of todo) {
       const outFile = path.join(OUT_DIR, `${e.sourceId}.jpg`);
-      if (fs.existsSync(outFile) && fs.statSync(outFile).size > 1024) { ok += 1; continue; }
+      if (fs.existsSync(outFile) && fs.statSync(outFile).size > 1024) {
+        // 与 fetch-images.mjs 补丁一致: 已存在资产的条目也确保 localFile 落盘
+        if (!e.localFile) e.localFile = `../data/images/${e.sourceId}.jpg`;
+        ok += 1;
+        continue;
+      }
       const fb = fallbackUrl(e.imageUrl);
       try {
         const buf = await downloadWithRetry(fb ?? e.imageUrl, ua);

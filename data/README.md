@@ -42,8 +42,12 @@
   图片落盘到 `backend/.dev-storage`,由后端 `/dev-storage/*` 静态服务提供
   (`FileObjectStorage`,仅 dev 环境;生产仍走 COS 签名直链)
 - **刷新资产**: 海外/可访问 Wikimedia 时运行 `cd backend && node scripts/fetch-images.mjs`
-  (限速 + 429 退避重试 + 幂等跳过已存在文件)
-- 生产不需要本目录(导入在生产走 imageUrl → COS,见 deploy/README)
+  (限速 + 429 退避重试 + 幂等跳过已存在文件);429 限流严重时用
+  `node scripts/fetch-images-retry.mjs --rounds 8`(多轮慢速补跑,间隔 30s)
+- ⚠️ **超大原图条目**: 少数条目(如 `Cosmic Cliffs` PNG 31MB、抽象画 TIFF/黑洞 TIFF)的
+  `imageUrl` 指向原始格式,超过导入器 30MB 上限 — 生产 clone 仓库后 `node dist/cli/import.js`
+  走 `localFile` 零网络导入,不受影响;但若在无 `data/images` 的环境用 imageUrl 导入会失败,
+  需先跑 `fetch-images.mjs` 或删除该条目的 imageUrl 只留 localFile
 
 ## 二次加工前的字段说明
 

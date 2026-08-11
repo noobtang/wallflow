@@ -121,6 +121,8 @@ async function fetchSource(src, limit) {
       if (!isWhitelisted(lic)) continue;
       if (!(ii.width > ii.height)) continue;
       if (ii.width < 2000) continue;
+      // schema 上限(manifest.schema.ts): 超宽全景不入候选,避免后续导入校验失败
+      if (ii.width > 20000 || ii.height > 20000) continue;
       // 去 utm 参数
       const url = ii.url.split('?')[0];
       const fileName = p.title.replace(/^File:/, '');
