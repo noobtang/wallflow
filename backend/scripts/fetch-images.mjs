@@ -88,7 +88,7 @@ async function main() {
 
     // 已存在且非空 → 跳过(断点重跑)
     if (fs.existsSync(outFile) && fs.statSync(outFile).size > 1024) {
-      e.localFile = rel;
+      if (!e.localFile) e.localFile = rel;
       ok += 1;
       console.log(`[skip]  ${e.sourceId} (已有资产)`);
       continue;

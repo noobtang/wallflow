@@ -14,6 +14,9 @@ npm-debug.log*
 # Dev file storage(#10 联调): 本地图片落盘目录,不入库
 .dev-storage/
 
+# 取材中间产物(#10 扩库): fetch-candidates.mjs 可随时再生,不入库
+data/candidates.json
+
 # OS
 .DS_Store
 

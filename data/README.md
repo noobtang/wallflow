@@ -1,13 +1,21 @@
-# data/manifest.json — 精选壁纸清单(MVP 样例 20 张)
+# data/manifest.json — 精选壁纸清单(100 张)
 
 ## 内容来源
 
-全部取自 **Wikimedia Commons**(CC0 图库),由人工精选 20 张,手写中文标题与标签。
+全部取自 **Wikimedia Commons**(CC0 图库),由人工精选 100 张,手写中文标题与标签。
 
 - 许可白名单(与 #3 `ALLOWED_LICENSES` 一致): **CC0 / CC BY / PD(公有领域)**
 - 每条的 `creatorUrl` 指向 Commons 文件描述页,归属可一键核验
-- 许可分布: CC0×4 / CC BY×10 / PD×6;分类分布(规格词表): 星空×5 / 自然×6 / 城市×3 / 极简×3 / 风景×2 / 艺术×1
-- 所有图片为横向(w>h),分辨率 ≥ 2288×1880,含 2K/4K 级大图
+- 许可分布: PD×43 / CC0×42 / CC BY×15;分类分布(规格词表): 自然×29 / 星空×18 / 城市×19 / 风景×18 / 极简×10 / 艺术×6
+- 所有图片为横向(w>h),分辨率 ≥ 2000px 宽,含 2K/4K/8K 级大图(超宽全景已按 schema 上限 20000 过滤)
+
+## 取材来源(2026-08-11 扩库,20 → 100)
+
+- **NASA/USFWS/NOAA 政府图库**(PD 为主): 天文星云、火星全景、海洋生物、鸟类、地貌景观
+- **CC0 结构化搜索**(`haswbstatement:P275=Q6938433`): 城市天际线、极光、星轨、抽象画作、独树极简
+- **CC BY 搜索**(`haswbstatement:P275=Q50829104`): 少量高品质城市/自然补充
+- 候选流水线: `cd backend && node scripts/fetch-candidates.mjs --limit 40` → 输出 `data/candidates.json`
+  (白名单许可 + 横向 + 宽≥2000 + 尺寸≤20000 过滤),人工精选后手写中文元数据并入 manifest
 
 ## 实测发现(2026-08-10,供 #4 导入实现参考)
 
@@ -26,7 +34,7 @@
 
 ## 图片资产(#10 联调,2026-08-11)
 
-`data/images/*.jpg` 是本清单的**离线图片资产**(20 张,共 ~11.5MB):
+`data/images/*.jpg` 是本清单的**离线图片资产**(100 张):
 
 - 从 Wikimedia 下载后经 sharp 压缩(最长边 2560、JPEG q82),manifest 每条带
   `localFile: "../data/images/<sourceId>.jpg"`(相对 backend 工作目录)
@@ -50,5 +58,5 @@
 
 ## 后续
 
-- 二期扩量至 100-300 张: 同流程(Commons 搜索 → 许可/尺寸过滤 → 人工精选 → 手写标签)
+- 扩量至 300 张: 同流程(`fetch-candidates.mjs` → 人工精选 → 手写标签),候选池已覆盖 NASA/USFWS/NOAA/CC0 搜索
 - GitHub CC0 仓库(如 dharmx/walls 等)可作补充取材,收录前必须逐张核实许可
