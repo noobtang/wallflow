@@ -12,9 +12,10 @@
 
 - [x] 选定首源:Wikimedia Commons(2026-08-10 调研)→ **二次修正(2026-08-10): 精选 CC0 语料转存国内 COS**(Wikimedia 大陆不可达,jsDelivr/Gitee 实测不可靠)
 - [ ] 开通对象存储(用户 2026-08-11 搁置 COS 凭证,后期可能换供应商;接口已抽象 `ObjectStorage`,更换只改实现 + downloadFile 域名白名单)
-- [x] manifest 精选清单原型(2026-08-10): `data/manifest.json` 20 张样例(Commons CC0/CC BY/PD 精选 + 手写中文标签),`npm run import:dry-run` 跑通 → 扩量 100-300 张待做
-- [ ] manifest 扩量:从 GitHub CC0 仓库/CC0 图库精选至 100-300 张,逐张核实许可(注意: upload.wikimedia.org 原图高频下载会 429 限流,导入须限速+退避,见 data/README.md)
-- [ ] 精选 100-300 张壁纸 + 中文分类标签
+- [x] manifest 精选清单原型(2026-08-10): `data/manifest.json` 20 张样例(Commons CC0/CC BY/PD 精选 + 手写中文标签),`npm run import:dry-run` 跑通
+- [x] manifest 扩量 20 → 100 张(2026-08-11 #10): `fetch-candidates.mjs` 13 源取材(NASA/USFWS/NOAA/CC0 搜索/极光/星轨/抽象)+ 人工精选 + 手写中文元数据;离线资产 `data/images` 100 张(65MB, sharp 压缩);dev 库导入 100/100;CI 全绿
+- [ ] manifest 扩量至 300 张:同流程(候选池已备 941 条,`node scripts/fetch-candidates.mjs` 再生),逐张核实许可
+- [x] 精选 100 张壁纸 + 中文分类标签(分类: 自然29/城市19/星空18/风景18/极简10/艺术6;许可: PD43/CC0 42/CC BY 15)
 - [ ] 核实微信小程序注册主体(个人 vs 企业/个体户,流量主资格)
 - [x] 部署清单已产出(2026-08-11 #12): `deploy/README.md` 上线前清单 + docker-compose.prod.yml(postgres+迁移+api+nginx TLS)+ 备份脚本;实际购买服务器/备案待用户执行
 - [x] 内容安全检测已接入(2026-08-11 #5: allow/block/degrade → pending_review 接口 + mock;真实腾讯云内容安全待上线前配置)
