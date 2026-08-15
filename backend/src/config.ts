@@ -19,6 +19,11 @@ const envSchema = z.object({
   COS_SECRET_KEY: z.string().default(''),
   COS_BUCKET: z.string().default(''),
   COS_REGION: z.string().default('ap-guangzhou'),
+  // 管理员接口(#12 运维补全): 空 → 管理路由整体 503(未配置不暴露)
+  ADMIN_API_KEY: z.string().default(''),
+  // 运维告警(#12 告警接入): 群机器人 webhook URL,空 → 禁用;窗口秒数(默认 60s)
+  OPS_ALERT_WEBHOOK_URL: z.string().default(''),
+  OPS_ALERT_MIN_INTERVAL_SECONDS: z.coerce.number().int().positive().default(60),
   // dev 文件存储(#10 联调): 空 → 默认 http://127.0.0.1:<PORT> + backend/.dev-storage
   DEV_STORAGE_BASE_URL: z.string().default(''),
   DEV_STORAGE_DIR: z.string().default(''),

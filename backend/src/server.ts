@@ -5,6 +5,7 @@ import { createWechatClient, type WechatClient } from './auth/wechat';
 import { config } from './config';
 import { createPool } from './db';
 import { createAuth, type AuthContext } from './plugins/auth';
+import { createOpsAlerter, OpsAlerter } from './ops/alerter';
 import { registerErrorHandler } from './plugins/error-handler';
 import { registerRoutes } from './routes';
 import { registerDevStatic } from './routes/dev-static';
@@ -28,6 +29,10 @@ export async function buildServer(
     auth?: AuthContext;
     wechat?: WechatClient | null;
     jwtSecret?: string;
+    /** 管理接口密钥(#12 运维补全);默认取 config.ADMIN_API_KEY(未配置则管理路由 503) */
+    adminApiKey?: string;
+    /** 运维告警(#12 告警接入);默认按 config 构建(测试可注入 mock,见 test/ops/alerter.test.ts) */
+    opsAlerter?: OpsAlerter;
   } = {},
 ) {
   const app = Fastify({ logger: true });
@@ -41,12 +46,33 @@ export async function buildServer(
   const jwtSecret = options.jwtSecret ?? config.JWT_SECRET;
   const wechat = options.wechat !== undefined ? options.wechat : createWechatClient(config);
   const auth = options.auth ?? createAuth({ jwtSecret });
+  const opsAlerter = options.opsAlerter ?? createOpsAlerter(config);
   app.decorateRequest('user', null);
   registerErrorHandler(app);
-  await registerRoutes(app, { pool, storage, auth, wechat, jwtSecret });
+
+  // 运维告警(#12): 5xx 响应 → 通知 webhook(告警器内部防抖聚合,发送不阻塞请求)
+  app.addHook('onResponse', async (request, reply) => {
+    if (reply.statusCode >= 500) {
+      opsAlerter.record(reply.statusCode, request.method, request.url);
+    }
+  });
+  await registerRoutes(app, {
+    pool,
+    storage,
+    auth,
+    wechat,
+    jwtSecret,
+    adminApiKey: options.adminApiKey ?? config.ADMIN_API_KEY,
+  });
   if (!options.pool) {
     app.addHook('onClose', async () => {
       await pool.end();
+    });
+  }
+  if (!options.opsAlerter) {
+    // 自建的告警器随服务关停清理(注入的由测试/调用方负责)
+    app.addHook('onClose', async () => {
+      opsAlerter.dispose();
     });
   }
   return app;

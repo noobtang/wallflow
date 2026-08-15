@@ -129,14 +129,27 @@ chmod +x /data/wallflow/deploy/pg_backup.sh
 
 - **回滚**: 后端 `docker compose -f docker-compose.prod.yml up -d --build <旧镜像>`;小程序微信后台撤回版本;DB 快照/备份恢复
 - **DB 迁移**: 破坏性迁移先在本库验证 → 备份 → 再上
-- **内容扩充**: 精选语料 20 → 100-300 张(manifest 扩量 + 限速导入);导入后检查 pending_review 数量
+- **内容扩充**: 精选语料 100 → 300 张(manifest 扩量 + 限速导入);导入后检查 pending_review 数量
 - **日志**: `docker logs wallflow-api --tail 100`;Fastify 已带结构化日志(5xx 有记录)
-- **二期**: 激励视频广告(需企业主体 + 流量主达标)、内容审核重检流程
+- **管理接口(#12 运维补全)**: 完整 API 说明见 `deploy/ADMIN-API.md`(认证/全部端点/错误形状/curl 示例)
+  - `GET /admin/health` — 运维面板(未处理举报数、回填暂停状态),日常巡查入口
+  - `POST /admin/wallpapers/:id/block|restore` — 隔离/恢复内容(版权投诉下架执行面)
+  - `GET /admin/reports` + `DELETE /admin/reports/:id` — 审举报
+  - `POST /admin/backfill/pause|resume` — 暂停/恢复回填(flag 落库,多副本共享)
+  - 调用带 `X-Admin-Key` 头;未配置密钥 → 管理路由整体 503(不上线不暴露)
+- **运维告警(#12 告警接入)**: 填 `OPS_ALERT_WEBHOOK_URL`(群机器人 webhook,企业微信/钉钉通用)后,任意 5xx 响应自动推送;同窗口(默认 60s)多条合并,风暴不刷屏。配置见 `deploy/ADMIN-API.md` §5
+- **定时回填(#12 回填持久化)**: `npm run backfill:scheduled`(重建 search_text)
+  - 由 cron/systemd 周期性调用(**进程内 node-cron 不持久**: 崩溃即丢,多副本会重叠)
+  - 内部 DB 租约(`job_leases` 表)防多副本重叠 + 读 `backfill_paused` 开关
+  - 示例 cron: `30 3 * * * cd /data/wallflow/backend && docker compose -f deploy/docker-compose.prod.yml run --rm api node dist/cli/scheduled-backfill.js`
+- **版权投诉与监管下架**: 流程见 `deploy/TAKEDOWN-SOP.md`(受理 → 隔离 → 双人复核 → 结案)
+- **二期**: 激励视频广告(需企业主体 + 流量主达标;组件已就绪,填 `REWARDED_AD_UNIT_ID` 即启用,见 `miniprogram/utils/config.ts`)、内容审核重检流程
 
 ## 开放问题(上线前需拍板)
 
 1. **COS 供应商**: 用户已搁置 COS 凭证,后期可能更换 — 届时只需换 `ObjectStorage` 实现 + 换 downloadFile 域名白名单,接口与 DB 不变
 2. **Web 端是否首发**(DESIGN-UI.md §8): 若与小程序同步上线,同一服务器/域名,另需 @fastify/cors + React 构建物部署(归 #13)
+3. **广告变现主体**: 激励视频需企业/个体户主体 + 流量主开通;个人主体可先上线但无广告位(组件已按空 adUnitId 自动降级免费)
 
 ---
 
@@ -148,5 +161,5 @@ chmod +x /data/wallflow/deploy/pg_backup.sh
 | 2. https://<domain>/health 公网 ok | ⬜ 待部署 |
 | 3. 真机完整流程 | ⬜ 待部署 + 真机 |
 | 4. 提审材料齐备 | ⬜ 见 §6-7 |
-| 5. 健康检查 + 告警 | 🟡 compose restart + 拨测待配 |
+| 5. 健康检查 + 告警 | 🟡 5xx 内置告警就绪(填 `OPS_ALERT_WEBHOOK_URL`)+ 外部拨测待配 |
 | 6. DB 自动备份 | 🟡 脚本就绪,待上 cron |
