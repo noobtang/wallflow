@@ -20,6 +20,10 @@
 - **CC BY 搜索**(`haswbstatement:P275=Q50829104`): 少量高品质城市/自然补充
 - 候选流水线: `cd backend && node scripts/fetch-candidates.mjs --limit 40` → 输出 `data/candidates.json`
   (白名单许可 + 横向 + 宽≥2000 + 尺寸≤20000 过滤),人工精选后手写中文元数据并入 manifest
+- **每周候选清单(2026-08-15 分析/扩库辅助)**: `node scripts/weekly-candidates.mjs` → 汇总 candidates.json 中
+  尚未入选 manifest 的候选(自动去重)+ 存储成本估算(像素×3B 经验值)+ 许可/来源分布 + 前 N 条大图列表,
+  报告写到 `data/weekly-candidates.md`,供每周人工挑图(选好后 build-expansion 草稿 → 核对 → 并入);
+  抓取逻辑抽到 `scripts/candidates-lib.mjs`(fetch-candidates 与 weekly-candidates 共用)
 
 ## 实测发现(2026-08-10,供 #4 导入实现参考)
 
@@ -55,7 +59,8 @@
 
 ## 图片再分发合规(热链调研,2026-08-15)
 
-> 结论先行: **运行时不对上游热链** — 图片在导入时一次性镜像到 COS(私有读 + 签名直链),
+> 结论先行: **运行时不对上游热链** — 图片在导入时一次性镜像到**自有服务器存储**
+> (2026-08-15 起首选: `DiskObjectStorage` 落盘 + nginx 静态直出;COS 为第二选项),
 > 与 upload.wikimedia.org 无运行时依赖,天然规避热链的三大风险(上游改图/删图/限流)。
 > 本节的合规义务全部已落地(见下),无代码改动要求。
 
@@ -81,12 +86,12 @@
 
 | 上游要求 | 产品现状 | 状态 |
 |----------|----------|------|
-| 不热链(推荐下载复用) | 导入时下载 → COS 镜像,运行时签名直链 | ✅ 已满足 |
+| 不热链(推荐下载复用) | 导入时下载 → 自有存储镜像(nginx 静态直出)/ COS 镜像,运行时直链 | ✅ 已满足 |
 | 禁 hot spider | 导入限速(1.5s/请求 + 退避),逐条复制 | ✅ 已满足 |
 | CC0 可无署名 | 详情页保留来源说明(溯源非义务) | ✅ 已满足 |
 | CC BY 署名(作者+许可链接) | `utils/attribution.ts` 输出标题/作者/许可 URI,一键复制 | ✅ 已满足 |
 | CC BY 修改声明 | `MODIFICATION_NOTE`(压缩/缩放 ≤2560px 声明) | ✅ 已满足 |
-| 缓存策略 | COS 对象 `Cache-Control: public, max-age=86400` + 签名 URL 过期刷新(~1h) | ✅ 已满足 |
+| 缓存策略 | 自有存储 nginx `Cache-Control: public, max-age=86400`(COS 对象等价缓存头 + 签名 URL 过期刷新) | ✅ 已满足 |
 
 ### 若未来改为直链上游(不推荐)需注意
 

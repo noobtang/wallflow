@@ -53,8 +53,12 @@ sudo systemctl restart docker
 mkdir -p /data/wallflow && cd /data/wallflow
 git clone https://github.com/noobtang/wallflow.git .   # 或 scp/rsync 代码
 cp deploy/.env.production.example deploy/.env
-vi deploy/.env        # 填写 DOMAIN/POSTGRES_PASSWORD/JWT_SECRET/WECHAT_*/COS_*
+vi deploy/.env        # 填写 DOMAIN/POSTGRES_PASSWORD/JWT_SECRET/WECHAT_*/图片存储
                      # JWT_SECRET 用: openssl rand -hex 32
+                     # 图片存储(2026-08-15 首选自有服务器):
+                     #   SELF_HOST_BASE_URL=https://images.wallflow.example.com  (nginx /images/* 静态直出)
+                     #   SELF_HOST_STORAGE_DIR 由 compose 挂载(images 卷→/data/wallflow/images),无需手填
+                     # 第二选项 COS: 填 COS_SECRET_ID/SECRET_KEY/BUCKET/REGION(两者都配时自有存储优先)
 cd deploy
 docker compose -f docker-compose.prod.yml up -d --build
 # 启动顺序: postgres(健康)→ migrate(一次性,node-pg-migrate up)→ api → nginx
@@ -99,15 +103,15 @@ acme.sh --install-cert -d api.wallflow.example.com \
 | 配置项 | 值 | 位置 |
 |--------|-----|------|
 | request 合法域名 | `https://api.wallflow.example.com` | 公众平台 → 开发管理 → 开发设置 → 服务器域名 |
-| downloadFile 合法域名 | **图片域名**(COS bucket 自定义域名或默认域名) | 同上;`<image>`/`previewImage`/`downloadFile` 都走此白名单 |
-| 图片域名 | COS 方案: `wallflow-wallpapers-1250000000.cos.ap-guangzhou.myqcloud.com`(建议绑定自定义域名走 CDN) | 若更换对象存储供应商,此域名随之替换,后端接口不变 |
+| downloadFile 合法域名 | **图片域名**(自有图片域名,如 `https://images.wallflow.example.com`;或 COS bucket 域名) | 同上;`<image>`/`previewImage`/`downloadFile` 都走此白名单 |
+| 图片域名 | **自有服务器存储(首选,2026-08-15)**: `SELF_HOST_BASE_URL=https://images.wallflow.example.com`,图片由 nginx `/images/*` 静态直出(共享 images 卷,公开读 + 缓存头);与 api 域名同证书或独立证书均可 | 第二选项 COS: `wallflow-wallpapers-1250000000.cos.ap-guangzhou.myqcloud.com`(建议绑定自定义域名走 CDN) |
 | 内容安全 | 已开通权限 + `WECHAT_APPID/SECRET` 已填 → 生产导入自动真实检测;未配置则降级 pending_review(不入用户流) | — |
 | 隐私协议 | 「相册(写入)」用途 + openid/设备标识处理声明(PIPL) | 公众平台 → 设置 → 用户隐私保护指引 |
 | 代码开关 | 提交前把 `miniprogram/utils/config.ts` 的 `BASE_URL` 改为正式域名;**`AUTH_FALLBACK_ANON` 置 `false`**(生产走微信登录) | 代码 |
 
 ## 7️⃣ 提审材料自查(对照规格 #11 验收)
 
-- [ ] **验收 1** 签名 URL: 真机 `downloadFile` 图片 200;非签名/过期访问 → 403(COS 私有读)
+- [ ] **验收 1** 图片 URL: 真机 `downloadFile` 图片 200(自有存储: `https://images.<domain>/images/wallpapers/<sourceId>.jpg` 公开 200;COS: 签名 URL 200、过期/非签名 403)
 - [ ] **验收 2** `https://<domain>/health` 公网 200
 - [ ] **验收 3** 开发者工具真机预览全流程: 首页流 → 详情 → 收藏 → 保存相册
 - [ ] **验收 4** 提审材料: 类目(工具-图片/壁纸)/ 隐私协议 / 合法域名 / 内容安全权限
@@ -142,12 +146,20 @@ chmod +x /data/wallflow/deploy/pg_backup.sh
   - 由 cron/systemd 周期性调用(**进程内 node-cron 不持久**: 崩溃即丢,多副本会重叠)
   - 内部 DB 租约(`job_leases` 表)防多副本重叠 + 读 `backfill_paused` 开关
   - 示例 cron: `30 3 * * * cd /data/wallflow/backend && docker compose -f deploy/docker-compose.prod.yml run --rm api node dist/cli/scheduled-backfill.js`
+- **图片带宽监控(2026-08-15 A 项)**: 图片走自有服务器直出后带宽是真金白银(轻量服务器常见 5Mbps/几十 GB 月流量包)。nginx 的 `/images/` location 日志打到 stdout,汇总脚本: `docker logs wallflow-nginx --since 24h 2>&1 | deploy/scripts/image-bandwidth.sh` → 请求数 + 总字节 + 按 CDN 参考价估算成本
+  - **降本建议(B 项)**: 图片域名挂 CDN(腾讯云/阿里云 CDN 回源),边缘缓存挡掉 95%+ 源站流量;纯配置无代码 — CDN 控制台配回源 `https://images.<domain>` → 小程序 downloadFile 白名单加 CDN 域名
+- **图片卷备份(2026-08-15 D 项)**: `deploy/scripts/backup-images.sh`(rsync 硬链接快照 + 保留 7 份,增量占空间)
+  - cron: `0 4 * * * /data/wallflow/deploy/scripts/backup-images.sh`(默认源 `/data/wallflow/images` → `/data/wallflow/backups/images`;异地/对象存储冷备可再加 rsync push)
+- **埋点事件保留(2026-08-15 E 项)**: `npm run cleanup:events -- --days 90`(删除 90 天前 events,防表无限增长)
+  - cron: `0 5 * * 0 /data/wallflow/deploy/scripts/...` 或 compose run: `docker compose -f deploy/docker-compose.prod.yml run --rm api node dist/cli/cleanup-events.js --days 90`
+- **公开写接口限流(2026-08-15 E 项)**: 内置零依赖限流(默认 60s/300 次/IP,按 X-Forwarded-For),保护 `/events /reports /favorites /unlock`;调参见 `RATE_LIMIT_WINDOW_MS` / `RATE_LIMIT_MAX`
+- **运营统计(2026-08-15 A 项)**: `GET /admin/stats`(X-Admin-Key)— 内容存量 / 7d-30d 下载·收藏·活跃用户 / Top 壁纸 / 分类热度,周报数据源(配合 `weekly-candidates.mjs` 决定下周补什么分类)
 - **版权投诉与监管下架**: 流程见 `deploy/TAKEDOWN-SOP.md`(受理 → 隔离 → 双人复核 → 结案)
 - **二期**: 激励视频广告(需企业主体 + 流量主达标;组件已就绪,填 `REWARDED_AD_UNIT_ID` 即启用,见 `miniprogram/utils/config.ts`)、内容审核重检流程
 
 ## 开放问题(上线前需拍板)
 
-1. **COS 供应商**: 用户已搁置 COS 凭证,后期可能更换 — 届时只需换 `ObjectStorage` 实现 + 换 downloadFile 域名白名单,接口与 DB 不变
+1. ~~COS 供应商~~ → **自有服务器存储已定(2026-08-15)**: 填 `SELF_HOST_STORAGE_DIR`(compose 已挂 images 卷)+ `SELF_HOST_BASE_URL`(图片域名)即启用,COS 降为第二选项(两者都配置时自有存储优先)。换存储后端只改 `ObjectStorage` 实现 + downloadFile 域名白名单,接口与 DB 不变
 2. **Web 端是否首发**(DESIGN-UI.md §8): 若与小程序同步上线,同一服务器/域名,另需 @fastify/cors + React 构建物部署(归 #13)
 3. **广告变现主体**: 激励视频需企业/个体户主体 + 流量主开通;个人主体可先上线但无广告位(组件已按空 adUnitId 自动降级免费)
 

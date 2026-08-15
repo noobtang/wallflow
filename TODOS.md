@@ -4,6 +4,8 @@
 
 - [ ] 动态/视频壁纸(Pexels 视频)— 微信无视频设壁纸 API,延后到有平台支持或做 App 端时
 - [ ] 真实广告位接入 — 流量主达标(UV ≥ 1000)后二期
+- [x] 分析变现第一步(2026-08-15): `GET /wallpapers?sort=hot` — 7 天行为加权热度(下载成功 5/收藏 3/点击 2)+ (score,id) keyset 分页,首页信息流可按热度排序(数据来自 #8 埋点);扩库辅助: `scripts/weekly-candidates.mjs` 每周候选清单(candidates.json 对 manifest 去重 + 存储成本估算 + 挑选建议,报告 → data/weekly-candidates.md;抓取逻辑抽到 `candidates-lib.mjs` 与 fetch-candidates 共用)
+- [x] 分析/运维闭环(2026-08-15 A/C/D/E): `GET /admin/stats` 运营统计(内容存量/7d-30d 行为/Top 壁纸/分类热度→内容缺口);首页「最新/热门」Tab(sort=hot 上线展示层);`deploy/scripts/backup-images.sh` 图片卷快照备份(rsync 硬链接+保留 7 份);`npm run cleanup:events -- --days 90` 埋点保留清理;公开写接口零依赖限流(`RATE_LIMIT_WINDOW_MS/MAX`,X-Forwarded-For 按 IP);nginx `/images/` 日志 + `image-bandwidth.sh` 带宽统计。待办: 图片域名挂 CDN 降源站带宽(纯控制台配置,见 deploy/README §8)
 - [ ] UGC 上传、评论 — MVP 明确不做
 - [ ] 个性化推荐(ML)— 待相似推荐(标签匹配)验证后评估
 - [ ] 管理后台 — 内容运营规模化后
@@ -11,7 +13,7 @@
 ## Pre-launch checklist
 
 - [x] 选定首源:Wikimedia Commons(2026-08-10 调研)→ **二次修正(2026-08-10): 精选 CC0 语料转存国内 COS**(Wikimedia 大陆不可达,jsDelivr/Gitee 实测不可靠)
-- [ ] 开通对象存储(用户 2026-08-11 搁置 COS 凭证,后期可能换供应商;接口已抽象 `ObjectStorage`,更换只改实现 + downloadFile 域名白名单)
+- [x] 图片存储方案定稿(2026-08-15 用户决定): **自有服务器 + 域名优先**(`DiskObjectStorage` 落盘 + nginx `/images/*` 静态直出,compose images 卷共享),**COS 降为第二选项**(完整凭证才启用;两者都配时自有存储优先);工厂优先级: 自有存储 → COS → dev 文件存储 → mock,生产缺配置硬失败;部署见 `deploy/README.md` §4/§6
 - [x] manifest 精选清单原型(2026-08-10): `data/manifest.json` 20 张样例(Commons CC0/CC BY/PD 精选 + 手写中文标签),`npm run import:dry-run` 跑通
 - [x] manifest 扩量 20 → 100 张(2026-08-11 #10): `fetch-candidates.mjs` 13 源取材(NASA/USFWS/NOAA/CC0 搜索/极光/星轨/抽象)+ 人工精选 + 手写中文元数据;离线资产 `data/images` 100 张(65MB, sharp 压缩);dev 库导入 100/100;CI 全绿
 - [x] manifest 扩量至 300 张(2026-08-15): `scripts/build-expansion.mjs` 从候选池 941 条选 200(白名单许可+横向+2K+去重+关键词中文元数据+杂物负向过滤),dry-run 校验 300/300 通过
@@ -30,7 +32,7 @@
 - [x] 摄影师/来源链接可达性(2026-08-15 调研): 详情页不嵌 web-view — 来源/作者 URL 走「署名复制」剪贴板纯文本(CC BY 署名含许可 URI,粘贴浏览器可打开,不涉及合法域名白名单);微信 `web-view` 业务域名不开放给个人主体且第三方域名(commons.wikimedia.org)无法绑定,页内跳转不可行(替代方案: 自建中转页需备案域名)。详见 DESIGN-UI.md「收藏 / 分享 / 更多」
 - [x] 埋点事件定义表(2026-08-11: DESIGN-UI.md §5 漏斗事件 + POST /events 幂等上报已上线 #8)
 - [ ] 激励视频服务端回调接入(流量主开通后,与广告 SDK 对接)
-- [ ] 高清下载与"反付费墙"定位的平衡策略:广告 fill rate 低时的降级方案(如限时免费)
+- [x] 高清下载与"反付费墙"定位的平衡策略(2026-08-15): 广告失败(fill rate 低)→ **每日限次免费降级**(`FREE_FALLBACK_ON_AD_ERROR` 默认开 + `FREE_FALLBACK_DAILY_LIMIT` 默认 3 次/日,本地按自然日计数)→ toast 提示后照常保存;次数用尽或开关关闭 = 严格付费墙。`watchRewardedAd` 新增 `degraded` 结果 + 31 测试全绿
 
 ## From Eng review (2026-08-10)
 

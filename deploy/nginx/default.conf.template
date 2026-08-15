@@ -27,6 +27,19 @@ server {
         access_log off;
     }
 
+    # 自有服务器图片存储(2026-08-15): api 导入时写入 images 卷,nginx 静态直出
+    # SELF_HOST_BASE_URL=https://<DOMAIN> 时即本 location;独立图片域名则用同名 server 块
+    location /images/ {
+        alias /data/wallflow/images/;
+        # 与导入器写盘一致: 公开读 + 长缓存(图片内容不可变,sourceId 唯一)
+        add_header Cache-Control "public, max-age=86400";
+        expires 1d;
+        # 带宽统计(2026-08-15 A 项): 默认 combined 格式含 $body_bytes_sent,走 stdout(docker logs);
+        # 用 deploy/scripts/image-bandwidth.sh 汇总每日图片流量,见 deploy/README §8
+        access_log /dev/stdout combined;
+        try_files $uri =404;
+    }
+
     location / {
         proxy_pass http://api:3000;
         proxy_http_version 1.1;
