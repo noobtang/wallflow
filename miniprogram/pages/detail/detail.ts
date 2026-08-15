@@ -2,7 +2,7 @@ import { ApiError, request } from '../../utils/api';
 import { buildAttribution, needsModificationNote } from '../../utils/attribution';
 import { ensureLogin } from '../../utils/auth';
 import { badgeClassFor, licenseDescription } from '../../utils/badge';
-import { watchRewardedAd } from '../../utils/rewarded-ad';
+import { freeFallbackRemaining, watchRewardedAd } from '../../utils/rewarded-ad';
 import { saveWallpaper } from '../../utils/save';
 import { currentThemeClass, refreshThemeClass } from '../../utils/theme';
 import { track } from '../../utils/track';
@@ -110,13 +110,21 @@ Page({
 
     // 激励视频(#12 广告组件接入): 已开通流量主(adUnitId 非空)时,看完广告才算解锁;
     // 未开通 → watchRewardedAd 直接 completed(MVP 全免费)。看完才调 /unlock + 保存。
+    // 广告失败(fill rate 低)命中每日限次免费降级 → degraded,同样视为解锁(见 rewarded-ad.ts)。
     const adOutcome = await watchRewardedAd();
-    if (adOutcome !== 'completed') {
+    if (adOutcome !== 'completed' && adOutcome !== 'degraded') {
       this.setData({ saveState: 'idle' });
       if (adOutcome === 'error') {
         wx.showToast({ title: '广告加载失败,请稍后再试', icon: 'none' });
       }
       return; // canceled: 中途关闭不解锁不保存
+    }
+    if (adOutcome === 'degraded') {
+      const remaining = freeFallbackRemaining();
+      wx.showToast({
+        title: remaining > 0 ? `广告未加载,已免费解锁(今日剩 ${remaining} 次)` : '广告未加载,本次免费解锁',
+        icon: 'none',
+      });
     }
     try {
       await ensureLogin();

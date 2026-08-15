@@ -1,5 +1,22 @@
-import { describe, expect, it, vi } from 'vitest';
-import { watchRewardedAd, type RewardedVideoAdLike } from '../utils/rewarded-ad';
+import { describe, expect, it } from 'vitest';
+import {
+  freeFallbackRemaining,
+  watchRewardedAd,
+  type RewardedVideoAdLike,
+  type StorageLike,
+} from '../utils/rewarded-ad';
+
+/** 内存版本地存储(测试注入,免 wx API) */
+function memStorage(initial: Record<string, unknown> = {}): StorageLike & { store: Map<string, unknown> } {
+  const store = new Map<string, unknown>(Object.entries(initial));
+  return {
+    store,
+    get: (key) => store.get(key) as never,
+    set: (key, value) => {
+      store.set(key, value);
+    },
+  };
+}
 
 /** 构造可控的 fake 广告实例 */
 function makeAd(handlers: {
@@ -56,9 +73,11 @@ describe('rewarded-ad.ts 激励视频封装(#12)', () => {
     expect(await p2).toBe('canceled');
   });
 
-  it('广告错误 → error;创建失败 → error;show 失败 → error', async () => {
+  it('广告错误 → error;创建失败 → error;show 失败 → error(严格付费墙: 降级开关关闭)', async () => {
+    // 默认 FREE_FALLBACK_ON_AD_ERROR=true,广告失败会降级为 degraded;
+    // 本用例显式 freeFallback: false 固定「严格付费墙」语义(降级开关关闭时的行为)。
     const ad = makeAd({});
-    const p = watchRewardedAd({ enabled: true, createRewardedVideoAd: () => ad });
+    const p = watchRewardedAd({ enabled: true, freeFallback: false, createRewardedVideoAd: () => ad });
     await new Promise((r) => setTimeout(r, 0));
     ad.emitError(new Error('ad fail'));
     expect(await p).toBe('error');
@@ -66,10 +85,10 @@ describe('rewarded-ad.ts 激励视频封装(#12)', () => {
     const badFactory = (): RewardedVideoAdLike => {
       throw new Error('create failed');
     };
-    expect(await watchRewardedAd({ enabled: true, createRewardedVideoAd: badFactory })).toBe('error');
+    expect(await watchRewardedAd({ enabled: true, freeFallback: false, createRewardedVideoAd: badFactory })).toBe('error');
 
     const ad2 = makeAd({ showImpl: () => Promise.reject(new Error('show fail')) });
-    const p2 = watchRewardedAd({ enabled: true, createRewardedVideoAd: () => ad2 });
+    const p2 = watchRewardedAd({ enabled: true, freeFallback: false, createRewardedVideoAd: () => ad2 });
     expect(await p2).toBe('error');
   });
 
@@ -79,5 +98,67 @@ describe('rewarded-ad.ts 激励视频封装(#12)', () => {
     await new Promise((r) => setTimeout(r, 0));
     ad.emitClose({ isEnded: true });
     expect(await p).toBe('completed');
+  });
+
+  describe('广告失败限次免费降级(2026-08-15 平衡策略)', () => {
+    it('onError → 命中降级(有剩余次数)→ degraded 且计数 +1', async () => {
+      const storage = memStorage();
+      const ad = makeAd({});
+      const p = watchRewardedAd({ enabled: true, freeFallback: true, storage, createRewardedVideoAd: () => ad });
+      await new Promise((r) => setTimeout(r, 0));
+      ad.emitError(new Error('no fill'));
+      expect(await p).toBe('degraded');
+      const record = storage.store.get('wallflow_free_fallback_count') as { date: string; count: number };
+      expect(record.count).toBe(1);
+      expect(freeFallbackRemaining(storage)).toBe(2);
+    });
+
+    it('当日次数用尽(3 次)→ error(严格付费墙,不再免费)', async () => {
+      const today = new Date().toISOString().slice(0, 10);
+      const storage = memStorage({ wallflow_free_fallback_count: { date: today, count: 3 } });
+      const ad = makeAd({});
+      const p = watchRewardedAd({ enabled: true, freeFallback: true, storage, createRewardedVideoAd: () => ad });
+      await new Promise((r) => setTimeout(r, 0));
+      ad.emitError(new Error('no fill'));
+      expect(await p).toBe('error');
+      expect((storage.store.get('wallflow_free_fallback_count') as { count: number }).count).toBe(3); // 未再计数
+      expect(freeFallbackRemaining(storage)).toBe(0);
+    });
+
+    it('跨自然日重置计数(昨天用尽 → 今天可再次降级)', async () => {
+      const yesterday = '2000-01-01'; // 与今天必然不同
+      const storage = memStorage({ wallflow_free_fallback_count: { date: yesterday, count: 3 } });
+      const ad = makeAd({});
+      const p = watchRewardedAd({ enabled: true, freeFallback: true, storage, createRewardedVideoAd: () => ad });
+      await new Promise((r) => setTimeout(r, 0));
+      ad.emitError(new Error('no fill'));
+      expect(await p).toBe('degraded');
+      const record = storage.store.get('wallflow_free_fallback_count') as { date: string; count: number };
+      expect(record.date).not.toBe(yesterday);
+      expect(record.count).toBe(1);
+    });
+
+    it('降级开关关闭 → onError 仍为 error(严格付费墙)', async () => {
+      const storage = memStorage();
+      const ad = makeAd({});
+      const p = watchRewardedAd({ enabled: true, freeFallback: false, storage, createRewardedVideoAd: () => ad });
+      await new Promise((r) => setTimeout(r, 0));
+      ad.emitError(new Error('no fill'));
+      expect(await p).toBe('error');
+      expect(storage.store.size).toBe(0); // 未计数
+    });
+
+    it('创建广告失败 / show 失败 → 同样走降级', async () => {
+      const storage = memStorage();
+      const badFactory = (): RewardedVideoAdLike => {
+        throw new Error('create failed');
+      };
+      expect(await watchRewardedAd({ enabled: true, freeFallback: true, storage, createRewardedVideoAd: badFactory })).toBe('degraded');
+
+      const ad = makeAd({ showImpl: () => Promise.reject(new Error('show fail')) });
+      const p = watchRewardedAd({ enabled: true, freeFallback: true, storage, createRewardedVideoAd: () => ad });
+      expect(await p).toBe('degraded');
+      expect((storage.store.get('wallflow_free_fallback_count') as { count: number }).count).toBe(2);
+    });
   });
 });

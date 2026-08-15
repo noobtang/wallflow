@@ -30,3 +30,21 @@ export const REWARDED_AD_UNIT_ID = '';
 
 /** 激励视频广告是否启用(adUnitId 非空即启用) */
 export const REWARDED_AD_ENABLED = REWARDED_AD_UNIT_ID.length > 0;
+
+/**
+ * 广告加载失败(fill rate 低)时的免费降级(2026-08-15,Outside Voice TODO:
+ * 「高清下载与反付费墙定位的平衡策略」)。
+ *
+ * 策略: 广告失败(onError/show 失败)时,按每日限次(见下)直接免费解锁,
+ * 避免填充率低时用户被「付费墙」卡死 — 与产品「免费开源壁纸」定位一致。
+ * 次数在本地按自然日计数(轻量防滥用;服务端 /unlock 本就幂等全免费)。
+ *
+ * 关闭(false) = 严格付费墙: 广告失败不解锁,提示稍后重试。
+ */
+export const FREE_FALLBACK_ON_AD_ERROR = true;
+
+/** 每日免费降级次数上限(自然日,本地计数) */
+export const FREE_FALLBACK_DAILY_LIMIT = 3;
+
+/** 免费降级计数本地存储 key */
+export const FREE_FALLBACK_STORAGE_KEY = 'wallflow_free_fallback_count';
