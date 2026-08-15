@@ -37,7 +37,7 @@
 - [ ] 后端流式代理带宽监控:MVP 已改 COS 签名直链(免后端带宽);若未来走代理,需监控带宽成本
 - [x] 回填任务持久化(2026-08-15): `src/jobs/lease.ts` DB 租约(job_leases 表,过期强占)+ `src/jobs/scheduler.ts` 调度器 + `npm run backfill:scheduled`;cron/systemd 触发,防多副本重叠
 - [x] 完整署名(2026-08-15): `miniprogram/utils/attribution.ts` — CC BY 输出标题/作者(含来源)/许可 URI/修改声明,详情页可一键复制
-- [ ] CI 测试:内容管道基于本地 manifest 导入(无上游实时依赖,已实现),COS SDK 用 mock(已实现 mock,补全 CI 断言覆盖待做)
+- [x] CI 测试:内容管道基于本地 manifest 导入(2026-08-15): `test/jobs/import-real-manifest.test.ts` — 真实 300 条 manifest 经 **localFile 分支 + mock COS** 全链路导入(零网络,无上游依赖): 契约校验(全量 localFile 文件存在)/导入落库/缩略图质量/幂等/resume 语义,4 测试
 - [x] 运维(2026-08-15): 管理员路径 `/admin/*`(隔离内容/审举报/暂停回填)+ 运维面板 `/admin/health` + `ADMIN_API_KEY`;DB 备份脚本/健康检查已有
 - [x] 运维告警 + 管理接口文档(2026-08-15): 5xx → 群机器人 webhook(`OPS_ALERT_WEBHOOK_URL`,防抖聚合 60s 窗口不刷屏,`src/ops/alerter.ts` 8 测试);管理接口完整 API 说明 `deploy/ADMIN-API.md`(认证/端点/错误/curl/告警配置)
 - [x] 版权投诉与中国监管下架流程(2026-08-15): `deploy/TAKEDOWN-SOP.md` SOP + block/restore/reports 管理接口执行面
