@@ -195,6 +195,53 @@ export class WallpaperRepository {
   }
 
   /**
+   * 热门信息流(2026-08-15,分析变现第一步): 按最近 7 天用户行为加权热度排序。
+   * - 权重: download_success 5 / favorite_add 3 / download_click 2(下载是壁纸产品最强信号;
+   *   收藏次之;点击最弱)。无事件壁纸 score 0,按 id DESC 兜底(新内容仍可见)
+   * - 窗口: events.created_at >= now() - interval '7 days'(按事件发生时间,非导入时间)
+   * - 分页: (score, id) 复合 keyset 游标,与 search 的 (rank, id) 同构;
+   *   score 用 double precision(文本往返精确,等值比较安全,见 search 的精度陷阱注释)
+   * - 索引: events 有 idx_events_name_created(event_name, created_at);MVP 事件量级下聚合代价可忽略
+   */
+  async listHot(
+    category: string | null,
+    options: { limit: number; cursor?: { rank: number; id: number } | null },
+  ): Promise<{ items: WallpaperRow[]; lastScore: number }> {
+    const { limit, cursor = null } = options;
+    const { rows } = await this.pool.query(
+      `WITH scored AS (
+         SELECT w.*,
+                COALESCE(SUM(
+                  CASE e.event_name
+                    WHEN 'download_success' THEN 5
+                    WHEN 'favorite_add' THEN 3
+                    WHEN 'download_click' THEN 2
+                    ELSE 0
+                  END
+                ), 0)::double precision AS hot_score
+         FROM wallpapers w
+         LEFT JOIN events e
+           ON e.wallpaper_id = w.id
+          AND e.created_at >= now() - interval '7 days'
+          AND e.event_name IN ('download_success', 'favorite_add', 'download_click')
+         WHERE w.status = 'active'
+           AND ($1::text IS NULL OR w.category = $1)
+         GROUP BY w.id
+       )
+       SELECT ${ROW_COLUMNS}, hot_score FROM scored
+       WHERE ($2::double precision IS NULL
+              OR hot_score < $2
+              OR (hot_score = $2 AND id < $3))
+       ORDER BY hot_score DESC, id DESC
+       LIMIT $4`,
+      [category, cursor?.rank ?? null, cursor?.id ?? null, limit],
+    );
+    const items = rows.map(mapRow);
+    const lastScore = items.length > 0 ? Number(rows[rows.length - 1].hot_score) : 0;
+    return { items, lastScore };
+  }
+
+  /**
    * 信息流/分类页(#7): (created_at, id) 复合 keyset 分页。
    * - 排序 created_at DESC, id DESC;游标 (created_at, id) 保证翻页无重复无遗漏
    * - 精度前提: created_at 已由迁移截断到毫秒,与 JS Date 无损往返

@@ -97,6 +97,8 @@ const feedQuerySchema = z.object({
   category: z.enum(CATEGORIES).optional(),
   cursor: z.string().min(1).max(200).optional(),
   limit: z.coerce.number().int().min(1).max(50).default(20),
+  /** 排序(2026-08-15): latest = 新到旧(默认,created_at);hot = 7 天行为热度 */
+  sort: z.enum(['latest', 'hot']).default('latest'),
 });
 
 const idParamsSchema = z.object({
@@ -161,8 +163,9 @@ export async function wallpapersRoutes(
   });
 
   /**
-   * 首页信息流/分类页(#7): GET /wallpapers?category=&cursor=&limit=
-   * - keyset 分页 (created_at, id): 游标 base64url(createdAtUnixMs,id),非法 → 400
+   * 首页信息流/分类页(#7): GET /wallpapers?category=&sort=&cursor=&limit=
+   * - sort=latest(默认): keyset 分页 (created_at, id),游标 base64url(createdAtUnixMs,id),非法 → 400
+   * - sort=hot(2026-08-15): 7 天行为热度(下载/收藏加权)降序,游标 (score, id) 同构(rank,id)
    * - 只返回 active;默认 20 条;列表缓存 60s
    */
   app.get('/wallpapers', async (request, reply) => {
@@ -173,19 +176,37 @@ export async function wallpapersRoutes(
         .join('; ');
       throw badRequest(`信息流参数非法: ${details}`);
     }
-    const { category, limit } = parsed.data;
-    let cursor: { createdAtMs: number; id: number } | null = null;
-    if (parsed.data.cursor !== undefined) {
-      cursor = decodeTsCursor(parsed.data.cursor);
-      if (!cursor) throw badRequest('cursor 非法');
+    const { category, limit, sort } = parsed.data;
+    let nextCursor: string | null = null;
+    let rows: WallpaperRow[];
+
+    if (sort === 'hot') {
+      let cursor: { rank: number; id: number } | null = null;
+      if (parsed.data.cursor !== undefined) {
+        cursor = decodeCursor(parsed.data.cursor);
+        if (!cursor) throw badRequest('cursor 非法');
+      }
+      const { items, lastScore } = await repo.listHot(category ?? null, { limit, cursor });
+      rows = items;
+      if (items.length === limit && items.length > 0) {
+        // 复用 (rank,id) 游标编码: rank 即 hot_score(双精度文本往返精确)
+        nextCursor = encodeCursor(lastScore, items[items.length - 1].id);
+      }
+    } else {
+      let cursor: { createdAtMs: number; id: number } | null = null;
+      if (parsed.data.cursor !== undefined) {
+        cursor = decodeTsCursor(parsed.data.cursor);
+        if (!cursor) throw badRequest('cursor 非法');
+      }
+      rows = await repo.listFeed(category ?? null, { limit, cursor });
+      const last = rows[rows.length - 1];
+      nextCursor =
+        rows.length === limit && rows.length > 0
+          ? encodeTsCursor(last.createdAt.getTime(), last.id)
+          : null;
     }
-    const rows = await repo.listFeed(category ?? null, { limit, cursor });
+
     const mapped = rows.map((row) => toSignedListItem(row, storage));
-    const last = rows[rows.length - 1];
-    const nextCursor =
-      mapped.length === limit && mapped.length > 0
-        ? encodeTsCursor(last.createdAt.getTime(), last.id)
-        : null;
     reply.header('Cache-Control', 'public, max-age=60');
     return { items: mapped, nextCursor };
   });

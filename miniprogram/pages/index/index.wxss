@@ -24,6 +24,29 @@
   color: var(--text2);
 }
 
+/* 排序 Tab(最新/热门,2026-08-15) */
+.sort-tabs {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.sort-tab {
+  padding: 10rpx 32rpx;
+  border-radius: 999rpx;
+  font-size: 26rpx;
+  color: var(--text2);
+  background: var(--card);
+  border: 1rpx solid var(--border);
+}
+
+.sort-tab--active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--grad1), var(--grad2));
+  border-color: transparent;
+  font-weight: 600;
+}
+
 /* 今日精选(静态运营位) */
 .featured {
   position: relative;

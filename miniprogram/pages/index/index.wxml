@@ -5,6 +5,20 @@
     <text class="search-bar__placeholder">搜索壁纸、风格、关键词…</text>
   </view>
 
+  <!-- 排序 Tab(2026-08-15 C 项): 最新 / 热门(7 天行为热度,后端 sort=hot) -->
+  <view class="sort-tabs">
+    <view
+      class="sort-tab {{sort === 'latest' ? 'sort-tab--active' : ''}}"
+      data-sort="latest"
+      bindtap="onSortTap"
+    >最新</view>
+    <view
+      class="sort-tab {{sort === 'hot' ? 'sort-tab--active' : ''}}"
+      data-sort="hot"
+      bindtap="onSortTap"
+    >热门</view>
+  </view>
+
   <!-- 今日精选: 静态运营位(人工配置单张精选图;当前取精选分类/最新一张) -->
   <view wx:if="{{featured}}" class="featured" bindtap="onFeaturedTap">
     <image class="featured__img" src="{{featured.thumbUrl}}" mode="aspectFill" />

@@ -272,4 +272,80 @@ describe('内容 API(#7 路由)', () => {
     expect(res.statusCode).toBe(200);
     expect(res.json().items.length).toBeGreaterThan(0);
   });
+
+  describe('sort=hot 7 天热度(2026-08-15 分析变现第一步)', () => {
+    // 第一个用例埋的高分壁纸 id(后续用例复用,避免重复插事件)
+    let hotA: number | undefined;
+
+    it('按事件加权排序: 下载成功(5) > 收藏(3) > 点击(2) > 无事件(0,id 兜底)', async () => {
+      const a = await repo.findBySourceAndSourceId('curated', 'feed-风景-0');
+      const b = await repo.findBySourceAndSourceId('curated', 'feed-风景-1');
+      const c = await repo.findBySourceAndSourceId('curated', 'feed-风景-2');
+      const d = await repo.findBySourceAndSourceId('curated', 'feed-风景-3');
+      expect([a, b, c, d].every(Boolean)).toBe(true);
+      hotA = a!.id;
+
+      // a: download_success×1(5 分)+ download_click×1(2 分)= 7;b: favorite_add×1 = 3;c: download_click×1 = 2;d: 无事件 = 0
+      const post = (path: string, data: Record<string, unknown>) =>
+        app.inject({ method: 'POST', url: path, payload: data });
+      await post('/events', { event_name: 'download_success', event_id: 'hot-test-1', wallpaper_id: a!.id });
+      await post('/events', { event_name: 'download_click', event_id: 'hot-test-2', wallpaper_id: a!.id });
+      await post('/events', { event_name: 'favorite_add', event_id: 'hot-test-3', wallpaper_id: b!.id });
+      await post('/events', { event_name: 'download_click', event_id: 'hot-test-4', wallpaper_id: c!.id });
+
+      const res = await app.inject({ method: 'GET', url: '/wallpapers?sort=hot&limit=50' });
+      expect(res.statusCode).toBe(200);
+      const ids = res.json().items.map((x: { id: number }) => x.id);
+      expect(ids.indexOf(a!.id)).toBeLessThan(ids.indexOf(b!.id));
+      expect(ids.indexOf(b!.id)).toBeLessThan(ids.indexOf(c!.id));
+      expect(ids.indexOf(c!.id)).toBeLessThan(ids.indexOf(d!.id));
+    });
+
+    it('sort=hot keyset 翻页无重复无遗漏(含同分 0 分大批量)', async () => {
+      const seen = new Set<number>();
+      let cursor: string | null = null;
+      for (let page = 0; page < 10; page++) {
+        const url =
+          cursor === null
+            ? '/wallpapers?sort=hot&limit=5'
+            : `/wallpapers?sort=hot&limit=5&cursor=${encodeURIComponent(cursor)}`;
+        const res = await app.inject({ method: 'GET', url });
+        const body: { items: Array<{ id: number }>; nextCursor: string | null } = res.json();
+        for (const x of body.items) {
+          expect(seen.has(x.id)).toBe(false); // 无重复
+          seen.add(x.id);
+        }
+        cursor = body.nextCursor;
+        if (cursor === null) break;
+      }
+      // 热门列表返回全量 active(29 条: 24 + sim 4 + notags 1;blocked/pending 不入列)
+      expect(seen.size).toBe(29);
+    });
+
+    it('sort=hot 支持 category 过滤 + 坏 cursor/sort 参数 → 400', async () => {
+      const res = await app.inject({ method: 'GET', url: '/wallpapers?sort=hot&category=城市&limit=50' });
+      expect(res.statusCode).toBe(200);
+      const ids = res.json().items.map((x: { id: number }) => x.id);
+      expect(ids).toHaveLength(7);
+
+      const badCursor = await app.inject({ method: 'GET', url: '/wallpapers?sort=hot&cursor=abc' });
+      expect(badCursor.statusCode).toBe(400);
+      const badSort = await app.inject({ method: 'GET', url: '/wallpapers?sort=rank' });
+      expect(badSort.statusCode).toBe(400);
+    });
+
+    it('7 天窗口外的事件不计入热度(老事件不抬高排名)', async () => {
+      const e = await repo.findBySourceAndSourceId('curated', 'feed-风景-4');
+      // 直接插一条 30 天前的事件(避开 /events 的 created_at=now)
+      await pool.query(
+        `INSERT INTO events (event_id, event_name, wallpaper_id, created_at)
+         VALUES ($1, 'download_success', $2, now() - interval '30 days')`,
+        ['hot-test-old', e!.id],
+      );
+      const res = await app.inject({ method: 'GET', url: '/wallpapers?sort=hot&limit=50' });
+      const ids = res.json().items.map((x: { id: number }) => x.id);
+      // 30 天前的事件不计分 → e 保持 0 分,按 id 兜底;hotA(7 分)必然在 e 之前
+      expect(ids.indexOf(hotA!)).toBeLessThan(ids.indexOf(e!.id));
+    });
+  });
 });

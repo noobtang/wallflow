@@ -6,6 +6,8 @@ import type { FeedResponse, WallpaperItem } from '../../utils/types';
 
 const PAGE_SIZE = 20;
 
+type FeedSort = 'latest' | 'hot';
+
 Page({
   data: {
     themeClass: '',
@@ -19,6 +21,8 @@ Page({
     error: false,
     empty: false,
     skeleton: true,
+    // 排序 Tab(2026-08-15 C 项): latest = 最新(默认)/ hot = 7 天热门
+    sort: 'latest' as FeedSort,
   },
 
   onLoad() {
@@ -43,6 +47,14 @@ Page({
 
   onSearchTap() {
     wx.navigateTo({ url: '/pages/search/search' });
+  },
+
+  // 排序 Tab 切换(2026-08-15): 切到热门即换 sort=hot 重新拉取(漏斗: 热度是埋点数据变现的展示层)
+  onSortTap(e: WechatMiniprogram.TouchEvent) {
+    const sort = e.currentTarget.dataset.sort as FeedSort;
+    if (!sort || sort === this.data.sort) return;
+    this.setData({ sort });
+    void this.loadFirst();
   },
 
   onFeaturedTap() {
@@ -75,7 +87,7 @@ Page({
       hasMore: true,
     });
     try {
-      const res = await request<FeedResponse>({ path: `/wallpapers?limit=${PAGE_SIZE}` });
+      const res = await request<FeedResponse>({ path: `/wallpapers?limit=${PAGE_SIZE}&sort=${this.data.sort}` });
       // 今日精选静态运营位: 优先「精选」分类,否则取最新一张兜底
       let featured = res.items[0] ?? null;
       try {
@@ -107,7 +119,7 @@ Page({
     this.setData({ loading: true });
     try {
       const res = await request<FeedResponse>({
-        path: `/wallpapers?limit=${PAGE_SIZE}&cursor=${encodeURIComponent(cursor)}`,
+        path: `/wallpapers?limit=${PAGE_SIZE}&sort=${this.data.sort}&cursor=${encodeURIComponent(cursor)}`,
       });
       const cols = this.distribute(res.items);
       this.setData({
