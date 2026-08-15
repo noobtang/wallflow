@@ -37,6 +37,7 @@ X-Admin-Key: <ADMIN_API_KEY>
 | POST | `/admin/wallpapers/:id/restore` | 恢复内容(误隔离/申诉通过) |
 | GET | `/admin/reports` | 举报列表(keyset 分页,含壁纸摘要) |
 | DELETE | `/admin/reports/:id` | 处理举报(下架或驳回后移除记录) |
+| GET | `/admin/stats` | 运营统计: 内容存量 / 7d-30d 行为 / Top 壁纸 / 分类热度(2026-08-15) |
 | POST | `/admin/backfill/pause` | 暂停定时回填(flag 落库,多副本共享) |
 | POST | `/admin/backfill/resume` | 恢复定时回填 |
 
@@ -152,7 +153,37 @@ curl -s -X DELETE -H "X-Admin-Key: $ADMIN_API_KEY" \
 
 错误: 400(id 非法)/ 404(举报不存在)。
 
-### 4.6 POST /admin/backfill/pause | resume
+### 4.6 GET /admin/stats
+
+运营统计面板(2026-08-15 A 项): 内容存量 + 行为指标 + Top 壁纸 + 分类热度。行为数据来自埋点
+(`POST /events`,下载=`download_success` / 收藏=`favorite_add` / 解锁=`ad_unlocks` / 活跃用户=去重 user_id)。
+
+```
+curl -s -H "X-Admin-Key: $ADMIN_API_KEY" https://api.example.com/admin/stats
+```
+
+```json
+{
+  "content": { "active": 300, "blocked": 0, "pending_review": 0 },
+  "activity7d": { "downloads": 120, "favorites": 45, "unlocks": 30, "activeUsers": 88 },
+  "activity30d": { "downloads": 450, "favorites": 150, "unlocks": 90, "activeUsers": 200 },
+  "topWallpapers": [
+    { "id": 42, "title": "星轨", "category": "星空", "downloads": 12 }
+  ],
+  "categoryHeat": [
+    { "category": "星空", "inventory": 65, "downloads": 40 }
+  ]
+}
+```
+
+| 字段 | 说明 |
+|------|------|
+| `content` | 壁纸存量按 status 分组(active/blocked/pending_review) |
+| `activity7d` / `activity30d` | 下载/收藏/解锁/活跃用户(7 天与 30 天窗口) |
+| `topWallpapers` | 7 天下载 Top 10(内容决策: 哪些风格受欢迎) |
+| `categoryHeat` | 分类「存量 vs 7 天下载」(内容缺口: inventory 大 downloads 小 = 该分类补得过多) |
+
+### 4.7 POST /admin/backfill/pause | resume
 
 暂停/恢复定时回填(`backfill_search` 调度器读取 `backfill_paused` flag;不中断正在运行的批次)。
 
@@ -209,6 +240,7 @@ OPS_ALERT_MIN_INTERVAL_SECONDS=60
 ## 6. 对接建议(运维自动化)
 
 - **日常巡检**: 定时 `GET /admin/health` → `openReports > 0` 或 `backfillPaused: true` 时告警/提示
+- **运营周报**: 定时 `GET /admin/stats` → 下载/收藏/活跃用户趋势 + Top 壁纸 + 分类热度(配合 `scripts/weekly-candidates.mjs` 决定下周补什么分类)
 - **版权投诉流程**: 见 `TAKEDOWN-SOP.md` —— 受理 → `block` 隔离 → 双人复核 → `DELETE /admin/reports/:id` 结案
 - **回填维护**: 需要停回填时 `pause`,完成后 `resume`(调度器租约见 `backend/src/jobs/lease.ts`)
 - **告警自检**: 可在测试环境触发一个 5xx(如未配置密钥的管理操作)验证 webhook 通路

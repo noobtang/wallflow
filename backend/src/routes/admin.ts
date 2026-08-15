@@ -69,6 +69,9 @@ export async function adminRoutes(
     };
   });
 
+  // 运营统计(2026-08-15 A 项: 内容存量 + 行为 + Top 壁纸 + 分类热度,复用 #8 埋点数据)
+  app.get('/admin/stats', { preHandler: requireAdmin }, async () => admin.getStats());
+
   // ---- 隔离/恢复内容(版权投诉/违规下架的执行面) ----
   app.post('/admin/wallpapers/:id/block', { preHandler: requireAdmin }, async (request) => {
     const parsed = idParamsSchema.safeParse(request.params);

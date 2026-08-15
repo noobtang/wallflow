@@ -150,4 +150,34 @@ describe('管理接口(#12 运维补全)', () => {
     const healthAfter = await app.inject({ method: 'GET', url: '/admin/health', headers: adminHeaders });
     expect(healthAfter.json()).toMatchObject({ backfillPaused: false });
   });
+
+  it('运营统计 /admin/stats: 内容存量 + 7d 行为 + Top 壁纸 + 分类热度(2026-08-15)', async () => {
+    const a = (await repo.findBySourceAndSourceId('curated', 'adm-1'))!;
+    const b = (await repo.findBySourceAndSourceId('curated', 'adm-2'))!;
+    // 直接插事件(避开 /events 的 created_at=now 限制;stat-* 前缀 8+ 字符)
+    await pool.query(
+      `INSERT INTO events (event_id, event_name, user_id, wallpaper_id, created_at) VALUES
+       ('stats-dl-a1', 'download_success', 'u1', $1, now()),
+       ('stats-dl-a2', 'download_success', 'u2', $1, now()),
+       ('stats-fav-a', 'favorite_add', 'u3', $1, now()),
+       ('stats-dl-b1', 'download_success', 'u1', $2, now())`,
+      [a.id, b.id],
+    );
+
+    const res = await app.inject({ method: 'GET', url: '/admin/stats', headers: adminHeaders });
+    expect(res.statusCode).toBe(200);
+    const s = res.json();
+    expect(s.content.active).toBe(2);
+    expect(s.activity7d.downloads).toBe(3);
+    expect(s.activity7d.favorites).toBe(1);
+    expect(s.activity7d.activeUsers).toBe(3); // u1/u2/u3
+    expect(s.activity30d.downloads).toBe(3);
+    // Top 壁纸: a 有 2 次下载 > b 的 1 次
+    expect(s.topWallpapers[0].id).toBe(a.id);
+    expect(s.topWallpapers[0].downloads).toBe(2);
+    // 分类热度: 风景(a)下载 2 > 星空(b)下载 1
+    const byCat = Object.fromEntries(s.categoryHeat.map((x: { category: string; downloads: number }) => [x.category, x.downloads]));
+    expect(byCat['风景']).toBe(2);
+    expect(byCat['星空']).toBe(1);
+  });
 });

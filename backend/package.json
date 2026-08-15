@@ -17,6 +17,7 @@
     "backfill:search": "tsx src/cli/backfill-search.ts",
     "backfill:cos-keys": "tsx src/cli/backfill-cos-keys.ts",
     "backfill:scheduled": "tsx src/cli/scheduled-backfill.ts",
+    "cleanup:events": "tsx src/cli/cleanup-events.ts",
     "cos:configure": "tsx src/cli/cos-configure.ts",
     "import": "tsx src/cli/import.ts",
     "db:up": "node-pg-migrate up",

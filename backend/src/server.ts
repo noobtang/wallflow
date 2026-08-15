@@ -7,6 +7,7 @@ import { createPool } from './db';
 import { createAuth, type AuthContext } from './plugins/auth';
 import { createOpsAlerter, OpsAlerter } from './ops/alerter';
 import { registerErrorHandler } from './plugins/error-handler';
+import { registerRateLimit, type RateLimitOptions } from './plugins/rate-limit';
 import { registerRoutes } from './routes';
 import { registerDevStatic } from './routes/dev-static';
 import {
@@ -33,6 +34,8 @@ export async function buildServer(
     adminApiKey?: string;
     /** 运维告警(#12 告警接入);默认按 config 构建(测试可注入 mock,见 test/ops/alerter.test.ts) */
     opsAlerter?: OpsAlerter;
+    /** 公开写接口限流(2026-08-15);undefined = 按 config;null = 关闭(测试可关) */
+    rateLimit?: RateLimitOptions | null;
   } = {},
 ) {
   const app = Fastify({ logger: true });
@@ -49,6 +52,11 @@ export async function buildServer(
   const opsAlerter = options.opsAlerter ?? createOpsAlerter(config);
   app.decorateRequest('user', null);
   registerErrorHandler(app);
+
+  // 公开写接口限流(2026-08-15): 保护 /events /reports /favorites /unlock;测试可注入 null 关闭
+  if (options.rateLimit !== null) {
+    registerRateLimit(app, options.rateLimit ?? { windowMs: config.RATE_LIMIT_WINDOW_MS, max: config.RATE_LIMIT_MAX });
+  }
 
   // 运维告警(#12): 5xx 响应 → 通知 webhook(告警器内部防抖聚合,发送不阻塞请求)
   app.addHook('onResponse', async (request, reply) => {
