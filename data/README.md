@@ -1,13 +1,17 @@
-# data/manifest.json — 精选壁纸清单(100 张)
+# data/manifest.json — 精选壁纸清单(300 张)
 
 ## 内容来源
 
-全部取自 **Wikimedia Commons**(CC0 图库),由人工精选 100 张,手写中文标题与标签。
+全部取自 **Wikimedia Commons**(CC0 图库)。前 100 张由人工精选 + 手写中文元数据;
+后 200 张由 `backend/scripts/build-expansion.mjs` 从候选池(941 条)机器生成草稿
+(文件名关键词 → 中文标题/分类/标签,负向过滤杂物),经 `import:dry-run` schema 校验后并入。
 
 - 许可白名单(与 #3 `ALLOWED_LICENSES` 一致): **CC0 / CC BY / PD(公有领域)**
 - 每条的 `creatorUrl` 指向 Commons 文件描述页,归属可一键核验
-- 许可分布: PD×43 / CC0×42 / CC BY×15;分类分布(规格词表): 自然×29 / 星空×18 / 城市×19 / 风景×18 / 极简×10 / 艺术×6
+- 许可分布: PD×100 / CC0×175 / CC BY×25;分类分布(规格词表): 自然×80 / 星空×65 / 城市×55 / 风景×56 / 极简×38 / 艺术×6
 - 所有图片为横向(w>h),分辨率 ≥ 2000px 宽,含 2K/4K/8K 级大图(超宽全景已按 schema 上限 20000 过滤)
+- ⚠️ **后 200 张为机器生成草稿**: 标题/标签基于文件名关键词,生产导入前建议逐条核对
+  (尤其 CC BY 的署名与许可版本);重新生成: `cd backend && node scripts/build-expansion.mjs`
 
 ## 取材来源(2026-08-11 扩库,20 → 100)
 
@@ -62,5 +66,7 @@
 
 ## 后续
 
-- 扩量至 300 张: 同流程(`fetch-candidates.mjs` → 人工精选 → 手写标签),候选池已覆盖 NASA/USFWS/NOAA/CC0 搜索
+- 扩量至 500+ 张: `fetch-candidates.mjs` 再生候选 → `build-expansion.mjs` 生成草稿 → 人工核对 → 并入
+- 后 200 张标题/标签的**人工复核**(机器生成草稿,生产导入前建议逐条过一遍)
+- 新条目离线资产(`localFile`): 需要时可跑 `fetch-images.mjs` 补齐(当前新条目仅 imageUrl,导入走限速下载)
 - GitHub CC0 仓库(如 dharmx/walls 等)可作补充取材,收录前必须逐张核实许可

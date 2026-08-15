@@ -1,1908 +1,5 @@
 [
   {
-    "sourceId": "cc-milky_way1-jpg",
-    "title": "银河星空长卷",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Milky_way1.jpg",
-    "category": "星空",
-    "tags": [
-      "星空",
-      "银河",
-      "宇宙",
-      "深空"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "NASA/JPL-Caltech/UCLA",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Milky_way1.jpg",
-    "width": 13530,
-    "height": 4909,
-    "localFile": "../data/images/cc-milky_way1-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-tatry_-_panorama_z_polskiego_spiszu-jpg",
-    "title": "塔特拉山脉全景",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Tatry_-_panorama_z_Polskiego_Spiszu.jpg",
-    "category": "风景",
-    "tags": [
-      "风景",
-      "山脉",
-      "雪山",
-      "全景"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "creator": "Qvidemus",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Tatry_-_panorama_z_Polskiego_Spiszu.jpg",
-    "width": 8364,
-    "height": 4850,
-    "localFile": "../data/images/cc-tatry_-_panorama_z_polskiego_spiszu-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-museu_coleção_berardo_and_museu_de_arte_contemporânea-_belém-_lisbon_-5470177155",
-    "title": "里斯本现代美术馆",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Museu_Cole%C3%A7%C3%A3o_Berardo_and_Museu_de_Arte_Contempor%C3%A2nea%2C_Bel%C3%A9m%2C_Lisbon_%2854701771551%29.jpg",
-    "category": "极简",
-    "tags": [
-      "极简",
-      "建筑",
-      "几何",
-      "城市"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "Dale Cruse - 10M views from San Francisco, CA, USA",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Museu_Cole%C3%A7%C3%A3o_Berardo_and_Museu_de_Arte_Contempor%C3%A2nea%2C_Bel%C3%A9m%2C_Lisbon_(54701771551).jpg",
-    "width": 7810,
-    "height": 4393,
-    "localFile": "../data/images/cc-museu_coleção_berardo_and_museu_de_arte_contemporânea-_belém-_lisbon_-5470177155.jpg"
-  },
-  {
-    "sourceId": "cc-waves_at_la_corniche-jpg",
-    "title": "塞特港日落海浪",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Waves_at_La_Corniche.jpg",
-    "category": "自然",
-    "tags": [
-      "自然",
-      "海洋",
-      "海浪",
-      "日落",
-      "礁石"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "Christian Ferrer",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Waves_at_La_Corniche.jpg",
-    "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-waves_at_la_corniche-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-weaver_bird_nest_closeup-jpg",
-    "title": "织巢鸟巢特写",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Weaver_Bird_Nest_Closeup.jpg",
-    "category": "自然",
-    "tags": [
-      "自然",
-      "动物",
-      "鸟类",
-      "微观"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Thecodemachine",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Weaver_Bird_Nest_Closeup.jpg",
-    "width": 6000,
-    "height": 3376,
-    "localFile": "../data/images/cc-weaver_bird_nest_closeup-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-tokyo_tower-_minato_city-jpg",
-    "title": "东京塔夜景",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Tokyo_Tower%2C_Minato_City.jpg",
-    "category": "城市",
-    "tags": [
-      "城市",
-      "夜景",
-      "霓虹",
-      "东京"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "David Kernan",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower%2C_Minato_City.jpg",
-    "width": 5991,
-    "height": 3370,
-    "localFile": "../data/images/cc-tokyo_tower-_minato_city-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-aurora_and_perseids-jpg",
-    "title": "极光与流星雨",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Aurora_and_perseids.jpg",
-    "category": "星空",
-    "tags": [
-      "星空",
-      "极光",
-      "流星",
-      "海岸"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "Stephan Sprinz",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aurora_and_perseids.jpg",
-    "width": 5978,
-    "height": 3977,
-    "localFile": "../data/images/cc-aurora_and_perseids-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-édifice_price_at_night-_quebec_city-_canada-jpg",
-    "title": "魁北克普赖斯大厦之夜",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/%C3%89difice_Price_at_night%2C_Quebec_city%2C_Canada.jpg",
-    "category": "城市",
-    "tags": [
-      "城市",
-      "夜景",
-      "建筑",
-      "灯光"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Wilfredor",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:%C3%89difice_Price_at_night%2C_Quebec_city%2C_Canada.jpg",
-    "width": 4524,
-    "height": 2940,
-    "localFile": "../data/images/cc-édifice_price_at_night-_quebec_city-_canada-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-mountains_in_snow-_mountain_lake-_chola_valley-_nepal-_himalayas-jpg",
-    "title": "喜马拉雅雪湖",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Mountains_in_snow%2C_Mountain_lake%2C_Chola_Valley%2C_Nepal%2C_Himalayas.jpg",
-    "category": "风景",
-    "tags": [
-      "风景",
-      "雪山",
-      "湖泊",
-      "喜马拉雅"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "Vyacheslav Argenberg",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Mountains_in_snow%2C_Mountain_lake%2C_Chola_Valley%2C_Nepal%2C_Himalayas.jpg",
-    "width": 4032,
-    "height": 2688,
-    "localFile": "../data/images/cc-mountains_in_snow-_mountain_lake-_chola_valley-_nepal-_himalayas-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-havelock_island-_mangrove_tree_on_the_beach-_andaman_islands-jpg",
-    "title": "安达曼红树林海滩",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Havelock_Island%2C_Mangrove_tree_on_the_beach%2C_Andaman_Islands.jpg",
-    "category": "自然",
-    "tags": [
-      "自然",
-      "海洋",
-      "海滩",
-      "热带",
-      "红树林"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "Vyacheslav Argenberg",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Havelock_Island%2C_Mangrove_tree_on_the_beach%2C_Andaman_Islands.jpg",
-    "width": 4032,
-    "height": 2688,
-    "localFile": "../data/images/cc-havelock_island-_mangrove_tree_on_the_beach-_andaman_islands-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-frederic_edwin_church_-_aurora_borealis_-_google_art_project-jpg",
-    "title": "极光之夜 · 经典油画",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Frederic_Edwin_Church_-_Aurora_Borealis_-_Google_Art_Project.jpg",
-    "category": "星空",
-    "tags": [
-      "星空",
-      "极光",
-      "油画",
-      "艺术"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Frederic Edwin Church",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Frederic_Edwin_Church_-_Aurora_Borealis_-_Google_Art_Project.jpg",
-    "width": 4001,
-    "height": 2692,
-    "localFile": "../data/images/cc-frederic_edwin_church_-_aurora_borealis_-_google_art_project-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-laser_towards_milky_ways_centre-jpg",
-    "title": "银河中心激光导星",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Laser_Towards_Milky_Ways_Centre.jpg",
-    "category": "星空",
-    "tags": [
-      "星空",
-      "银河",
-      "天文台",
-      "科学"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "ESO/Yuri Beletsky (ybialets at eso.org)",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Laser_Towards_Milky_Ways_Centre.jpg",
-    "width": 4000,
-    "height": 3631,
-    "localFile": "../data/images/cc-laser_towards_milky_ways_centre-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-hoh_sunrise_mist_fog_scenic_j_preston_-17095320637-jpg",
-    "title": "奥林匹克雨林晨雾",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Hoh_sunrise_mist_fog_scenic_j_preston_%2817095320637%29.jpg",
-    "category": "自然",
-    "tags": [
-      "自然",
-      "森林",
-      "晨雾",
-      "雨林"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Olympic National Park",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Hoh_sunrise_mist_fog_scenic_j_preston_(17095320637).jpg",
-    "width": 3872,
-    "height": 2592,
-    "localFile": "../data/images/cc-hoh_sunrise_mist_fog_scenic_j_preston_-17095320637-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-mule_deer_at_seedskadee_national_wildlife_refuge_-49134055992-jpg",
-    "title": "黄昏下的骡鹿",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Mule_deer_at_Seedskadee_National_Wildlife_Refuge_%2849134055992%29.jpg",
-    "category": "自然",
-    "tags": [
-      "自然",
-      "动物",
-      "鹿",
-      "黄昏"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "USFWS Mountain Prairie",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Mule_deer_at_Seedskadee_National_Wildlife_Refuge_(49134055992).jpg",
-    "width": 3863,
-    "height": 2869,
-    "localFile": "../data/images/cc-mule_deer_at_seedskadee_national_wildlife_refuge_-49134055992-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-minimal_hike_on_the_dunes_-unsplash-jpg",
-    "title": "白沙国家公园",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Minimal_hike_on_the_dunes_%28Unsplash%29.jpg",
-    "category": "极简",
-    "tags": [
-      "极简",
-      "沙丘",
-      "沙漠",
-      "留白"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Matt Le mattlephoto",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Minimal_hike_on_the_dunes_(Unsplash).jpg",
-    "width": 3600,
-    "height": 2400,
-    "localFile": "../data/images/cc-minimal_hike_on_the_dunes_-unsplash-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-simei_mrt_curvature_and_concrete_-_flickr_-_t100timlen-jpg",
-    "title": "地铁曲线 · 黑白",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Simei_MRT_curvature_and_concrete_-_Flickr_-_T100Timlen.jpg",
-    "category": "极简",
-    "tags": [
-      "极简",
-      "建筑",
-      "黑白",
-      "几何"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "Thomas Timlen from Singapore, Singapore",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Simei_MRT_curvature_and_concrete_-_Flickr_-_T100Timlen.jpg",
-    "width": 3568,
-    "height": 2676,
-    "localFile": "../data/images/cc-simei_mrt_curvature_and_concrete_-_flickr_-_t100timlen-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-abstract_watercolor_painting_on_paper_-through_-_truth-_2016_-_goauche_art_by_du",
-    "title": "水彩抽象 · 真相",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Abstract_watercolor_painting_on_paper_%27Through_-_Truth%27%2C_2016_-_goauche_art_by_Dutch_artist_Fons_Heijnsbroek_-_free_download_colorful_art_image_in_high_resolution.png",
-    "category": "艺术",
-    "tags": [
-      "艺术",
-      "水彩",
-      "抽象",
-      "色彩"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-    "creator": "Fons Heijnsbroek",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Abstract_watercolor_painting_on_paper_%27Through_-_Truth%27%2C_2016_-_goauche_art_by_Dutch_artist_Fons_Heijnsbroek_-_free_download_colorful_art_image_in_high_resolution.png",
-    "width": 3465,
-    "height": 2865,
-    "localFile": "../data/images/cc-abstract_watercolor_painting_on_paper_-through_-_truth-_2016_-_goauche_art_by_du.jpg"
-  },
-  {
-    "sourceId": "cc-aurora_borealis_over_eielson_air_force_base-_alaska-jpg",
-    "title": "阿拉斯加雪原极光",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Aurora_borealis_over_Eielson_Air_Force_Base%2C_Alaska.jpg",
-    "category": "星空",
-    "tags": [
-      "星空",
-      "极光",
-      "雪原",
-      "阿拉斯加"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "United States Air Force photo by Senior Airman Joshua Strang",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_over_Eielson_Air_Force_Base%2C_Alaska.jpg",
-    "width": 3008,
-    "height": 1960,
-    "localFile": "../data/images/cc-aurora_borealis_over_eielson_air_force_base-_alaska-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-clapper_rail_at_prime_hook_national_wildlife_refuge-_credit-_usfws_-11713833474-",
-    "title": "湿地秧鸡",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Clapper_rail_at_Prime_Hook_National_Wildlife_Refuge._Credit-_USFWS_%2811713833474%29.jpg",
-    "category": "自然",
-    "tags": [
-      "自然",
-      "动物",
-      "鸟类",
-      "湿地"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "U. S. Fish and Wildlife Service - Northeast Region",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Clapper_rail_at_Prime_Hook_National_Wildlife_Refuge._Credit-_USFWS_(11713833474).jpg",
-    "width": 2576,
-    "height": 1932,
-    "localFile": "../data/images/cc-clapper_rail_at_prime_hook_national_wildlife_refuge-_credit-_usfws_-11713833474-.jpg"
-  },
-  {
-    "sourceId": "cc-night_in_detroit_-24244411621-jpg",
-    "title": "底特律之夜",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Night_in_Detroit_%2824244411621%29.jpg",
-    "category": "城市",
-    "tags": [
-      "城市",
-      "夜景",
-      "街景",
-      "灯光"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "www.Pixel.la Free Stock Photos",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Night_in_Detroit_(24244411621).jpg",
-    "width": 2288,
-    "height": 1880,
-    "localFile": "../data/images/cc-night_in_detroit_-24244411621-jpg.jpg"
-  },
-  {
-    "sourceId": "cc-cosmic_cliffs_in_the_carina_nebula_nircam_compass_image_2022_031",
-    "title": "船底座星云·宇宙悬崖",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/%22Cosmic_Cliffs%22_in_the_Carina_Nebula_%28NIRCam_Compass_Image%29_%282022-031%29.png",
-    "category": "星空",
-    "tags": [
-      "星云",
-      "宇宙",
-      "韦伯望远镜",
-      "深空",
-      "船底座"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "IMAGE: NASA, ESA, CSA, STScI",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Cosmic%20Cliffs%22%20in%20the%20Carina%20Nebula%20(NIRCam%20Compass%20Image)%20(2022-031).png",
-    "width": 14575,
-    "height": 11227,
-    "localFile": "../data/images/cc-cosmic_cliffs_in_the_carina_nebula_nircam_compass_image_2022_031.jpg"
-  },
-  {
-    "sourceId": "cc-coreshine_in_the_l183_dark_cloud",
-    "title": "暗云辉光·星际尘埃",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/%22Coreshine%22_in_the_L183_Dark_Cloud.jpg",
-    "category": "星空",
-    "tags": [
-      "星云",
-      "暗云",
-      "深空",
-      "宇宙"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "NASA/JPL-Caltech/L. Pagani (Observatoire de Paris/CNRS)",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Coreshine%22%20in%20the%20L183%20Dark%20Cloud.jpg",
-    "width": 3000,
-    "height": 1650,
-    "localFile": "../data/images/cc-coreshine_in_the_l183_dark_cloud.jpg"
-  },
-  {
-    "sourceId": "cc-starless_core_l1014",
-    "title": "无星之核 L1014",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/%22Starless%22_Core_L1014.jpg",
-    "category": "星空",
-    "tags": [
-      "星云",
-      "暗云",
-      "深空",
-      "宇宙"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "NASA/JPL-Caltech/N. Evans (Univ. of Texas at Austin)/DSS",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Starless%22%20Core%20L1014.jpg",
-    "width": 2000,
-    "height": 1200,
-    "localFile": "../data/images/cc-starless_core_l1014.jpg"
-  },
-  {
-    "sourceId": "cc-happy_birthday_alexei_leonov_iss059e072908",
-    "title": "空间站舷窗外的地球",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/%22Happy_birthday_Alexei_Leonov%21%22_%28Iss059e072908%29.jpg",
-    "category": "星空",
-    "tags": [
-      "空间站",
-      "地球",
-      "太空",
-      "夜景"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "NASA",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Happy%20birthday%20Alexei%20Leonov!%22%20(Iss059e072908).jpg",
-    "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-happy_birthday_alexei_leonov_iss059e072908.jpg"
-  },
-  {
-    "sourceId": "cc-solar_eclipse_on_april_8_2024_in_québec_city",
-    "title": "魁北克日全食",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Solar_eclipse_on_April_8%2C_2024_in_Qu%C3%A9bec_city.jpg",
-    "category": "星空",
-    "tags": [
-      "日食",
-      "太阳",
-      "天文",
-      "魁北克"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Wilfredor",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Solar%20eclipse%20on%20April%208%2C%202024%20in%20Qu%C3%A9bec%20city.jpg",
-    "width": 5000,
-    "height": 3522,
-    "localFile": "../data/images/cc-solar_eclipse_on_april_8_2024_in_québec_city.jpg"
-  },
-  {
-    "sourceId": "cc-green_and_red_polar_lights_unsplash",
-    "title": "绿红交织的极光",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Green_and_red_polar_lights_%28Unsplash%29.jpg",
-    "category": "星空",
-    "tags": [
-      "极光",
-      "北极光",
-      "夜空",
-      "绿色"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Nelly Volkovich nelly",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Green%20and%20red%20polar%20lights%20(Unsplash).jpg",
-    "width": 5278,
-    "height": 3519,
-    "localFile": "../data/images/cc-green_and_red_polar_lights_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-green_northern_lights_unsplash",
-    "title": "翠绿极光舞夜空",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Green_northern_lights_%28Unsplash%29.jpg",
-    "category": "星空",
-    "tags": [
-      "极光",
-      "北极光",
-      "夜空",
-      "翠绿"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "HyunKuk Kim spacekhk",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Green%20northern%20lights%20(Unsplash).jpg",
-    "width": 6016,
-    "height": 4016,
-    "localFile": "../data/images/cc-green_northern_lights_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-lofoten_norway_unsplash",
-    "title": "罗弗敦群岛极光",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Lofoten%2C_Norway_%28Unsplash%29.jpg",
-    "category": "星空",
-    "tags": [
-      "极光",
-      "罗弗敦",
-      "挪威",
-      "雪山"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Johannes Groll followhansi",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Lofoten%2C%20Norway%20(Unsplash).jpg",
-    "width": 5059,
-    "height": 3373,
-    "localFile": "../data/images/cc-lofoten_norway_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-northern_lights_at_lauklines_norway",
-    "title": "劳克莱斯极光",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Northern_Lights_at_Lauklines_Norway.jpg",
-    "category": "星空",
-    "tags": [
-      "极光",
-      "挪威",
-      "夜空",
-      "绿色"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Sebastian Kowalski",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20Lights%20at%20Lauklines%20Norway.jpg",
-    "width": 6000,
-    "height": 4000,
-    "localFile": "../data/images/cc-northern_lights_at_lauklines_norway.jpg"
-  },
-  {
-    "sourceId": "cc-aurora_near_e10_at_katterjåkk_2022_09_03_03",
-    "title": "卡特亚克公路极光",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Aurora_near_E10_at_Katterj%C3%A5kk_2022-09-03_03.jpg",
-    "category": "星空",
-    "tags": [
-      "极光",
-      "瑞典",
-      "公路",
-      "夜空"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Leonhard Lenz",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aurora%20near%20E10%20at%20Katterj%C3%A5kk%202022-09-03%2003.jpg",
-    "width": 8384,
-    "height": 5612,
-    "localFile": "../data/images/cc-aurora_near_e10_at_katterjåkk_2022_09_03_03.jpg"
-  },
-  {
-    "sourceId": "cc-star_trails_over_a_lebanon_ranch_unsplash",
-    "title": "黎巴嫩牧场星轨",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Star_trails_over_a_Lebanon_ranch_%28Unsplash%29.jpg",
-    "category": "星空",
-    "tags": [
-      "星轨",
-      "夜空",
-      "星辰",
-      "牧场"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "John Moore john_moore",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Star%20trails%20over%20a%20Lebanon%20ranch%20(Unsplash).jpg",
-    "width": 6000,
-    "height": 4000,
-    "localFile": "../data/images/cc-star_trails_over_a_lebanon_ranch_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-s_t_a_r_t_r_a_i_l_unsplash",
-    "title": "旋转星轨",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/S_T_A_R_T_R_A_I_L_%28Unsplash%29.jpg",
-    "category": "星空",
-    "tags": [
-      "星轨",
-      "夜空",
-      "星辰",
-      "长曝光"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Samuele Errico Piccarini samuele_piccarini",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:S%20T%20A%20R%20T%20R%20A%20I%20L%20(Unsplash).jpg",
-    "width": 6000,
-    "height": 4000,
-    "localFile": "../data/images/cc-s_t_a_r_t_r_a_i_l_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-longmont_star_trails_unsplash",
-    "title": "朗蒙特星轨",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Longmont_star_trails_%28Unsplash%29.jpg",
-    "category": "星空",
-    "tags": [
-      "星轨",
-      "夜空",
-      "星辰",
-      "城市光"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Jeremy Thomas jeremythomasphoto",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Longmont%20star%20trails%20(Unsplash).jpg",
-    "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-longmont_star_trails_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-new_york_by_winkler",
-    "title": "纽约天际线",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/New_York_by_Winkler.jpg",
-    "category": "城市",
-    "tags": [
-      "纽约",
-      "天际线",
-      "摩天楼",
-      "夜景"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Frank Winkler",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:New%20York%20by%20Winkler.jpg",
-    "width": 7087,
-    "height": 4724,
-    "localFile": "../data/images/cc-new_york_by_winkler.jpg"
-  },
-  {
-    "sourceId": "cc-quebec_city_night_skylines_downtown_19",
-    "title": "魁北克城夜色",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/Quebec_City_night_skylines_%28downtown_19%29.jpg",
-    "category": "城市",
-    "tags": [
-      "魁北克",
-      "城市夜景",
-      "建筑",
-      "灯光"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Wilfredor",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Quebec%20City%20night%20skylines%20(downtown%2019).jpg",
-    "width": 8256,
-    "height": 5504,
-    "localFile": "../data/images/cc-quebec_city_night_skylines_downtown_19.jpg"
-  },
-  {
-    "sourceId": "cc-perth_city_skyline_across_lake",
-    "title": "珀斯湖畔天际线",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Perth_City_Skyline_Across_Lake.jpg",
-    "category": "城市",
-    "tags": [
-      "珀斯",
-      "澳大利亚",
-      "天际线",
-      "湖泊"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Yourusernamewillbepublic2",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Perth%20City%20Skyline%20Across%20Lake.jpg",
-    "width": 5472,
-    "height": 3648,
-    "localFile": "../data/images/cc-perth_city_skyline_across_lake.jpg"
-  },
-  {
-    "sourceId": "cc-night_skyline_of_toronto_canada_374759",
-    "title": "多伦多夜色",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Night_skyline_of_Toronto%2C_Canada_374759.jpg",
-    "category": "城市",
-    "tags": [
-      "多伦多",
-      "加拿大",
-      "天际线",
-      "夜景"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Andrew Gosine",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Night%20skyline%20of%20Toronto%2C%20Canada%20374759.jpg",
-    "width": 5472,
-    "height": 3648,
-    "localFile": "../data/images/cc-night_skyline_of_toronto_canada_374759.jpg"
-  },
-  {
-    "sourceId": "cc-chicago_loop_skyline_at_sunset",
-    "title": "芝加哥落日余晖",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Chicago_Loop_Skyline_at_Sunset.jpg",
-    "category": "城市",
-    "tags": [
-      "芝加哥",
-      "天际线",
-      "日落",
-      "建筑"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "GazeboJake",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Chicago%20Loop%20Skyline%20at%20Sunset.jpg",
-    "width": 6000,
-    "height": 4000,
-    "localFile": "../data/images/cc-chicago_loop_skyline_at_sunset.jpg"
-  },
-  {
-    "sourceId": "cc-sydney_skyline_23700049033",
-    "title": "悉尼歌剧院与海港",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Sydney_skyline_%2823700049033%29.jpg",
-    "category": "城市",
-    "tags": [
-      "悉尼",
-      "澳大利亚",
-      "歌剧院",
-      "海港"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "www.Pixel.la Free Stock Photos",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Sydney%20skyline%20(23700049033).jpg",
-    "width": 4183,
-    "height": 2160,
-    "localFile": "../data/images/cc-sydney_skyline_23700049033.jpg"
-  },
-  {
-    "sourceId": "cc-toronto_skyline_ontario_canada",
-    "title": "多伦多港湾",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Toronto_Skyline%2C_Ontario_Canada.jpg",
-    "category": "城市",
-    "tags": [
-      "多伦多",
-      "天际线",
-      "湖泊",
-      "建筑"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Peter_Glyn",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Toronto%20Skyline%2C%20Ontario%20Canada.jpg",
-    "width": 4000,
-    "height": 2248,
-    "localFile": "../data/images/cc-toronto_skyline_ontario_canada.jpg"
-  },
-  {
-    "sourceId": "cc-city_of_melbourne_skyline_from_docklands",
-    "title": "墨尔本港区天际线",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/City_of_Melbourne_Skyline_From_Docklands.JPG",
-    "category": "城市",
-    "tags": [
-      "墨尔本",
-      "澳大利亚",
-      "天际线",
-      "港湾"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Maximus Lu",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:City%20of%20Melbourne%20Skyline%20From%20Docklands.JPG",
-    "width": 2784,
-    "height": 1856,
-    "localFile": "../data/images/cc-city_of_melbourne_skyline_from_docklands.jpg"
-  },
-  {
-    "sourceId": "cc-auckland_skyline_pa01",
-    "title": "奥克兰天际线",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/Auckland_skyline_PA01.jpg",
-    "category": "城市",
-    "tags": [
-      "奥克兰",
-      "新西兰",
-      "天际线",
-      "海港"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Paora",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Auckland%20skyline%20PA01.jpg",
-    "width": 5712,
-    "height": 3486,
-    "localFile": "../data/images/cc-auckland_skyline_pa01.jpg"
-  },
-  {
-    "sourceId": "cc-san_diego_skyline_image",
-    "title": "圣迭戈海岸天际线",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/San_Diego_Skyline_Image.jpg",
-    "category": "城市",
-    "tags": [
-      "圣迭戈",
-      "美国",
-      "天际线",
-      "海岸"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Eric youtse",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:San%20Diego%20Skyline%20Image.jpg",
-    "width": 6000,
-    "height": 3376,
-    "localFile": "../data/images/cc-san_diego_skyline_image.jpg"
-  },
-  {
-    "sourceId": "cc-ho_chi_minh_city_skyline",
-    "title": "胡志明市天际线",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Ho_Chi_Minh_City_Skyline.jpg",
-    "category": "城市",
-    "tags": [
-      "胡志明市",
-      "越南",
-      "天际线",
-      "城市"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Pimnl",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Ho%20Chi%20Minh%20City%20Skyline.jpg",
-    "width": 8000,
-    "height": 3579,
-    "localFile": "../data/images/cc-ho_chi_minh_city_skyline.jpg"
-  },
-  {
-    "sourceId": "cc-golden_city_skyline_unsplash",
-    "title": "金色都市黄昏",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Golden_city_skyline_%28Unsplash%29.jpg",
-    "category": "城市",
-    "tags": [
-      "城市",
-      "天际线",
-      "黄昏",
-      "金色"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "chuttersnap chuttersnap",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Golden%20city%20skyline%20(Unsplash).jpg",
-    "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-golden_city_skyline_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-beautiful_nyc_skyline_unsplash",
-    "title": "曼哈顿摩天群像",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Beautiful_NYC_skyline_%28Unsplash%29.jpg",
-    "category": "城市",
-    "tags": [
-      "纽约",
-      "曼哈顿",
-      "天际线",
-      "摩天楼"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Anthony DELANOIX anthonydelanoix",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Beautiful%20NYC%20skyline%20(Unsplash).jpg",
-    "width": 5616,
-    "height": 3744,
-    "localFile": "../data/images/cc-beautiful_nyc_skyline_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-city_skyline_urban_skyscrapers_unsplash",
-    "title": "城市摩天楼群",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/City_Skyline_Urban_Skyscrapers_%28Unsplash%29.jpg",
-    "category": "城市",
-    "tags": [
-      "城市",
-      "摩天楼",
-      "天际线",
-      "建筑"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Anthony DELANOIX anthonydelanoix",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:City%20Skyline%20Urban%20Skyscrapers%20(Unsplash).jpg",
-    "width": 5303,
-    "height": 3535,
-    "localFile": "../data/images/cc-city_skyline_urban_skyscrapers_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-pink_and_purple_skyline_unsplash",
-    "title": "粉紫暮色天际线",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Pink_and_purple_skyline_%28Unsplash%29.jpg",
-    "category": "城市",
-    "tags": [
-      "城市",
-      "天际线",
-      "暮色",
-      "粉色"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "srikanta H. U srikanta",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Pink%20and%20purple%20skyline%20(Unsplash).jpg",
-    "width": 3840,
-    "height": 2160,
-    "localFile": "../data/images/cc-pink_and_purple_skyline_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-qingdao_drone_view_city_with_skyline_unsplash",
-    "title": "青岛无人机航拍",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Qingdao_-_Drone_view_city_with_skyline_%28Unsplash%29.jpg",
-    "category": "城市",
-    "tags": [
-      "青岛",
-      "中国",
-      "航拍",
-      "海岸"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "CHO EUNSEONG being_es",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Qingdao%20-%20Drone%20view%20city%20with%20skyline%20(Unsplash).jpg",
-    "width": 3776,
-    "height": 2520,
-    "localFile": "../data/images/cc-qingdao_drone_view_city_with_skyline_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-cinms_bluewhales_30550423643",
-    "title": "蓝鲸浮潜",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/CINMS_-_BlueWhales_%2830550423643%29.jpg",
-    "category": "自然",
-    "tags": [
-      "鲸鱼",
-      "蓝鲸",
-      "海洋",
-      "海洋生物"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20BlueWhales%20(30550423643).jpg",
-    "width": 4928,
-    "height": 3264,
-    "localFile": "../data/images/cc-cinms_bluewhales_30550423643.jpg"
-  },
-  {
-    "sourceId": "cc-cinms_common_dolphins_49518014407",
-    "title": "飞旋海豚群",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/CINMS_Common_Dolphins_%2849518014407%29.jpg",
-    "category": "自然",
-    "tags": [
-      "海豚",
-      "海洋",
-      "海洋生物",
-      "群游"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20Common%20Dolphins%20(49518014407).jpg",
-    "width": 4800,
-    "height": 3605,
-    "localFile": "../data/images/cc-cinms_common_dolphins_49518014407.jpg"
-  },
-  {
-    "sourceId": "cc-cbnms_california_sea_lion_48783436012",
-    "title": "加州海狮",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/CBNMS_California_Sea_Lion_%2848783436012%29.jpg",
-    "category": "自然",
-    "tags": [
-      "海狮",
-      "海洋",
-      "海洋生物",
-      "海岸"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CBNMS%20California%20Sea%20Lion%20(48783436012).jpg",
-    "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-cbnms_california_sea_lion_48783436012.jpg"
-  },
-  {
-    "sourceId": "cc-cbnms_pacific_white_sided_dolphin_49225401171",
-    "title": "太平洋斑纹海豚",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/CBNMS_Pacific_White_Sided_Dolphin_%2849225401171%29.jpg",
-    "category": "自然",
-    "tags": [
-      "海豚",
-      "太平洋",
-      "海洋生物",
-      "海洋"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CBNMS%20Pacific%20White%20Sided%20Dolphin%20(49225401171).jpg",
-    "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-cbnms_pacific_white_sided_dolphin_49225401171.jpg"
-  },
-  {
-    "sourceId": "cc-elephant_seal_42962970420",
-    "title": "沙滩上的象海豹",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Elephant_Seal_%2842962970420%29.jpg",
-    "category": "自然",
-    "tags": [
-      "海豹",
-      "象海豹",
-      "海滩",
-      "海洋生物"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Elephant%20Seal%20(42962970420).jpg",
-    "width": 4488,
-    "height": 3216,
-    "localFile": "../data/images/cc-elephant_seal_42962970420.jpg"
-  },
-  {
-    "sourceId": "cc-brain_coral_16434980063",
-    "title": "脑珊瑚纹理",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Brain_Coral_%2816434980063%29.jpg",
-    "category": "自然",
-    "tags": [
-      "珊瑚",
-      "海洋",
-      "纹理",
-      "水下"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "NOAA's National Ocean Service",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Brain%20Coral%20(16434980063).jpg",
-    "width": 3648,
-    "height": 2736,
-    "localFile": "../data/images/cc-brain_coral_16434980063.jpg"
-  },
-  {
-    "sourceId": "cc-fagatele_bay_corals_29032296958",
-    "title": "法加泰莱湾珊瑚",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Fagatele_Bay_Corals_%2829032296958%29.jpg",
-    "category": "自然",
-    "tags": [
-      "珊瑚",
-      "珊瑚礁",
-      "海洋",
-      "水下"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Fagatele%20Bay%20Corals%20(29032296958).jpg",
-    "width": 4000,
-    "height": 3000,
-    "localFile": "../data/images/cc-fagatele_bay_corals_29032296958.jpg"
-  },
-  {
-    "sourceId": "cc-cinms_spanish_shawl_nudibranch_27416199230",
-    "title": "西班牙披肩海蛞蝓",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/CINMS_-_spanish_shawl_nudibranch_%2827416199230%29.jpg",
-    "category": "自然",
-    "tags": [
-      "海蛞蝓",
-      "海洋生物",
-      "微观",
-      "色彩"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20spanish%20shawl%20nudibranch%20(27416199230).jpg",
-    "width": 3072,
-    "height": 2304,
-    "localFile": "../data/images/cc-cinms_spanish_shawl_nudibranch_27416199230.jpg"
-  },
-  {
-    "sourceId": "cc-cinms_fish_in_kelp_forest_50199042878",
-    "title": "海藻森林里的鱼群",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/CINMS_fish_in_kelp_forest_%2850199042878%29.jpg",
-    "category": "自然",
-    "tags": [
-      "海藻",
-      "鱼群",
-      "海洋",
-      "水下"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20fish%20in%20kelp%20forest%20(50199042878).jpg",
-    "width": 3008,
-    "height": 2000,
-    "localFile": "../data/images/cc-cinms_fish_in_kelp_forest_50199042878.jpg"
-  },
-  {
-    "sourceId": "cc-coral_spawning_38797556434",
-    "title": "珊瑚产卵瞬间",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Coral_Spawning_%2838797556434%29.jpg",
-    "category": "自然",
-    "tags": [
-      "珊瑚",
-      "产卵",
-      "海洋",
-      "水下"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Coral%20Spawning%20(38797556434).jpg",
-    "width": 2667,
-    "height": 1773,
-    "localFile": "../data/images/cc-coral_spawning_38797556434.jpg"
-  },
-  {
-    "sourceId": "cc-diver_and_ray_42871145075",
-    "title": "潜水员与鳐鱼",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Diver_And_Ray_%2842871145075%29.jpg",
-    "category": "自然",
-    "tags": [
-      "鳐鱼",
-      "潜水",
-      "海洋",
-      "水下"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Diver%20And%20Ray%20(42871145075).jpg",
-    "width": 3008,
-    "height": 2000,
-    "localFile": "../data/images/cc-diver_and_ray_42871145075.jpg"
-  },
-  {
-    "sourceId": "cc-cinms_spiny_lobster_28025625352",
-    "title": "岩石缝中的刺龙虾",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/CINMS_-_Spiny_Lobster_%2828025625352%29.jpg",
-    "category": "自然",
-    "tags": [
-      "龙虾",
-      "海洋生物",
-      "礁石",
-      "水下"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20Spiny%20Lobster%20(28025625352).jpg",
-    "width": 3072,
-    "height": 2304,
-    "localFile": "../data/images/cc-cinms_spiny_lobster_28025625352.jpg"
-  },
-  {
-    "sourceId": "cc-a_banded_adult_bald_eagle_5657709617",
-    "title": "白头海雕凝视",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/A_Banded_Adult_Bald_Eagle_%285657709617%29.jpg",
-    "category": "自然",
-    "tags": [
-      "白头鹰",
-      "猛禽",
-      "鸟类",
-      "野生动物"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20Banded%20Adult%20Bald%20Eagle%20(5657709617).jpg",
-    "width": 3872,
-    "height": 2592,
-    "localFile": "../data/images/cc-a_banded_adult_bald_eagle_5657709617.jpg"
-  },
-  {
-    "sourceId": "cc-adult_american_white_pelican_in_flight_9688520100",
-    "title": "展翅的白鹈鹕",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Adult_American_white_pelican_in_flight_%289688520100%29.jpg",
-    "category": "自然",
-    "tags": [
-      "鹈鹕",
-      "鸟类",
-      "飞行",
-      "湖泊"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Adult%20American%20white%20pelican%20in%20flight%20(9688520100).jpg",
-    "width": 2644,
-    "height": 1582,
-    "localFile": "../data/images/cc-adult_american_white_pelican_in_flight_9688520100.jpg"
-  },
-  {
-    "sourceId": "cc-a_black_bear_and_cub_travel",
-    "title": "黑熊母子同行",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/A_black_bear_and_cub_travel.jpg",
-    "category": "自然",
-    "tags": [
-      "黑熊",
-      "野生动物",
-      "森林",
-      "哺乳动物"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Wood Rob, U.S. Fish and Wildlife Service",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20black%20bear%20and%20cub%20travel.jpg",
-    "width": 2592,
-    "height": 1944,
-    "localFile": "../data/images/cc-a_black_bear_and_cub_travel.jpg"
-  },
-  {
-    "sourceId": "cc-a_cluster_of_monarch_butterflies_roosts_on_the_branch_of_a_eucalyptus_tree_at_the_pismo_beach_monarch_butterfl",
-    "title": "枝头栖息的帝王蝶群",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/A_cluster_of_monarch_butterflies_roosts_on_the_branch_of_a_Eucalyptus_tree_at_the_Pismo_Beach_Monarch_Butterfly_Grove._%2832748447355%29.jpg",
-    "category": "自然",
-    "tags": [
-      "蝴蝶",
-      "帝王蝶",
-      "昆虫",
-      "栖息"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20cluster%20of%20monarch%20butterflies%20roosts%20on%20the%20branch%20of%20a%20Eucalyptus%20tree%20at%20the%20Pismo%20Beach%20Monarch%20Butterfly%20Grove.%20(32748447355).jpg",
-    "width": 5472,
-    "height": 3648,
-    "localFile": "../data/images/cc-a_cluster_of_monarch_butterflies_roosts_on_the_branch_of_a_eucalyptus_tree_at_the_pismo_beach_monarch_butterfl.jpg"
-  },
-  {
-    "sourceId": "cc-a_small_cluster_of_monarchs_in_encinitas_california_38675074292",
-    "title": "恩西尼塔斯帝王蝶",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/A_small_cluster_of_monarchs_in_Encinitas%2C_California_%2838675074292%29.jpg",
-    "category": "自然",
-    "tags": [
-      "蝴蝶",
-      "帝王蝶",
-      "昆虫",
-      "加州"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20small%20cluster%20of%20monarchs%20in%20Encinitas%2C%20California%20(38675074292).jpg",
-    "width": 6000,
-    "height": 4000,
-    "localFile": "../data/images/cc-a_small_cluster_of_monarchs_in_encinitas_california_38675074292.jpg"
-  },
-  {
-    "sourceId": "cc-acorn_woodpecker",
-    "title": "橡树啄木鸟",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Acorn_woodpecker.jpg",
-    "category": "自然",
-    "tags": [
-      "啄木鸟",
-      "鸟类",
-      "野生动物",
-      "羽毛"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "David Brezinski/United States Fish and Wildlife Service",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Acorn%20woodpecker.jpg",
-    "width": 3593,
-    "height": 2400,
-    "localFile": "../data/images/cc-acorn_woodpecker.jpg"
-  },
-  {
-    "sourceId": "cc-green_heron_in_costa_rica",
-    "title": "哥斯达黎加绿鹭",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Green_heron_in_Costa_Rica.jpg",
-    "category": "自然",
-    "tags": [
-      "绿鹭",
-      "鸟类",
-      "湿地",
-      "哥斯达黎加"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Bernard Gagnon",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Green%20heron%20in%20Costa%20Rica.jpg",
-    "width": 4375,
-    "height": 2937,
-    "localFile": "../data/images/cc-green_heron_in_costa_rica.jpg"
-  },
-  {
-    "sourceId": "cc-brent_goose",
-    "title": "黑雁临水",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Brent_goose.jpg",
-    "category": "自然",
-    "tags": [
-      "黑雁",
-      "鸟类",
-      "水鸟",
-      "候鸟"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Hobbyfotowiki",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Brent%20goose.jpg",
-    "width": 3111,
-    "height": 2069,
-    "localFile": "../data/images/cc-brent_goose.jpg"
-  },
-  {
-    "sourceId": "cc-a_banded_western_snowy_plover_at_monterey_state_beach_32986508961",
-    "title": "蒙特雷滩小雪鸻",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/A_banded_western_snowy_plover_at_Monterey_State_Beach._%2832986508961%29.jpg",
-    "category": "自然",
-    "tags": [
-      "鸻",
-      "鸟类",
-      "海滩",
-      "野生动物"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20banded%20western%20snowy%20plover%20at%20Monterey%20State%20Beach.%20(32986508961).jpg",
-    "width": 4780,
-    "height": 3186,
-    "localFile": "../data/images/cc-a_banded_western_snowy_plover_at_monterey_state_beach_32986508961.jpg"
-  },
-  {
-    "sourceId": "cc-adult_non_breeding_royal_tern_thalasseus_maximus_6554873171",
-    "title": "皇家燕鸥",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Adult_non-breeding_Royal_Tern_%28Thalasseus_maximus%29_%286554873171%29.jpg",
-    "category": "自然",
-    "tags": [
-      "燕鸥",
-      "鸟类",
-      "海鸟",
-      "野生动物"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Adult%20non-breeding%20Royal%20Tern%20(Thalasseus%20maximus)%20(6554873171).jpg",
-    "width": 3456,
-    "height": 2304,
-    "localFile": "../data/images/cc-adult_non_breeding_royal_tern_thalasseus_maximus_6554873171.jpg"
-  },
-  {
-    "sourceId": "cc-a_hiding_american_avocet_recurvirostra_americana_chick_6551228265",
-    "title": "躲藏的反嘴鹬幼鸟",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/A_hiding_American_avocet_%28Recurvirostra_americana%29_chick_%286551228265%29.jpg",
-    "category": "自然",
-    "tags": [
-      "反嘴鹬",
-      "鸟类",
-      "幼鸟",
-      "湿地"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20hiding%20American%20avocet%20(Recurvirostra%20americana)%20chick%20(6551228265).jpg",
-    "width": 3456,
-    "height": 2304,
-    "localFile": "../data/images/cc-a_hiding_american_avocet_recurvirostra_americana_chick_6551228265.jpg"
-  },
-  {
-    "sourceId": "cc-aerial_view_of_glacier_in_wrangell_mountains",
-    "title": "兰格尔山冰川航拍",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Aerial_view_of_glacier_in_wrangell_mountains.jpg",
-    "category": "风景",
-    "tags": [
-      "冰川",
-      "雪山",
-      "航拍",
-      "阿拉斯加"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "U.S. Fish and Wildlife Service",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aerial%20view%20of%20glacier%20in%20wrangell%20mountains.jpg",
-    "width": 2100,
-    "height": 1414,
-    "localFile": "../data/images/cc-aerial_view_of_glacier_in_wrangell_mountains.jpg"
-  },
-  {
-    "sourceId": "cc-charyn_canyon_kazakhstan_04",
-    "title": "恰伦峡谷地貌",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Charyn_Canyon%2C_Kazakhstan_04.jpg",
-    "category": "风景",
-    "tags": [
-      "峡谷",
-      "哈萨克斯坦",
-      "地貌",
-      "岩石"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Bgag",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Charyn%20Canyon%2C%20Kazakhstan%2004.jpg",
-    "width": 4974,
-    "height": 3059,
-    "localFile": "../data/images/cc-charyn_canyon_kazakhstan_04.jpg"
-  },
-  {
-    "sourceId": "cc-khorgo_volcano_04",
-    "title": "蒙古霍尔戈火山",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Khorgo_Volcano_04.jpg",
-    "category": "风景",
-    "tags": [
-      "火山",
-      "蒙古",
-      "地貌",
-      "山野"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Bernard Gagnon",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Khorgo%20Volcano%2004.jpg",
-    "width": 4439,
-    "height": 2959,
-    "localFile": "../data/images/cc-khorgo_volcano_04.jpg"
-  },
-  {
-    "sourceId": "cc-bands_of_glowing_magma_from_submarine_volcano",
-    "title": "海底火山熔岩带",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Bands_of_glowing_magma_from_submarine_volcano.jpg",
-    "category": "风景",
-    "tags": [
-      "火山",
-      "熔岩",
-      "海底",
-      "深海"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "NOAA/National Science Foundation",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bands%20of%20glowing%20magma%20from%20submarine%20volcano.jpg",
-    "width": 2048,
-    "height": 1536,
-    "localFile": "../data/images/cc-bands_of_glowing_magma_from_submarine_volcano.jpg"
-  },
-  {
-    "sourceId": "cc-go_in_the_clouds_off_the_coast_of_chile_modis_2022_05_15",
-    "title": "智利海岸云海(卫星)",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/%22Go%21%22_in_the_clouds_off_the_coast_of_Chile_%28MODIS_2022-05-15%29.jpg",
-    "category": "风景",
-    "tags": [
-      "云海",
-      "卫星图",
-      "海岸",
-      "智利"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "MODIS Land Rapid Response Team, NASA GSFC",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Go!%22%20in%20the%20clouds%20off%20the%20coast%20of%20Chile%20(MODIS%202022-05-15).jpg",
-    "width": 8067,
-    "height": 6149,
-    "localFile": "../data/images/cc-go_in_the_clouds_off_the_coast_of_chile_modis_2022_05_15.jpg"
-  },
-  {
-    "sourceId": "cc-american_samoa_coastline_48779481311",
-    "title": "美属萨摩亚海岸线",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/American_Samoa_coastline_%2848779481311%29.jpg",
-    "category": "风景",
-    "tags": [
-      "海岸线",
-      "海岛",
-      "太平洋",
-      "碧海"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:American%20Samoa%20coastline%20(48779481311).jpg",
-    "width": 5760,
-    "height": 3840,
-    "localFile": "../data/images/cc-american_samoa_coastline_48779481311.jpg"
-  },
-  {
-    "sourceId": "cc-afognak_coastline",
-    "title": "阿福格纳克海岸",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Afognak_coastline.jpg",
-    "category": "风景",
-    "tags": [
-      "海岸",
-      "阿拉斯加",
-      "海岬",
-      "荒野"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Poppy Benson/U.S. Fish and Wildlife Service",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Afognak%20coastline.jpg",
-    "width": 3000,
-    "height": 2005,
-    "localFile": "../data/images/cc-afognak_coastline.jpg"
-  },
-  {
-    "sourceId": "cc-cinms_clouds_over_santa_cruz_island_49753277178",
-    "title": "圣克鲁斯岛云层",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/CINMS_Clouds_Over_Santa_Cruz_Island_%2849753277178%29.jpg",
-    "category": "风景",
-    "tags": [
-      "云海",
-      "海岛",
-      "天空",
-      "圣克鲁斯"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20Clouds%20Over%20Santa%20Cruz%20Island%20(49753277178).jpg",
-    "width": 4288,
-    "height": 2848,
-    "localFile": "../data/images/cc-cinms_clouds_over_santa_cruz_island_49753277178.jpg"
-  },
-  {
-    "sourceId": "cc-cinms_sunrise_49050187573",
-    "title": "海上日出",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/CINMS_Sunrise_%2849050187573%29.jpg",
-    "category": "风景",
-    "tags": [
-      "日出",
-      "海洋",
-      "霞光",
-      "海平线"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20Sunrise%20(49050187573).jpg",
-    "width": 3008,
-    "height": 2000,
-    "localFile": "../data/images/cc-cinms_sunrise_49050187573.jpg"
-  },
-  {
-    "sourceId": "cc-a_field_of_desert_sunflowers_33213851150",
-    "title": "沙漠向日葵田",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/A_field_of_desert_sunflowers_%2833213851150%29.jpg",
-    "category": "风景",
-    "tags": [
-      "向日葵",
-      "花田",
-      "沙漠",
-      "荒野"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20field%20of%20desert%20sunflowers%20(33213851150).jpg",
-    "width": 5249,
-    "height": 3499,
-    "localFile": "../data/images/cc-a_field_of_desert_sunflowers_33213851150.jpg"
-  },
-  {
-    "sourceId": "cc-a_sea_of_desert_sunflowers_33596889675",
-    "title": "向日葵花海",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/A_sea_of_desert_sunflowers_%2833596889675%29.jpg",
-    "category": "风景",
-    "tags": [
-      "向日葵",
-      "花海",
-      "花田",
-      "金色"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20sea%20of%20desert%20sunflowers%20(33596889675).jpg",
-    "width": 5192,
-    "height": 2948,
-    "localFile": "../data/images/cc-a_sea_of_desert_sunflowers_33596889675.jpg"
-  },
-  {
-    "sourceId": "cc-a_banner_year_for_wildflowers_40248749214",
-    "title": "野花盛放之年",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/A_banner_year_for_wildflowers_%2840248749214%29.jpg",
-    "category": "风景",
-    "tags": [
-      "野花",
-      "花田",
-      "自然",
-      "彩色"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20banner%20year%20for%20wildflowers%20(40248749214).jpg",
-    "width": 3966,
-    "height": 2673,
-    "localFile": "../data/images/cc-a_banner_year_for_wildflowers_40248749214.jpg"
-  },
-  {
-    "sourceId": "cc-a_poppy_at_sundown_33213595010",
-    "title": "日落罂粟花",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/A_poppy_at_sundown_%2833213595010%29.jpg",
-    "category": "风景",
-    "tags": [
-      "罂粟花",
-      "花朵",
-      "日落",
-      "红色"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20poppy%20at%20sundown%20(33213595010).jpg",
-    "width": 5472,
-    "height": 3648,
-    "localFile": "../data/images/cc-a_poppy_at_sundown_33213595010.jpg"
-  },
-  {
-    "sourceId": "cc-saint_sacrement_quebec_city_in_winter_after_a_snow_storm_12",
-    "title": "雪后魁北克老街",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Saint_Sacrement%2C_Quebec_city_in_winter%2C_after_a_snow_storm_12.jpg",
-    "category": "风景",
-    "tags": [
-      "雪景",
-      "魁北克",
-      "冬季",
-      "街道"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Wilfredor",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Saint%20Sacrement%2C%20Quebec%20city%20in%20winter%2C%20after%20a%20snow%20storm%2012.jpg",
-    "width": 7728,
-    "height": 5162,
-    "localFile": "../data/images/cc-saint_sacrement_quebec_city_in_winter_after_a_snow_storm_12.jpg"
-  },
-  {
-    "sourceId": "cc-20160818_lower_deer_creek_2016_08_18_16_29260528970",
-    "title": "鹿溪流水",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/20160818-Lower_Deer_Creek_2016-08-18_%2816%29_%2829260528970%29.jpg",
-    "category": "风景",
-    "tags": [
-      "溪流",
-      "山间",
-      "流水",
-      "森林"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:20160818-Lower%20Deer%20Creek%202016-08-18%20(16)%20(29260528970).jpg",
-    "width": 5472,
-    "height": 3648,
-    "localFile": "../data/images/cc-20160818_lower_deer_creek_2016_08_18_16_29260528970.jpg"
-  },
-  {
-    "sourceId": "cc-a_shot_of_hagen_creek_in_maryland",
-    "title": "马里兰哈根溪",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/A_shot_of_Hagen_creek_in_Maryland.jpg",
-    "category": "风景",
-    "tags": [
-      "溪流",
-      "马里兰",
-      "河流",
-      "自然"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Walton LaVonda, U.S. Fish and Wildlife Service",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20shot%20of%20Hagen%20creek%20in%20Maryland.jpg",
-    "width": 3000,
-    "height": 1988,
-    "localFile": "../data/images/cc-a_shot_of_hagen_creek_in_maryland.jpg"
-  },
-  {
-    "sourceId": "cc-koh_mak_island_thailand_solitary_tree_in_lagoon",
-    "title": "潟湖孤树",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Koh_Mak_%28island%29%2C_Thailand%2C_Solitary_tree_in_lagoon.jpg",
-    "category": "极简",
-    "tags": [
-      "孤树",
-      "潟湖",
-      "极简",
-      "泰国"
-    ],
-    "license": "CC BY",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": "Vyacheslav Argenberg",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Koh%20Mak%20(island)%2C%20Thailand%2C%20Solitary%20tree%20in%20lagoon.jpg",
-    "width": 4032,
-    "height": 2688,
-    "localFile": "../data/images/cc-koh_mak_island_thailand_solitary_tree_in_lagoon.jpg"
-  },
-  {
-    "sourceId": "cc-porte_marguerite_de_navarre_paris_station_black_and_white",
-    "title": "巴黎黑白拱门",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Porte_Marguerite-de-Navarre_%28Paris%29_station_Black_and_White.jpg",
-    "category": "极简",
-    "tags": [
-      "黑白",
-      "巴黎",
-      "建筑",
-      "极简"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Wilfredor",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Porte%20Marguerite-de-Navarre%20(Paris)%20station%20Black%20and%20White.jpg",
-    "width": 8239,
-    "height": 5493,
-    "localFile": "../data/images/cc-porte_marguerite_de_navarre_paris_station_black_and_white.jpg"
-  },
-  {
-    "sourceId": "cc-sea_wave_abstract_texture_unsplash",
-    "title": "海浪抽象纹理",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Sea_wave_abstract_texture_%28Unsplash%29.jpg",
-    "category": "极简",
-    "tags": [
-      "海浪",
-      "纹理",
-      "抽象",
-      "蓝色"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Lukas Blazek goumbik",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Sea%20wave%20abstract%20texture%20(Unsplash).jpg",
-    "width": 6144,
-    "height": 4069,
-    "localFile": "../data/images/cc-sea_wave_abstract_texture_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-cliff_star_trails_unsplash",
-    "title": "悬崖上的星轨",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Cliff_Star_Trails_%28Unsplash%29.jpg",
-    "category": "极简",
-    "tags": [
-      "星轨",
-      "悬崖",
-      "夜空",
-      "长曝光"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Andrew Preble apreble",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Cliff%20Star%20Trails%20(Unsplash).jpg",
-    "width": 6016,
-    "height": 4016,
-    "localFile": "../data/images/cc-cliff_star_trails_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-star_trail_trees_rooftop_unsplash",
-    "title": "屋顶星轨与树影",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Star_Trail_Trees_Rooftop_%28Unsplash%29.jpg",
-    "category": "极简",
-    "tags": [
-      "星轨",
-      "剪影",
-      "夜空",
-      "长曝光"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Nathan Anderson nathananderson",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Star%20Trail%20Trees%20Rooftop%20(Unsplash).jpg",
-    "width": 6016,
-    "height": 4016,
-    "localFile": "../data/images/cc-star_trail_trees_rooftop_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-sunset_crater_volcano_lava_flow_trail_34665598392",
-    "title": "落日火山熔岩径",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Sunset_Crater_Volcano%2C_Lava_Flow_Trail_%2834665598392%29.jpg",
-    "category": "极简",
-    "tags": [
-      "火山",
-      "熔岩",
-      "落日",
-      "地貌"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Coconino National Forest",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Sunset%20Crater%20Volcano%2C%20Lava%20Flow%20Trail%20(34665598392).jpg",
-    "width": 8691,
-    "height": 4776,
-    "localFile": "../data/images/cc-sunset_crater_volcano_lava_flow_trail_34665598392.jpg"
-  },
-  {
-    "sourceId": "cc-above_knight_s_landing_5204364385",
-    "title": "田野上空的云",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Above_Knight%27s_Landing_%285204364385%29.jpg",
-    "category": "极简",
-    "tags": [
-      "田野",
-      "云朵",
-      "天空",
-      "极简"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Pacific Southwest Region USFWS from Sacramento, US",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Above%20Knight's%20Landing%20(5204364385).jpg",
-    "width": 3648,
-    "height": 2736,
-    "localFile": "../data/images/cc-above_knight_s_landing_5204364385.jpg"
-  },
-  {
-    "sourceId": "cc-black_black_holes_chandra_uncovers_new_evidence_for_event_horizons_surrounding_black_holes_2001_blackholes_bla",
-    "title": "黑洞艺术想象",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/%22Black%22_Black_Holes-_Chandra_Uncovers_New_Evidence_For_Event_Horizons_Surrounding_Black_Holes_%282001-blackholes_-_blackhole_illustration%29.tiff",
-    "category": "艺术",
-    "tags": [
-      "黑洞",
-      "宇宙",
-      "艺术",
-      "科学艺术"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "Credit: NASA/CfA/M. Garcia et al.)",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Black%22%20Black%20Holes-%20Chandra%20Uncovers%20New%20Evidence%20For%20Event%20Horizons%20Surrounding%20Black%20Holes%20(2001-blackholes%20-%20blackhole%20illustration).tiff",
-    "width": 3300,
-    "height": 2550,
-    "localFile": "../data/images/cc-black_black_holes_chandra_uncovers_new_evidence_for_event_horizons_surrounding_black_holes_2001_blackholes_bla.jpg"
-  },
-  {
-    "sourceId": "cc-color_signs_7_abstract_gouache_painting_on_paper_with_brushstrokes_and_paint_texture_created_by_dutch_artist_f",
-    "title": "色彩符号·水粉抽象",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/%27Color_Signs_7.%27_-_abstract_gouache_painting_on_paper_with_brushstrokes_and_paint_texture%2C_created_by_Dutch_artist_Fons_Heijnsbroek_in_2004.png",
-    "category": "艺术",
-    "tags": [
-      "抽象",
-      "水粉",
-      "艺术",
-      "色彩"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Fons Heijnsbroek",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Color%20Signs%207.'%20-%20abstract%20gouache%20painting%20on%20paper%20with%20brushstrokes%20and%20paint%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202004.png",
-    "width": 5213,
-    "height": 3883,
-    "localFile": "../data/images/cc-color_signs_7_abstract_gouache_painting_on_paper_with_brushstrokes_and_paint_texture_created_by_dutch_artist_f.jpg"
-  },
-  {
-    "sourceId": "cc-nova_scotia_abstract_watercolor_painting_in_color_lines_by_artist_fons_heijnsbroek_created_in_2010_free_art_im",
-    "title": "新斯科舍·水彩线条",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/%27Nova_Scotia%27_-_abstract_watercolor_painting_in_color_lines_-_by_artist_Fons_Heijnsbroek%2C_created_in_2010._Free_art_image_in_high_resolutions_TIFF.tif",
-    "category": "艺术",
-    "tags": [
-      "抽象",
-      "水彩",
-      "艺术",
-      "线条"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Fons Heijnsbroek",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Nova%20Scotia'%20-%20abstract%20watercolor%20painting%20in%20color%20lines%20-%20by%20artist%20Fons%20Heijnsbroek%2C%20created%20in%202010.%20Free%20art%20image%20in%20high%20resolutions%20TIFF.tif",
-    "width": 3646,
-    "height": 2835,
-    "localFile": "../data/images/cc-nova_scotia_abstract_watercolor_painting_in_color_lines_by_artist_fons_heijnsbroek_created_in_2010_free_art_im.jpg"
-  },
-  {
-    "sourceId": "cc-polar_lights_over_dark_trees_unsplash",
-    "title": "墨林之上的极光",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Polar_lights_over_dark_trees_%28Unsplash%29.jpg",
-    "category": "艺术",
-    "tags": [
-      "极光",
-      "剪影",
-      "夜空",
-      "艺术"
-    ],
-    "license": "CC0",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "creator": "Vincent Guth vingtcent",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:Polar%20lights%20over%20dark%20trees%20(Unsplash).jpg",
-    "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-polar_lights_over_dark_trees_unsplash.jpg"
-  },
-  {
-    "sourceId": "cc-cinms_hermissenda_nudibranch_27878887602",
-    "title": "赫尔米森达海蛞蝓",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/CINMS_-_hermissenda_nudibranch_%2827878887602%29.jpg",
-    "category": "艺术",
-    "tags": [
-      "海蛞蝓",
-      "微观",
-      "色彩",
-      "海洋艺术"
-    ],
-    "license": "PD",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "creator": "National Marine Sanctuaries",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20hermissenda%20nudibranch%20(27878887602).jpg",
-    "width": 3072,
-    "height": 2304,
-    "localFile": "../data/images/cc-cinms_hermissenda_nudibranch_27878887602.jpg"
-  },
-  {
     "sourceId": "cc-basic_quin_abstract_gouache_painting_on_paper_with_turning_brush_strokes_and_paint_texture_created_by_dutch_ar",
     "title": "抽象水彩 · 蓝调",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/%27Basic_Quin%27_-_abstract_gouache_painting_on_paper_with_turning_brush_strokes_and_paint_texture%2C_created_by_Dutch_artist_Fons_Heijnsbroek_in_2004.png",
@@ -1917,8 +14,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Basic%20Quin'%20-%20abstract%20gouache%20painting%20on%20paper%20with%20turning%20brush%20strokes%20and%20paint%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202004.png",
     "width": 3344,
-    "height": 2998,
-    "localFile": "../data/images/cc-basic_quin_abstract_gouache_painting_on_paper_with_turning_brush_strokes_and_paint_texture_created_by_dutch_ar.jpg"
+    "height": 2998
   },
   {
     "sourceId": "cc-bird_in_izola",
@@ -1935,8 +31,7 @@
     "creator": "Janko Ferlic",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bird%20in%20Izola.jpg",
     "width": 2668,
-    "height": 1606,
-    "localFile": "../data/images/cc-bird_in_izola.jpg"
+    "height": 1606
   },
   {
     "sourceId": "cc-i_see_trees_of_green_flickr_hli_photography",
@@ -1953,8 +48,7 @@
     "creator": "HLI-Photography",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:I%20see%20trees%20of%20green%20...%20-%20Flickr%20-%20HLI-Photography.jpg",
     "width": 5587,
-    "height": 3725,
-    "localFile": "../data/images/cc-i_see_trees_of_green_flickr_hli_photography.jpg"
+    "height": 3725
   },
   {
     "sourceId": "cc-boilers_along_the_southeast_coast_of_bermuda_1801",
@@ -1971,8 +65,7 @@
     "creator": "Image ISS003-E-5735, was provided by the Earth Sciences and Image Analysis Laboratory at Johnson Space Center. Additional images taken by astronauts and cosmonauts can be viewed at the NASA-JSC Gatewa",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Boilers%22%20along%20the%20southeast%20coast%20of%20Bermuda%20(1801).jpg",
     "width": 3060,
-    "height": 2092,
-    "localFile": "../data/images/cc-boilers_along_the_southeast_coast_of_bermuda_1801.jpg"
+    "height": 2092
   },
   {
     "sourceId": "cc-jersey_city_skyline_jan_2006",
@@ -1989,8 +82,7 @@
     "creator": "Diliff",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20Skyline%20Jan%202006.jpg",
     "width": 2667,
-    "height": 1245,
-    "localFile": "../data/images/cc-jersey_city_skyline_jan_2006.jpg"
+    "height": 1245
   },
   {
     "sourceId": "cc-victoria_harbour_skyscrapers",
@@ -2007,8 +99,7 @@
     "creator": "Wilfredor",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Victoria%20Harbour%20skyscrapers.jpg",
     "width": 2000,
-    "height": 1329,
-    "localFile": "../data/images/cc-victoria_harbour_skyscrapers.jpg"
+    "height": 1329
   },
   {
     "sourceId": "cc-byron_bay_observatory_timelapse",
@@ -2025,8 +116,7 @@
     "creator": "Dylan O'Donnell, deography.com",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Byron%20Bay%20Observatory%20Timelapse.jpg",
     "width": 2048,
-    "height": 1365,
-    "localFile": "../data/images/cc-byron_bay_observatory_timelapse.jpg"
+    "height": 1365
   },
   {
     "sourceId": "cc-kwoan_abstract_gouache_painting_on_paper_with_brush_strokes_and_paint_texture_created_by_dutch_artist_fons_hei",
@@ -2043,8 +133,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Kwoan'%20-%20abstract%20gouache%20painting%20on%20paper%20with%20brush%20strokes%20and%20paint%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202004.png",
     "width": 4851,
-    "height": 4187,
-    "localFile": "../data/images/cc-kwoan_abstract_gouache_painting_on_paper_with_brush_strokes_and_paint_texture_created_by_dutch_artist_fons_hei.jpg"
+    "height": 4187
   },
   {
     "sourceId": "cc-northern_lights_finally_3066014529",
@@ -2061,8 +150,7 @@
     "creator": "cogdogblog",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20Lights%20Finally%20(3066014529).jpg",
     "width": 2400,
-    "height": 1600,
-    "localFile": "../data/images/cc-northern_lights_finally_3066014529.jpg"
+    "height": 1600
   },
   {
     "sourceId": "cc-bolles_lorbeertaube",
@@ -2079,8 +167,7 @@
     "creator": "Hobbyfotowiki",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bolles%20Lorbeertaube.jpg",
     "width": 4307,
-    "height": 2864,
-    "localFile": "../data/images/cc-bolles_lorbeertaube.jpg"
+    "height": 2864
   },
   {
     "sourceId": "cc-jersey_city_skyline_jan_2006-2",
@@ -2097,8 +184,7 @@
     "creator": "Diliff",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20Skyline%20-%20Jan%202006.jpg",
     "width": 3307,
-    "height": 1384,
-    "localFile": "../data/images/cc-jersey_city_skyline_jan_2006-2.jpg"
+    "height": 1384
   },
   {
     "sourceId": "cc-skylines_of_quebec_city_skyline",
@@ -2115,8 +201,7 @@
     "creator": "Wilfredor",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Skylines%20of%20Quebec%20City%20(skyline).jpg",
     "width": 17456,
-    "height": 5660,
-    "localFile": "../data/images/cc-skylines_of_quebec_city_skyline.jpg"
+    "height": 5660
   },
   {
     "sourceId": "cc-sunset_crater_volcano_lava_flow_trail_34829335505",
@@ -2133,8 +218,7 @@
     "creator": "Coconino National Forest",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Sunset%20Crater%20Volcano%2C%20Lava%20Flow%20Trail%20(34829335505).jpg",
     "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-sunset_crater_volcano_lava_flow_trail_34829335505.jpg"
+    "height": 4912
   },
   {
     "sourceId": "cc-onrooskens_abstract_gouache_painting_on_paper_with_brushstrokes_and_paint_texture_created_by_dutch_artist_fons",
@@ -2151,8 +235,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'OnRooskens'%20-%20abstract%20gouache%20painting%20on%20paper%20with%20brushstrokes%20and%20paint%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202004.png",
     "width": 4384,
-    "height": 3940,
-    "localFile": "../data/images/cc-onrooskens_abstract_gouache_painting_on_paper_with_brushstrokes_and_paint_texture_created_by_dutch_artist_fons.jpg"
+    "height": 3940
   },
   {
     "sourceId": "cc-northern_lights_finally_3066855798",
@@ -2169,8 +252,7 @@
     "creator": "cogdogblog",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20Lights%20Finally%20(3066855798).jpg",
     "width": 2400,
-    "height": 1600,
-    "localFile": "../data/images/cc-northern_lights_finally_3066855798.jpg"
+    "height": 1600
   },
   {
     "sourceId": "cc-international_space_station_canadarm2_during_sts_108",
@@ -2187,8 +269,7 @@
     "creator": "NASA",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22International%20Space%20Station%22%20Canadarm2%20during%20STS-108.jpg",
     "width": 2272,
-    "height": 1768,
-    "localFile": "../data/images/cc-international_space_station_canadarm2_during_sts_108.jpg"
+    "height": 1768
   },
   {
     "sourceId": "cc-toledo_skyline_panorama_spain_dec_2006",
@@ -2205,8 +286,7 @@
     "creator": "Diliff",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Toledo%20Skyline%20Panorama%2C%20Spain%20-%20Dec%202006.jpg",
     "width": 4215,
-    "height": 2002,
-    "localFile": "../data/images/cc-toledo_skyline_panorama_spain_dec_2006.jpg"
+    "height": 2002
   },
   {
     "sourceId": "cc-togetherly_3_abstract_gouache_painting_on_paper_in_color_shapes_with_brush_strokes_and_paint_texture_created_b",
@@ -2223,8 +303,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Togetherly%203.'%20-%20abstract%20gouache%20painting%20on%20paper%20in%20color%20shapes%20with%20brush%20strokes%20and%20paint%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202003.png",
     "width": 4462,
-    "height": 3543,
-    "localFile": "../data/images/cc-togetherly_3_abstract_gouache_painting_on_paper_in_color_shapes_with_brush_strokes_and_paint_texture_created_b.jpg"
+    "height": 3543
   },
   {
     "sourceId": "cc-snap_it_solar_eclipse_photography_game_svs5524",
@@ -2241,8 +320,7 @@
     "creator": "NASA's Scientific Visualization Studio - SSAI/Andrew J Christensen, eMITS/Joy Ng, Wyle Information Systems/Mara Johnson-Groh, eMITS/Krystofer Kim, TRAX International/Kristen Perrin, SSAI/Brenda Lopez-",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Snap%20It!%22%20Solar%20Eclipse%20Photography%20Game%20(SVS5524).jpg",
     "width": 4000,
-    "height": 1540,
-    "localFile": "../data/images/cc-snap_it_solar_eclipse_photography_game_svs5524.jpg"
+    "height": 1540
   },
   {
     "sourceId": "cc-a_gentoo_penguin_colony_at_petermann_island_2006",
@@ -2259,8 +337,7 @@
     "creator": "NOAA Photo Library",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20gentoo%20penguin%20colony%20at%20Petermann%20Island%2C%202006.jpg",
     "width": 2304,
-    "height": 1728,
-    "localFile": "../data/images/cc-a_gentoo_penguin_colony_at_petermann_island_2006.jpg"
+    "height": 1728
   },
   {
     "sourceId": "cc-no_chaos_acrylic_painting_on_paper_abstract_art_made_in_2007_by_dutch_painter_fons_heijnsbroek",
@@ -2277,8 +354,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'No%20Chaos'%20-%20acrylic%20painting%20on%20paper%20-%20abstract%20art%2C%20made%20in%202007%20by%20Dutch%20painter%20Fons%20Heijnsbroek.tif",
     "width": 3543,
-    "height": 2657,
-    "localFile": "../data/images/cc-no_chaos_acrylic_painting_on_paper_abstract_art_made_in_2007_by_dutch_painter_fons_heijnsbroek.jpg"
+    "height": 2657
   },
   {
     "sourceId": "cc-bandit_angelfish_13151901254",
@@ -2295,8 +371,7 @@
     "creator": "NOAA's National Ocean Service",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bandit%20Angelfish%20(13151901254).jpg",
     "width": 2061,
-    "height": 1649,
-    "localFile": "../data/images/cc-bandit_angelfish_13151901254.jpg"
+    "height": 1649
   },
   {
     "sourceId": "cc-kondiaronk_belvedere_montreal_city_canada",
@@ -2313,8 +388,7 @@
     "creator": "Wilfredor",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Kondiaronk%20Belvedere%2C%20Montreal%20city%2C%20Canada.jpg",
     "width": 6536,
-    "height": 4401,
-    "localFile": "../data/images/cc-kondiaronk_belvedere_montreal_city_canada.jpg"
+    "height": 4401
   },
   {
     "sourceId": "cc-a_bear_in_the_bushes_ursus_americanus",
@@ -2331,8 +405,7 @@
     "creator": "Steve Hillebrand, U.S. Fish and Wildlife Service",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20bear%20in%20the%20bushes%20ursus%20americanus.jpg",
     "width": 3000,
-    "height": 2400,
-    "localFile": "../data/images/cc-a_bear_in_the_bushes_ursus_americanus.jpg"
+    "height": 2400
   },
   {
     "sourceId": "cc-bat_ray_at_anacapa_island_channel_islands_national_marine_sanctuary_43102098480",
@@ -2349,8 +422,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bat%20Ray%20at%20Anacapa%20Island%2C%20Channel%20Islands%20National%20Marine%20Sanctuary%20(43102098480).jpg",
     "width": 3008,
-    "height": 2000,
-    "localFile": "../data/images/cc-bat_ray_at_anacapa_island_channel_islands_national_marine_sanctuary_43102098480.jpg"
+    "height": 2000
   },
   {
     "sourceId": "cc-jersey_city_skyline_december_2023_03",
@@ -2367,8 +439,7 @@
     "creator": "Kidfly182",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20Skyline%20December%202023%2003.jpg",
     "width": 2560,
-    "height": 1152,
-    "localFile": "../data/images/cc-jersey_city_skyline_december_2023_03.jpg"
+    "height": 1152
   },
   {
     "sourceId": "cc-colored_proposal_abstract_watercolor_painting_a_mixture_of_colors_and_textures_contemporary_abstract_art_creat",
@@ -2385,8 +456,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Colored%20Proposal'%20-%20abstract%20watercolor%20painting%20a%20mixture%20of%20colors%20and%20textures%20-%20contemporary%20abstract%20art%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202008%20-%20abstract%20gouache%20art%20on%20paper.%20Free%20image%20in%20high%20TIFF%20resol.tif",
     "width": 4031,
-    "height": 3543,
-    "localFile": "../data/images/cc-colored_proposal_abstract_watercolor_painting_a_mixture_of_colors_and_textures_contemporary_abstract_art_creat.jpg"
+    "height": 3543
   },
   {
     "sourceId": "cc-anemone_and_fish_44773513851",
@@ -2403,8 +473,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Anemone%20And%20Fish%20(44773513851).jpg",
     "width": 5152,
-    "height": 3440,
-    "localFile": "../data/images/cc-anemone_and_fish_44773513851.jpg"
+    "height": 3440
   },
   {
     "sourceId": "cc-star_trail_254221623",
@@ -2421,8 +490,7 @@
     "creator": "Wang",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Star%20Trail%20(254221623).jpeg",
     "width": 2048,
-    "height": 1280,
-    "localFile": "../data/images/cc-star_trail_254221623.jpg"
+    "height": 1280
   },
   {
     "sourceId": "cc-a_lynx_spider_warms_in_the_san_bernardino_sunshine_above_east_fork_creek_31165699415",
@@ -2439,8 +507,7 @@
     "creator": "Pacific Southwest Region USFWS from Sacramento, US",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20Lynx%20Spider%20warms%20in%20the%20San%20Bernardino%20sunshine%20above%20East%20Fork%20Creek%20(31165699415).jpg",
     "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-a_lynx_spider_warms_in_the_san_bernardino_sunshine_above_east_fork_creek_31165699415.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-after_monet_2_abstract_watercolor_painting_a_mixture_of_red_yellow_and_blue_colors_contemporary_abstract_art_b",
@@ -2457,8 +524,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'After%20Monet%202.'%20-%20abstract%20watercolor%20painting%2C%20a%20mixture%20of%20red%2C%20yellow%20and%20blue%20colors%20-%20contemporary%20abstract%20art%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202008%20-%20abstract%20gouache%20art%20on%20paper.%20Free%20image%20in%20high%20resolutions%20TIFF.tif",
     "width": 4458,
-    "height": 3543,
-    "localFile": "../data/images/cc-after_monet_2_abstract_watercolor_painting_a_mixture_of_red_yellow_and_blue_colors_contemporary_abstract_art_b.jpg"
+    "height": 3543
   },
   {
     "sourceId": "cc-ice_eye_watching_star_210072813",
@@ -2475,8 +541,7 @@
     "creator": "Emma Liang",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Ice%20Eye%20Watching%20Star%20(210072813).jpeg",
     "width": 2048,
-    "height": 1365,
-    "localFile": "../data/images/cc-ice_eye_watching_star_210072813.jpg"
+    "height": 1365
   },
   {
     "sourceId": "cc-7_juli_2010_abstract_watercolor_painting_a_mixture_of_yellow_and_blue_color_lines_contemporary_abstract_expres",
@@ -2493,8 +558,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'7%20Juli%202010'%20-%20abstract%20watercolor%20painting%2C%20a%20mixture%20of%20yellow%20and%20blue%20color%20lines%20-%20contemporary%20abstract%20expressionism%20by%20Dutch%20artist%20Fons%20Heijnsbroek%2C%20made%20in%202010.%20Free%20art%20image%20in%20high%20resolutions%20TIFF.tif",
     "width": 3543,
-    "height": 2835,
-    "localFile": "../data/images/cc-7_juli_2010_abstract_watercolor_painting_a_mixture_of_yellow_and_blue_color_lines_contemporary_abstract_expres.jpg"
+    "height": 2835
   },
   {
     "sourceId": "cc-startrails_208478027",
@@ -2511,8 +575,7 @@
     "creator": "Ioan Sendroiu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Startrails%20(208478027).jpeg",
     "width": 2048,
-    "height": 1337,
-    "localFile": "../data/images/cc-startrails_208478027.jpg"
+    "height": 1337
   },
   {
     "sourceId": "cc-historiogram_abstract_watercolor_painting_a_mixture_of_green_and_brown_color_lines_by_fons_heijnsbroek_created",
@@ -2529,8 +592,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Historiogram'%20-%20abstract%20watercolor%20painting%2C%20a%20mixture%20of%20green%20and%20brown%20color%20lines%20-%20by%20Fons%20Heijnsbroek%2C%20created%20in%202010.%20Free%20art%20image%20in%20high%20resolutions%20TIFF.tif",
     "width": 3661,
-    "height": 3189,
-    "localFile": "../data/images/cc-historiogram_abstract_watercolor_painting_a_mixture_of_green_and_brown_color_lines_by_fons_heijnsbroek_created.jpg"
+    "height": 3189
   },
   {
     "sourceId": "cc-aurora_and_cephalus_met_dp805477",
@@ -2547,8 +609,7 @@
     "creator": "François Boucher",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aurora%20and%20Cephalus%20MET%20DP805477.jpg",
     "width": 3605,
-    "height": 2929,
-    "localFile": "../data/images/cc-aurora_and_cephalus_met_dp805477.jpg"
+    "height": 2929
   },
   {
     "sourceId": "cc-c2022_e3_ztf_with_star_trails_52655835075",
@@ -2565,8 +626,7 @@
     "creator": "Stephen Rahn",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:C2022%20E3%20(ZTF)%20with%20star%20trails%20-%2052655835075.png",
     "width": 4606,
-    "height": 2966,
-    "localFile": "../data/images/cc-c2022_e3_ztf_with_star_trails_52655835075.jpg"
+    "height": 2966
   },
   {
     "sourceId": "cc-painting_deaf_abstract_watercolor_painting_in_color_lines_by_artist_fons_heijnsbroek_created_in_2010_free_art_",
@@ -2583,8 +643,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Painting-deaf'%20-%20abstract%20watercolor%20painting%20in%20color%20lines%20-%20by%20artist%20Fons%20Heijnsbroek%2C%20created%20in%202010.%20Free%20art%20image%20in%20high%20resolutions.tif",
     "width": 3827,
-    "height": 3189,
-    "localFile": "../data/images/cc-painting_deaf_abstract_watercolor_painting_in_color_lines_by_artist_fons_heijnsbroek_created_in_2010_free_art_.jpg"
+    "height": 3189
   },
   {
     "sourceId": "cc-northern_lights_ontario_unsplash",
@@ -2601,8 +660,7 @@
     "creator": "Scott Rock scottrockphoto",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20Lights%20Ontario%20(Unsplash).jpg",
     "width": 3888,
-    "height": 2592,
-    "localFile": "../data/images/cc-northern_lights_ontario_unsplash.jpg"
+    "height": 2592
   },
   {
     "sourceId": "cc-bridge_in_zelenogradsky_park",
@@ -2619,8 +677,7 @@
     "creator": "Vsatinet",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bridge%20in%20Zelenogradsky%20Park.jpg",
     "width": 4256,
-    "height": 2832,
-    "localFile": "../data/images/cc-bridge_in_zelenogradsky_park.jpg"
+    "height": 2832
   },
   {
     "sourceId": "cc-cbnms_reef_49798472992",
@@ -2637,8 +694,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:CBNMS%20Reef%20(49798472992).jpg",
     "width": 5616,
-    "height": 3744,
-    "localFile": "../data/images/cc-cbnms_reef_49798472992.jpg"
+    "height": 3744
   },
   {
     "sourceId": "cc-new_york_city_skyline_from_ferry",
@@ -2655,8 +711,7 @@
     "creator": "FrameOverdose",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:New%20York%20City%20skyline%20from%20ferry.jpg",
     "width": 4032,
-    "height": 3024,
-    "localFile": "../data/images/cc-new_york_city_skyline_from_ferry.jpg"
+    "height": 3024
   },
   {
     "sourceId": "cc-the_cage_abstract_watercolor_painting_in_color_and_lines_by_artist_fons_heijnsbroek_created_in_2010_free_art_i",
@@ -2673,8 +728,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'The%20Cage'%20-%20abstract%20watercolor%20painting%20in%20color%20and%20lines%20-%20by%20artist%20Fons%20Heijnsbroek%2C%20created%20in%202010.%20Free%20art%20image%20in%20high%20resolutions%20tiff.tif",
     "width": 4252,
-    "height": 3189,
-    "localFile": "../data/images/cc-the_cage_abstract_watercolor_painting_in_color_and_lines_by_artist_fons_heijnsbroek_created_in_2010_free_art_i.jpg"
+    "height": 3189
   },
   {
     "sourceId": "cc-northern_lights_honninswag_norway_247517713",
@@ -2691,8 +745,7 @@
     "creator": "Leonardo Cavallini",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20Lights%20Honninswag%20Norway%20(247517713).jpeg",
     "width": 2048,
-    "height": 1365,
-    "localFile": "../data/images/cc-northern_lights_honninswag_norway_247517713.jpg"
+    "height": 1365
   },
   {
     "sourceId": "cc-cinms_anacapa_island_and_lighthouse_28049470731",
@@ -2709,8 +762,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20Anacapa%20Island%20And%20Lighthouse%20(28049470731).jpg",
     "width": 2240,
-    "height": 1488,
-    "localFile": "../data/images/cc-cinms_anacapa_island_and_lighthouse_28049470731.jpg"
+    "height": 1488
   },
   {
     "sourceId": "cc-cebu_city_skyline_2025",
@@ -2727,8 +779,7 @@
     "creator": "DisRaptor18",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Cebu%20city%20skyline%202025.jpg",
     "width": 4080,
-    "height": 3060,
-    "localFile": "../data/images/cc-cebu_city_skyline_2025.jpg"
+    "height": 3060
   },
   {
     "sourceId": "cc-20_minute_startrails_19832789009",
@@ -2745,8 +796,7 @@
     "creator": "Kees Scherer from Tomar, Portugal",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:20%20minute%20startrails%20(19832789009).jpg",
     "width": 5634,
-    "height": 3753,
-    "localFile": "../data/images/cc-20_minute_startrails_19832789009.jpg"
+    "height": 3753
   },
   {
     "sourceId": "cc-piet_s_comment_abstract_watercolor_painting_in_color_lines_by_artist_fons_heijnsbroek_created_in_2010_free_art",
@@ -2763,8 +813,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Piet's%20comment'%20-%20abstract%20watercolor%20painting%20in%20color%20lines%20-%20by%20artist%20Fons%20Heijnsbroek%2C%20created%20in%202010.%20Free%20art%20image%20in%20high%20resolutions%20tiff.tif",
     "width": 4659,
-    "height": 4252,
-    "localFile": "../data/images/cc-piet_s_comment_abstract_watercolor_painting_in_color_lines_by_artist_fons_heijnsbroek_created_in_2010_free_art.jpg"
+    "height": 4252
   },
   {
     "sourceId": "cc-katterjåkk_river_with_aurora_2022_09_03_08",
@@ -2781,8 +830,7 @@
     "creator": "Leonhard Lenz",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Katterj%C3%A5kk%20river%20with%20aurora%202022-09-03%2008.jpg",
     "width": 8384,
-    "height": 5612,
-    "localFile": "../data/images/cc-katterjåkk_river_with_aurora_2022_09_03_08.jpg"
+    "height": 5612
   },
   {
     "sourceId": "cc-cinms_inspiration_point_anacapa_island_26820991420",
@@ -2799,8 +847,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20Inspiration%20Point%2C%20Anacapa%20Island%20(26820991420).jpg",
     "width": 2048,
-    "height": 1536,
-    "localFile": "../data/images/cc-cinms_inspiration_point_anacapa_island_26820991420.jpg"
+    "height": 1536
   },
   {
     "sourceId": "cc-new_york_city_skyline_views_from_union_city_new_jersey_03",
@@ -2817,8 +864,7 @@
     "creator": "The Eloquent Peasant",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:New%20York%20City%20skyline%20views%20from%20Union%20City%2C%20New%20Jersey%2003.jpg",
     "width": 2560,
-    "height": 1920,
-    "localFile": "../data/images/cc-new_york_city_skyline_views_from_union_city_new_jersey_03.jpg"
+    "height": 1920
   },
   {
     "sourceId": "cc-more_star_trails_in_the_southern_hemisphere_52351473797",
@@ -2835,8 +881,7 @@
     "creator": "buddingphotographer",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:More%20star%20trails%20in%20the%20Southern%20Hemisphere%20(52351473797).jpg",
     "width": 4272,
-    "height": 2848,
-    "localFile": "../data/images/cc-more_star_trails_in_the_southern_hemisphere_52351473797.jpg"
+    "height": 2848
   },
   {
     "sourceId": "cc-splow_abstract_watercolor_painting_in_yellop_and_red_color_and_lines_by_artist_fons_heijnsbroek_2010_free_art_",
@@ -2853,8 +898,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Splow'%20-%20abstract%20watercolor%20painting%20in%20yellop%20and%20red%20color%20and%20lines%20-%20by%20artist%20Fons%20Heijnsbroek%2C%202010.%20Free%20art%20image%20in%20high%20resolutions%20tiff.tif",
     "width": 3949,
-    "height": 3189,
-    "localFile": "../data/images/cc-splow_abstract_watercolor_painting_in_yellop_and_red_color_and_lines_by_artist_fons_heijnsbroek_2010_free_art_.jpg"
+    "height": 3189
   },
   {
     "sourceId": "cc-cinms_elephant_seal_lounging_27099177915",
@@ -2871,8 +915,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20elephant%20seal%20lounging%20(27099177915).jpg",
     "width": 3008,
-    "height": 2000,
-    "localFile": "../data/images/cc-cinms_elephant_seal_lounging_27099177915.jpg"
+    "height": 2000
   },
   {
     "sourceId": "cc-acorn_woodpecker_fws_2",
@@ -2889,8 +932,7 @@
     "creator": "Gary Kramer/FWS",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Acorn%20Woodpecker%20FWS%202.jpg",
     "width": 3000,
-    "height": 1991,
-    "localFile": "../data/images/cc-acorn_woodpecker_fws_2.jpg"
+    "height": 1991
   },
   {
     "sourceId": "cc-eagerly_abstract_watercolor_painting_in_yellow_and_red_colors_and_lines_created_by_artist_fons_heijnsbroek_in_",
@@ -2907,8 +949,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Eagerly'%20-%20abstract%20watercolor%20painting%20in%20yellow%20and%20red%20colors%20and%20lines%20-%20created%20by%20artist%20Fons%20Heijnsbroek%20in%202010.%20Free%20art%20image%20in%20high%20resolutions.tif",
     "width": 3987,
-    "height": 3189,
-    "localFile": "../data/images/cc-eagerly_abstract_watercolor_painting_in_yellow_and_red_colors_and_lines_created_by_artist_fons_heijnsbroek_in_.jpg"
+    "height": 3189
   },
   {
     "sourceId": "cc-star_stack_star_trail",
@@ -2925,8 +966,7 @@
     "creator": "Youniverse Multiverse",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Star%20stack%20Star%20trail.jpg",
     "width": 4624,
-    "height": 3472,
-    "localFile": "../data/images/cc-star_stack_star_trail.jpg"
+    "height": 3472
   },
   {
     "sourceId": "cc-afterflow_abstract_watercolor_painting_in_a_mixture_of_red_colors_contemporary_abstract_expressionism_by_fons_",
@@ -2943,8 +983,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Afterflow'%20-%20abstract%20watercolor%20painting%20in%20a%20mixture%20of%20red%20colors%20-%20contemporary%20abstract%20expressionism%20by%20Fons%20Heijnsbroek%2C%202008%20-%20free%20art%20image%20in%20high%20resolution%2C%20TIFF.tif",
     "width": 4252,
-    "height": 3411,
-    "localFile": "../data/images/cc-afterflow_abstract_watercolor_painting_in_a_mixture_of_red_colors_contemporary_abstract_expressionism_by_fons_.jpg"
+    "height": 3411
   },
   {
     "sourceId": "cc-cinms_two_blue_whales_aerial_photo_27877575362",
@@ -2961,8 +1000,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20Two%20Blue%20Whales%20Aerial%20Photo%20(27877575362).jpg",
     "width": 2700,
-    "height": 1800,
-    "localFile": "../data/images/cc-cinms_two_blue_whales_aerial_photo_27877575362.jpg"
+    "height": 1800
   },
   {
     "sourceId": "cc-downtown_oklahoma_city_skyline",
@@ -2979,8 +1017,7 @@
     "creator": "Urbanative",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Downtown%20Oklahoma%20City%20skyline.jpg",
     "width": 2474,
-    "height": 1367,
-    "localFile": "../data/images/cc-downtown_oklahoma_city_skyline.jpg"
+    "height": 1367
   },
   {
     "sourceId": "cc-border_of_beauty_abstract_watercolor_painting_art_in_purple_and_yellow_lines_modern_abstract_expressionism_by_",
@@ -2997,8 +1034,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Border%20of%20Beauty'%20-%20abstract%20watercolor%20painting%20art%20in%20purple%20and%20yellow%20lines%20-%20modern%20abstract%20expressionism%20by%20Dutch%20artist%20Fons%20Heijnsbroek%2C%20made%20in%202008%20-%20gouache%20painting%20on%20paper.%20Free%20art%20image%20in%20high%20resolution%2C%20TIFF.tif",
     "width": 3780,
-    "height": 3229,
-    "localFile": "../data/images/cc-border_of_beauty_abstract_watercolor_painting_art_in_purple_and_yellow_lines_modern_abstract_expressionism_by_.jpg"
+    "height": 3229
   },
   {
     "sourceId": "cc-cinms_cavern_point_santa_cruz_island_28128848165",
@@ -3015,8 +1051,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20Cavern%20Point%20-%20Santa%20Cruz%20Island%20(28128848165).jpg",
     "width": 4000,
-    "height": 3000,
-    "localFile": "../data/images/cc-cinms_cavern_point_santa_cruz_island_28128848165.jpg"
+    "height": 3000
   },
   {
     "sourceId": "cc-new_york_city_skyline_with_empire_state_building_1",
@@ -3033,8 +1068,7 @@
     "creator": "Storylanding",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:New%20York%20City%20skyline%20with%20Empire%20State%20Building%201.jpg",
     "width": 2700,
-    "height": 1800,
-    "localFile": "../data/images/cc-new_york_city_skyline_with_empire_state_building_1.jpg"
+    "height": 1800
   },
   {
     "sourceId": "cc-moving_stars_above_fryeburg_unsplash",
@@ -3051,8 +1085,7 @@
     "creator": "Jeff Golenski jeffgolenski",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Moving%20stars%20above%20Fryeburg%20(Unsplash).jpg",
     "width": 4896,
-    "height": 3264,
-    "localFile": "../data/images/cc-moving_stars_above_fryeburg_unsplash.jpg"
+    "height": 3264
   },
   {
     "sourceId": "cc-on_the_edge_abstract_art_image_in_watercolor_with_a_color_mixture_and_brush_texture_modern_abstract_impression",
@@ -3069,8 +1102,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'On%20the%20Edge%20-%20abstract%20art%20image%20in%20watercolor%20with%20a%20color%20mixture%20and%20brush%20texture%20-%20modern%20abstract%20impressionism%20by%20Fons%20Heijnsbroek%2C%20made%20in%202008%20-%20gouache%20painting%20on%20paper%20in%20high%20resolution%20TIF.tif",
     "width": 3845,
-    "height": 3189,
-    "localFile": "../data/images/cc-on_the_edge_abstract_art_image_in_watercolor_with_a_color_mixture_and_brush_texture_modern_abstract_impression.jpg"
+    "height": 3189
   },
   {
     "sourceId": "cc-skyline_of_montreal_view_from_mont_royal_24244189891",
@@ -3087,8 +1119,7 @@
     "creator": "www.Pixel.la Free Stock Photos",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Skyline%20of%20Montreal%2C%20view%20from%20Mont%20Royal%20(24244189891).jpg",
     "width": 3632,
-    "height": 2440,
-    "localFile": "../data/images/cc-skyline_of_montreal_view_from_mont_royal_24244189891.jpg"
+    "height": 2440
   },
   {
     "sourceId": "cc-startrails_unsplash",
@@ -3105,8 +1136,7 @@
     "creator": "Tobias Polinder provlinder",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Startrails%20(Unsplash).jpg",
     "width": 4928,
-    "height": 3264,
-    "localFile": "../data/images/cc-startrails_unsplash.jpg"
+    "height": 3264
   },
   {
     "sourceId": "cc-color_tale_abstract_painting_in_green_and_yellow_blur_watercolor_on_paper_modern_abstract_expressionism_by_fon",
@@ -3123,8 +1153,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Color%20Tale'%20-%20abstract%20painting%20in%20green%20and%20yellow%20blur%20-%20watercolor%20on%20paper%20-%20modern%20abstract%20expressionism%20by%20Fons%20Heijnsbroek%2C%202008%20-%20free%20download%20art%20image%20CC0%2C%20high%20resolutions%20TIFF.tif",
     "width": 4279,
-    "height": 3543,
-    "localFile": "../data/images/cc-color_tale_abstract_painting_in_green_and_yellow_blur_watercolor_on_paper_modern_abstract_expressionism_by_fon.jpg"
+    "height": 3543
   },
   {
     "sourceId": "cc-may_10_2024_solar_storm_aurora_borealis_near_minneapolis",
@@ -3141,8 +1170,7 @@
     "creator": "Jsinned",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:May%2010%202024%20Solar%20Storm%20Aurora%20Borealis%20near%20Minneapolis.jpg",
     "width": 4000,
-    "height": 3000,
-    "localFile": "../data/images/cc-may_10_2024_solar_storm_aurora_borealis_near_minneapolis.jpg"
+    "height": 3000
   },
   {
     "sourceId": "cc-guatemala_city_skyline",
@@ -3159,8 +1187,7 @@
     "creator": "Roberto Perez",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Guatemala%20City%20Skyline.jpg",
     "width": 2048,
-    "height": 353,
-    "localFile": "../data/images/cc-guatemala_city_skyline.jpg"
+    "height": 353
   },
   {
     "sourceId": "cc-lockett_meadow_34703315701",
@@ -3177,8 +1204,7 @@
     "creator": "Coconino National Forest",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Lockett%20Meadow%20(34703315701).jpg",
     "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-lockett_meadow_34703315701.jpg"
+    "height": 4912
   },
   {
     "sourceId": "cc-3200x2400_texture_pd2002",
@@ -3195,8 +1221,7 @@
     "creator": "Mitchfeatherston",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:3200x2400-texture-pd2002.jpg",
     "width": 3200,
-    "height": 2400,
-    "localFile": "../data/images/cc-3200x2400_texture_pd2002.jpg"
+    "height": 2400
   },
   {
     "sourceId": "cc-jersey_city_skyline_august_2021",
@@ -3213,8 +1238,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20skyline%20-%20August%202021.jpg",
     "width": 4608,
-    "height": 2028,
-    "localFile": "../data/images/cc-jersey_city_skyline_august_2021.jpg"
+    "height": 2028
   },
   {
     "sourceId": "cc-alaska_maritime_national_wildlife_refuge_chagulak_island_in_the_aleutian_islands",
@@ -3231,8 +1255,7 @@
     "creator": "Hillebrand, Steve - U.S. Fish and Wildlife Service",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Alaska%20Maritime%20National%20Wildlife%20Refuge%3B%20Chagulak%20Island%20in%20the%20Aleutian%20Islands.jpg",
     "width": 3001,
-    "height": 2001,
-    "localFile": "../data/images/cc-alaska_maritime_national_wildlife_refuge_chagulak_island_in_the_aleutian_islands.jpg"
+    "height": 2001
   },
   {
     "sourceId": "cc-4800x3600_texture_gf4001",
@@ -3249,8 +1272,7 @@
     "creator": "Mitchfeatherston",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:4800x3600-texture-gf4001.jpg",
     "width": 4800,
-    "height": 3600,
-    "localFile": "../data/images/cc-4800x3600_texture_gf4001.jpg"
+    "height": 3600
   },
   {
     "sourceId": "cc-jersey_city_skyline_2023",
@@ -3267,8 +1289,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20Skyline%2C%202023.jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-jersey_city_skyline_2023.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-akutan_island_closeup",
@@ -3285,8 +1306,7 @@
     "creator": "U.S. Fish and Wildlife Service",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Akutan%20Island%20closeup.jpg",
     "width": 3000,
-    "height": 2000,
-    "localFile": "../data/images/cc-akutan_island_closeup.jpg"
+    "height": 2000
   },
   {
     "sourceId": "cc-nature_in_layers_nr_6_368_an_abstract_gouache_painting_on_paper_painted_in_2001_by_dutch_artist_fons_heijnsbro",
@@ -3303,8 +1323,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Nature%20in%20layers%2C%20nr.%206.368'%20-%20an%20abstract%20gouache%20painting%20on%20paper%2C%20painted%20in%202001%20by%20Dutch%20artist%20Fons%20Heijnsbroek.tif",
     "width": 3937,
-    "height": 3189,
-    "localFile": "../data/images/cc-nature_in_layers_nr_6_368_an_abstract_gouache_painting_on_paper_painted_in_2001_by_dutch_artist_fons_heijnsbro.jpg"
+    "height": 3189
   },
   {
     "sourceId": "cc-jersey_city_skyline_exchange_place_waterfront_at_sunset",
@@ -3321,8 +1340,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20skyline%2C%20Exchange%20Place%20waterfront%20at%20sunset.jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-jersey_city_skyline_exchange_place_waterfront_at_sunset.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-alaska_maritime_national_wildlife_refuge_aleutian_island_unit",
@@ -3339,8 +1357,7 @@
     "creator": "U.S. Fish and Wildlife Service",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Alaska%20Maritime%20National%20Wildlife%20Refuge%2C%20Aleutian%20Island%20Unit.jpg",
     "width": 3000,
-    "height": 2044,
-    "localFile": "../data/images/cc-alaska_maritime_national_wildlife_refuge_aleutian_island_unit.jpg"
+    "height": 2044
   },
   {
     "sourceId": "cc-dutch_lowlands_nr_6_387_an_abstract_gouache_painting_on_paper_painted_in_2001_by_dutch_artist_fons_heijnsbroek",
@@ -3357,8 +1374,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Dutch%20lowlands%2C%20nr.%206.387'%20-%20an%20abstract%20gouache%20painting%20on%20paper%2C%20painted%20in%202001%20by%20Dutch%20artist%20Fons%20Heijnsbroek.tif",
     "width": 4492,
-    "height": 3543,
-    "localFile": "../data/images/cc-dutch_lowlands_nr_6_387_an_abstract_gouache_painting_on_paper_painted_in_2001_by_dutch_artist_fons_heijnsbroek.jpg"
+    "height": 3543
   },
   {
     "sourceId": "cc-jersey_city_skyline_at_twilight",
@@ -3375,8 +1391,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20skyline%20at%20twilight.jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-jersey_city_skyline_at_twilight.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-colorful_acryl_painting_on_canvas_found_landscape_nr_4_050_an_abstract_large_painting_or_wall_art_painted_in_1",
@@ -3393,8 +1408,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Colorful%20acryl%20painting%20on%20canvas%20'Found%20Landscape%2C%20nr.%204.050'%20-%20an%20abstract%20large%20painting%20or%20wall%20art%2C%20painted%20in%201992%20by%20Dutch%20painter%20Fons%20Heijnsbroek.tif",
     "width": 4410,
-    "height": 3780,
-    "localFile": "../data/images/cc-colorful_acryl_painting_on_canvas_found_landscape_nr_4_050_an_abstract_large_painting_or_wall_art_painted_in_1.jpg"
+    "height": 3780
   },
   {
     "sourceId": "cc-jersey_city_skyline_at_twilight_exchange_place_and_newport",
@@ -3411,8 +1425,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20skyline%20at%20twilight%2C%20Exchange%20Place%20and%20Newport.jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-jersey_city_skyline_at_twilight_exchange_place_and_newport.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-soul_bottom_acrylic_painting_on_paper_abstract_art_made_in_2007_by_dutch_painter_fons_heijnsbroek",
@@ -3429,8 +1442,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Soul%20bottom'%20-%20acrylic%20painting%20on%20paper%20-%20abstract%20art%2C%20made%20in%202007%20by%20Dutch%20painter%20Fons%20Heijnsbroek.tif",
     "width": 4778,
-    "height": 4721,
-    "localFile": "../data/images/cc-soul_bottom_acrylic_painting_on_paper_abstract_art_made_in_2007_by_dutch_painter_fons_heijnsbroek.jpg"
+    "height": 4721
   },
   {
     "sourceId": "cc-jersey_city_skyline_at_twilight_2",
@@ -3447,8 +1459,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20skyline%20at%20twilight%202.jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-jersey_city_skyline_at_twilight_2.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-written_house_schiller_gouache_painting_on_paper_abstract_art_made_in_2007_by_dutch_painter_fons_heijnsbroek",
@@ -3465,8 +1476,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Written%20house%20(Schiller)'%20-%20gouache%20painting%20on%20paper%20-%20abstract%20art%2C%20made%20in%202007%20by%20Dutch%20painter%20Fons%20Heijnsbroek.tif",
     "width": 4376,
-    "height": 3543,
-    "localFile": "../data/images/cc-written_house_schiller_gouache_painting_on_paper_abstract_art_made_in_2007_by_dutch_painter_fons_heijnsbroek.jpg"
+    "height": 3543
   },
   {
     "sourceId": "cc-2006_amsterdam_photo_view_over_the_old_city_with_skyline_seen_from_the_roof_of_the_former_post_c_s_office_in_t",
@@ -3483,8 +1493,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:2006%2C%20Amsterdam%20photo%20-%20view%20over%20the%20old%20city%20with%20skyline%20-%20seen%20from%20the%20roof%20of%20the%20former%20Post%20C.S.%20office%20in%20the%20Oosterdok%20area%3B%20cityscape%20photography%20of%20The%20Netherlands%20by%20Fons%20Heijnsbroek%20-%20free%20photo%20CCO.tif",
     "width": 2048,
-    "height": 1536,
-    "localFile": "../data/images/cc-2006_amsterdam_photo_view_over_the_old_city_with_skyline_seen_from_the_roof_of_the_former_post_c_s_office_in_t.jpg"
+    "height": 1536
   },
   {
     "sourceId": "cc-beauty_truth_1_on_fr_von_schiller_gouache_painting_written_text_on_paper_abstract_art_made_in_2007_by_dutch_pa",
@@ -3501,8 +1510,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Beauty%20%26%20Truth%201.%20(on%20Fr.%20von%20Schiller)'%20-%20gouache%20painting%20%26%20written%20text%20on%20paper%20-%20abstract%20art%2C%20made%20in%202007%20by%20Dutch%20painter%20artist%20Fons%20Heijnsbroek.tif",
     "width": 4635,
-    "height": 3780,
-    "localFile": "../data/images/cc-beauty_truth_1_on_fr_von_schiller_gouache_painting_written_text_on_paper_abstract_art_made_in_2007_by_dutch_pa.jpg"
+    "height": 3780
   },
   {
     "sourceId": "cc-beauty_truth_4_on_fr_von_schiller_gouache_painting_on_paper_abstract_expressionism_art_made_in_2007_by_dutch_p",
@@ -3519,8 +1527,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Beauty%20%26%20Truth%204.%20(on%20Fr.%20von%20Schiller)'%20-%20gouache%20painting%20on%20paper%20-%20abstract%20expressionism%20art%2C%20made%20in%202007%20by%20Dutch%20painter%20artist%20Fons%20Heijnsbroek.tif",
     "width": 4472,
-    "height": 3780,
-    "localFile": "../data/images/cc-beauty_truth_4_on_fr_von_schiller_gouache_painting_on_paper_abstract_expressionism_art_made_in_2007_by_dutch_p.jpg"
+    "height": 3780
   },
   {
     "sourceId": "cc-beauty_truth_5_on_fr_von_schiller_gouache_painting_text_on_paper_abstract_expressionism_art_made_in_2007_by_pa",
@@ -3537,8 +1544,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Beauty%20%26%20Truth%205.%20(on%20Fr.%20von%20Schiller)'%20-%20gouache%20painting%20%26%20text%20on%20paper%20-%20abstract%20expressionism%20art%2C%20made%20in%202007%20by%20painter%20artist%20Fons%20Heijnsbroek.tif",
     "width": 4140,
-    "height": 3189,
-    "localFile": "../data/images/cc-beauty_truth_5_on_fr_von_schiller_gouache_painting_text_on_paper_abstract_expressionism_art_made_in_2007_by_pa.jpg"
+    "height": 3189
   },
   {
     "sourceId": "cc-beauty_truth_7_gouache_painting_on_paper_abstract_expressionism_art_made_in_2007_by_dutch_artist_fons_heijnsbr",
@@ -3555,8 +1561,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Beauty%20%26%20Truth%207.'%20-%20gouache%20painting%20on%20paper%20-%20abstract%20expressionism%20art%2C%20made%20in%202007%20by%20Dutch%20artist%20Fons%20Heijnsbroek.png",
     "width": 3688,
-    "height": 2835,
-    "localFile": "../data/images/cc-beauty_truth_7_gouache_painting_on_paper_abstract_expressionism_art_made_in_2007_by_dutch_artist_fons_heijnsbr.jpg"
+    "height": 2835
   },
   {
     "sourceId": "cc-signs_2_abstract_gouache_painting_on_paper_with_brush_strokes_and_paint_texture_created_by_dutch_artist_fons_h",
@@ -3573,8 +1578,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Signs%202.'%20-%20abstract%20gouache%20painting%20on%20paper%20with%20brush%20strokes%20and%20paint%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202004.png",
     "width": 4579,
-    "height": 3697,
-    "localFile": "../data/images/cc-signs_2_abstract_gouache_painting_on_paper_with_brush_strokes_and_paint_texture_created_by_dutch_artist_fons_h.jpg"
+    "height": 3697
   },
   {
     "sourceId": "cc-manhattan_skyline_from_ellis_island_24298999516",
@@ -3591,8 +1595,7 @@
     "creator": "www.Pixel.la Free Stock Photos",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Manhattan%20skyline%20from%20Ellis%20Island%20(24298999516).jpg",
     "width": 5196,
-    "height": 3464,
-    "localFile": "../data/images/cc-manhattan_skyline_from_ellis_island_24298999516.jpg"
+    "height": 3464
   },
   {
     "sourceId": "cc-sign_6_abstract_gouache_painting_on_paper_with_brush_strokes_and_paint_texture_created_by_dutch_artist_fons_he",
@@ -3609,8 +1612,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Sign%206.'%20-%20abstract%20gouache%20painting%20on%20paper%20with%20brush%20strokes%20and%20paint%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202004.png",
     "width": 5669,
-    "height": 4252,
-    "localFile": "../data/images/cc-sign_6_abstract_gouache_painting_on_paper_with_brush_strokes_and_paint_texture_created_by_dutch_artist_fons_he.jpg"
+    "height": 4252
   },
   {
     "sourceId": "cc-przełęcz_między_kopami_2",
@@ -3627,8 +1629,7 @@
     "creator": "Grzegorz Pietrzak, VindicatoR",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Prze%C5%82%C4%99cz%20mi%C4%99dzy%20kopami%202.jpg",
     "width": 4403,
-    "height": 1346,
-    "localFile": "../data/images/cc-przełęcz_między_kopami_2.jpg"
+    "height": 1346
   },
   {
     "sourceId": "cc-christen_købke_udsigt_fra_dosseringen_ved_sortedamssøen_mod_nørrebro_1838_kms359_statens_museum_for_kunst",
@@ -3645,8 +1646,7 @@
     "creator": "Christen Købke",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Christen%20K%C3%B8bke%2C%20Udsigt%20fra%20Dosseringen%20ved%20Sortedamss%C3%B8en%20mod%20N%C3%B8rrebro%2C%201838%2C%20KMS359%2C%20Statens%20Museum%20for%20Kunst.jpg",
     "width": 3974,
-    "height": 2875,
-    "localFile": "../data/images/cc-christen_købke_udsigt_fra_dosseringen_ved_sortedamssøen_mod_nørrebro_1838_kms359_statens_museum_for_kunst.jpg"
+    "height": 2875
   },
   {
     "sourceId": "cc-manhattan_skyline_from_weehawken_078",
@@ -3663,8 +1663,7 @@
     "creator": "Kidfly182",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Manhattan%20Skyline%20from%20Weehawken%20078.jpg",
     "width": 4608,
-    "height": 2072,
-    "localFile": "../data/images/cc-manhattan_skyline_from_weehawken_078.jpg"
+    "height": 2072
   },
   {
     "sourceId": "cc-small_abstract_03_gouache_and_ink_sketch_on_paper_with_brush_strokes_and_ink_texture_created_by_dutch_artist_f",
@@ -3681,8 +1680,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Small%20abstract%2003'%20-%20gouache%20and%20ink%20sketch%20on%20paper%20with%20brush%20strokes%20and%20ink%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202004.png",
     "width": 4492,
-    "height": 3513,
-    "localFile": "../data/images/cc-small_abstract_03_gouache_and_ink_sketch_on_paper_with_brush_strokes_and_ink_texture_created_by_dutch_artist_f.jpg"
+    "height": 3513
   },
   {
     "sourceId": "cc-new_york_city_skyline_of_lower_manhattan_in_the_1980s",
@@ -3699,8 +1697,7 @@
     "creator": "Alf van Beem",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:New%20York%20City%20skyline%20of%20Lower%20Manhattan%20in%20the%201980s.jpg",
     "width": 4677,
-    "height": 3186,
-    "localFile": "../data/images/cc-new_york_city_skyline_of_lower_manhattan_in_the_1980s.jpg"
+    "height": 3186
   },
   {
     "sourceId": "cc-ahmadreza_sajadi_2015_unsplash",
@@ -3717,8 +1714,7 @@
     "creator": "ahmadreza sajadi ahmadreza_sajadi",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Ahmadreza%20sajadi%202015%20(Unsplash).jpg",
     "width": 5184,
-    "height": 2672,
-    "localFile": "../data/images/cc-ahmadreza_sajadi_2015_unsplash.jpg"
+    "height": 2672
   },
   {
     "sourceId": "cc-small_abstract_01_gouache_and_ink_sketch_on_paper_with_brush_strokes_and_ink_texture_created_by_dutch_artist_f",
@@ -3735,8 +1731,7 @@
     "creator": "Fons Heijnsbroek",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:'Small%20abstract%2001'%20-%20gouache%20and%20ink%20sketch%20on%20paper%20with%20brush%20strokes%20and%20ink%20texture%2C%20created%20by%20Dutch%20artist%20Fons%20Heijnsbroek%20in%202004.png",
     "width": 4223,
-    "height": 3482,
-    "localFile": "../data/images/cc-small_abstract_01_gouache_and_ink_sketch_on_paper_with_brush_strokes_and_ink_texture_created_by_dutch_artist_f.jpg"
+    "height": 3482
   },
   {
     "sourceId": "cc-3200x2400_texture_pd2001",
@@ -3752,8 +1747,7 @@
     "creator": "Mitchfeatherston",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:3200x2400-texture-pd2001.jpg",
     "width": 3200,
-    "height": 2400,
-    "localFile": "../data/images/cc-3200x2400_texture_pd2001.jpg"
+    "height": 2400
   },
   {
     "sourceId": "cc-2016_togetherly_1_abstract_watercolor_painting_art_on_paper_dutch_abstract_expressionism_art_free_image_downlo",
@@ -3769,8 +1763,7 @@
     "creator": "Fons Heijnsbroek from Amsterdam, The Netherlands",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:2016%20-%20'Togetherly%201.'%20-%20abstract%20watercolor%20painting%20art%20on%20paper%3B%20Dutch%20Abstract%20Expressionism%20art%20-%20free%20image%20download%2C%20in%20public%20domain%20Commons%2C%20CC-BY%20%E2%80%93%20painter-artist%2C%20Fons%20Heijnsbroek%20(28345642240).png",
     "width": 4000,
-    "height": 3058,
-    "localFile": "../data/images/cc-2016_togetherly_1_abstract_watercolor_painting_art_on_paper_dutch_abstract_expressionism_art_free_image_downlo.jpg"
+    "height": 3058
   },
   {
     "sourceId": "cc-2003_avatar_1_art_on_paper_no_6_450_acrylic_painting_art_on_paper_dutch_abstract_expressionism_art_hollands_ab",
@@ -3786,8 +1779,7 @@
     "creator": "Fons Heijnsbroek from Amsterdam, The Netherlands",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:2003%20-%20'Avatar%201.'%20(art%20on%20paper%20no.%206.450)%2C%20acrylic%20painting%20art%20on%20paper%3B%20Dutch%20Abstract%20Expressionism%20art%20Hollands%20abstract-expressionisme%3B%20free%20image%20in%20public%20domain%20Commons%2C%20CCO%20%E2%80%93%20painter-artist%2C%20Fons%20Heijnsbroek%20(28375871211).png",
     "width": 3900,
-    "height": 2847,
-    "localFile": "../data/images/cc-2003_avatar_1_art_on_paper_no_6_450_acrylic_painting_art_on_paper_dutch_abstract_expressionism_art_hollands_ab.jpg"
+    "height": 2847
   },
   {
     "sourceId": "cc-aurora_as_seen_from_erlangen_germany_49_n",
@@ -3803,8 +1795,7 @@
     "creator": "Vtx22",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aurora%20as%20seen%20from%20Erlangen%2C%20Germany%20(49%C2%B0N).jpg",
     "width": 4096,
-    "height": 3072,
-    "localFile": "../data/images/cc-aurora_as_seen_from_erlangen_germany_49_n.jpg"
+    "height": 3072
   },
   {
     "sourceId": "cc-goleudau_gogledd_northern_lights_ffair_rhos",
@@ -3820,8 +1811,7 @@
     "creator": "WillowHelyg",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Goleudau%20Gogledd%20Northern%20Lights%20Ffair%20Rhos.jpg",
     "width": 4624,
-    "height": 3468,
-    "localFile": "../data/images/cc-goleudau_gogledd_northern_lights_ffair_rhos.jpg"
+    "height": 3468
   },
   {
     "sourceId": "cc-aurora_borealis_of_october_10th_2024_from_groane_park_lombardy_northern_italy",
@@ -3837,8 +1827,7 @@
     "creator": "Well203",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aurora%20Borealis%20of%20October%2010th%202024%20from%20Groane%20Park%2C%20Lombardy%2C%20Northern%20Italy.png",
     "width": 5184,
-    "height": 3888,
-    "localFile": "../data/images/cc-aurora_borealis_of_october_10th_2024_from_groane_park_lombardy_northern_italy.jpg"
+    "height": 3888
   },
   {
     "sourceId": "cc-a_few_more_northern_lights_for_the_road_3066069989",
@@ -3854,8 +1843,7 @@
     "creator": "cogdogblog",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20few%20More%20Northern%20Lights%20for%20the%20Road%20(3066069989).jpg",
     "width": 2000,
-    "height": 1333,
-    "localFile": "../data/images/cc-a_few_more_northern_lights_for_the_road_3066069989.jpg"
+    "height": 1333
   },
   {
     "sourceId": "cc-a_few_more_northern_lights_for_the_road_3066911088",
@@ -3871,8 +1859,7 @@
     "creator": "cogdogblog",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20few%20More%20Northern%20Lights%20for%20the%20Road%20(3066911088).jpg",
     "width": 2000,
-    "height": 1322,
-    "localFile": "../data/images/cc-a_few_more_northern_lights_for_the_road_3066911088.jpg"
+    "height": 1322
   },
   {
     "sourceId": "cc-green_northern_lights_tromsø_unsplash",
@@ -3888,8 +1875,7 @@
     "creator": "Adithya Ananth hashinclude",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Green%20Northern%20Lights%20Troms%C3%B8%20(Unsplash).jpg",
     "width": 6000,
-    "height": 4000,
-    "localFile": "../data/images/cc-green_northern_lights_tromsø_unsplash.jpg"
+    "height": 4000
   },
   {
     "sourceId": "cc-iceland_lake_northern_lights_unsplash",
@@ -3905,8 +1891,7 @@
     "creator": "Vincent Guth vingtcent",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Iceland%20lake%20Northern%20Lights%20(Unsplash).jpg",
     "width": 6000,
-    "height": 4004,
-    "localFile": "../data/images/cc-iceland_lake_northern_lights_unsplash.jpg"
+    "height": 4004
   },
   {
     "sourceId": "cc-northern_lights_above_iceland_unsplash",
@@ -3922,8 +1907,7 @@
     "creator": "Vincent Guth vingtcent",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20Lights%20above%20Iceland%20(Unsplash).jpg",
     "width": 6000,
-    "height": 4004,
-    "localFile": "../data/images/cc-northern_lights_above_iceland_unsplash.jpg"
+    "height": 4004
   },
   {
     "sourceId": "cc-antarctic_aurora_hobart_20201113_048",
@@ -3939,8 +1923,7 @@
     "creator": "Gary Houston",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Antarctic%20Aurora%20Hobart%2020201113-048.jpg",
     "width": 4008,
-    "height": 2222,
-    "localFile": "../data/images/cc-antarctic_aurora_hobart_20201113_048.jpg"
+    "height": 2222
   },
   {
     "sourceId": "cc-exceptional_northern_lights_sar_53713705225",
@@ -3956,8 +1939,7 @@
     "creator": "Giuseppe Donatiello from Oria (Brindisi), Italy",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Exceptional%20Northern%20Lights%20(SAR)%20(53713705225).jpg",
     "width": 9233,
-    "height": 4696,
-    "localFile": "../data/images/cc-exceptional_northern_lights_sar_53713705225.jpg"
+    "height": 4696
   },
   {
     "sourceId": "cc-northern_lights_img_1571_53711499542",
@@ -3973,8 +1955,7 @@
     "creator": "Michael S.",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20lights%20IMG%201571%20(53711499542).jpg",
     "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-northern_lights_img_1571_53711499542.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-northern_lights_img_1572_53712607213",
@@ -3990,8 +1971,7 @@
     "creator": "Michael S.",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20lights%20IMG%201572%20(53712607213).jpg",
     "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-northern_lights_img_1572_53712607213.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-pixnio_1094468_aurora_borealis",
@@ -4007,8 +1987,7 @@
     "creator": "Yuliya",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:PIXNIO-1094468-aurora%20borealis.jpg",
     "width": 4572,
-    "height": 3028,
-    "localFile": "../data/images/cc-pixnio_1094468_aurora_borealis.jpg"
+    "height": 3028
   },
   {
     "sourceId": "cc-northern_lights_over_germany_55052284270",
@@ -4024,8 +2003,7 @@
     "creator": "Sebastian Goralik",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20Lights%20over%20Germany%20(55052284270).jpg",
     "width": 6064,
-    "height": 4040,
-    "localFile": "../data/images/cc-northern_lights_over_germany_55052284270.jpg"
+    "height": 4040
   },
   {
     "sourceId": "cc-northern_lights_on_5_10_24_53712893367",
@@ -4041,8 +2019,7 @@
     "creator": "Stephen Rahn from Acworth, GA, USA",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Northern%20Lights%20on%205-10-24%20(53712893367).jpg",
     "width": 6720,
-    "height": 3320,
-    "localFile": "../data/images/cc-northern_lights_on_5_10_24_53712893367.jpg"
+    "height": 3320
   },
   {
     "sourceId": "cc-amandiers_sierra_nevada",
@@ -4058,8 +2035,7 @@
     "creator": "Jebulon",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Amandiers%20Sierra%20Nevada.jpg",
     "width": 3022,
-    "height": 2011,
-    "localFile": "../data/images/cc-amandiers_sierra_nevada.jpg"
+    "height": 2011
   },
   {
     "sourceId": "cc-rock_bunting_cochem",
@@ -4075,8 +2051,7 @@
     "creator": "Hobbyfotowiki",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Rock%20Bunting%20(Cochem).jpg",
     "width": 2899,
-    "height": 1894,
-    "localFile": "../data/images/cc-rock_bunting_cochem.jpg"
+    "height": 1894
   },
   {
     "sourceId": "cc-grauammer_mai_2026",
@@ -4092,8 +2067,7 @@
     "creator": "Romzig",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Grauammer%20(Mai%202026).jpg",
     "width": 3262,
-    "height": 2174,
-    "localFile": "../data/images/cc-grauammer_mai_2026.jpg"
+    "height": 2174
   },
   {
     "sourceId": "cc-listspinne_mai_2026_2",
@@ -4110,8 +2084,7 @@
     "creator": "Romzig",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Listspinne%20(Mai%202026)%202.jpg",
     "width": 4641,
-    "height": 3094,
-    "localFile": "../data/images/cc-listspinne_mai_2026_2.jpg"
+    "height": 3094
   },
   {
     "sourceId": "cc-house_sparrow_passer_domesticus_amrum",
@@ -4127,8 +2100,7 @@
     "creator": "Hobbyfotowiki",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:House%20sparrow%20(Passer%20domesticus)%2C%20Amrum.jpg",
     "width": 4553,
-    "height": 3027,
-    "localFile": "../data/images/cc-house_sparrow_passer_domesticus_amrum.jpg"
+    "height": 3027
   },
   {
     "sourceId": "cc-dent_de_burgin_and_le_chatelet_méribel_mottaret_from_across_the_valley",
@@ -4144,8 +2116,7 @@
     "creator": "DimiTalen",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Dent%20de%20Burgin%20and%20Le%20Chatelet%2C%20M%C3%A9ribel-Mottaret%2C%20from%20across%20the%20valley.jpg",
     "width": 5963,
-    "height": 3965,
-    "localFile": "../data/images/cc-dent_de_burgin_and_le_chatelet_méribel_mottaret_from_across_the_valley.jpg"
+    "height": 3965
   },
   {
     "sourceId": "cc-cosmic_cliffs_in_the_carina_nebula_nircam_and_miri_composite_compass_image_2022_031",
@@ -4162,8 +2133,7 @@
     "creator": "IMAGE: NASA, ESA, CSA, STScI",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:%22Cosmic%20Cliffs%22%20in%20the%20Carina%20Nebula%20(NIRCam%20and%20MIRI%20Composite%20Compass%20Image)%20(2022-031).png",
     "width": 11264,
-    "height": 6350,
-    "localFile": "../data/images/cc-cosmic_cliffs_in_the_carina_nebula_nircam_and_miri_composite_compass_image_2022_031.jpg"
+    "height": 6350
   },
   {
     "sourceId": "cc-bigtooth_cardinalfish_apogon_affinis",
@@ -4179,8 +2149,7 @@
     "creator": "SEFSC Pascagoula Laboratory; Collection of Brandi Noble, NOA",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bigtooth%20cardinalfish%20(%20Apogon%20affinis%20).jpg",
     "width": 2896,
-    "height": 1944,
-    "localFile": "../data/images/cc-bigtooth_cardinalfish_apogon_affinis.jpg"
+    "height": 1944
   },
   {
     "sourceId": "cc-cbnms_octopus_48779161936",
@@ -4196,8 +2165,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:CBNMS%20Octopus%20(48779161936).jpg",
     "width": 2592,
-    "height": 1944,
-    "localFile": "../data/images/cc-cbnms_octopus_48779161936.jpg"
+    "height": 1944
   },
   {
     "sourceId": "cc-cinms_bat_star_27230141724",
@@ -4213,8 +2181,7 @@
     "creator": "National Marine Sanctuaries",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:CINMS%20-%20bat%20star%20(27230141724).jpg",
     "width": 2048,
-    "height": 1536,
-    "localFile": "../data/images/cc-cinms_bat_star_27230141724.jpg"
+    "height": 1536
   },
   {
     "sourceId": "cc-deepsea_herring_bathyclupea_argentea",
@@ -4230,8 +2197,7 @@
     "creator": "SEFSC Pascagoula Laboratory; Collection of Brandi Noble, NOA",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Deepsea%20herring%20(%20Bathyclupea%20argentea%20).jpg",
     "width": 2560,
-    "height": 1920,
-    "localFile": "../data/images/cc-deepsea_herring_bathyclupea_argentea.jpg"
+    "height": 1920
   },
   {
     "sourceId": "cc-jersey_city_night_skyline_looking_northwest",
@@ -4247,8 +2213,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20night%20skyline%20looking%20northwest.jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-jersey_city_night_skyline_looking_northwest.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-jersey_city_night_skyline_looking_northwest_2",
@@ -4264,8 +2229,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20night%20skyline%20looking%20northwest%202.jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-jersey_city_night_skyline_looking_northwest_2.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-jersey_city_skyline_exchange_place_waterfront_at_sunset_cropped",
@@ -4281,8 +2245,7 @@
     "creator": "Alfred Twu, CC0, via Wikimedia Commons",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20skyline%2C%20Exchange%20Place%20waterfront%20at%20sunset%20(cropped).jpg",
     "width": 2788,
-    "height": 872,
-    "localFile": "../data/images/cc-jersey_city_skyline_exchange_place_waterfront_at_sunset_cropped.jpg"
+    "height": 872
   },
   {
     "sourceId": "cc-bonifacio_global_city_skyline",
@@ -4298,8 +2261,7 @@
     "creator": "PhiliptheNumber1",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bonifacio%20Global%20City%20skyline.jpg",
     "width": 4608,
-    "height": 3072,
-    "localFile": "../data/images/cc-bonifacio_global_city_skyline.jpg"
+    "height": 3072
   },
   {
     "sourceId": "cc-jersey_city_skyline_2023_cropped",
@@ -4315,8 +2277,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20Skyline%2C%202023%20cropped.jpg",
     "width": 3404,
-    "height": 708,
-    "localFile": "../data/images/cc-jersey_city_skyline_2023_cropped.jpg"
+    "height": 708
   },
   {
     "sourceId": "cc-jersey_city_skyline_from_the_staten_island_ferry",
@@ -4332,8 +2293,7 @@
     "creator": "Cornflower123",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20Skyline%20from%20the%20Staten%20Island%20Ferry.jpg",
     "width": 2048,
-    "height": 1536,
-    "localFile": "../data/images/cc-jersey_city_skyline_from_the_staten_island_ferry.jpg"
+    "height": 1536
   },
   {
     "sourceId": "cc-fuyang_city_skyline_20240930",
@@ -4349,8 +2309,7 @@
     "creator": "Fumikas Sagisavas",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Fuyang%20City%20Skyline%20(20240930).jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-fuyang_city_skyline_20240930.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-nighttime_metro_manila_skyline_seen_from_atop_of_metrobank_center_in_taguig_city",
@@ -4366,8 +2325,7 @@
     "creator": "YZJay",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Nighttime%20Metro%20Manila%20skyline%20seen%20from%20atop%20of%20Metrobank%20Center%20in%20Taguig%20City.jpg",
     "width": 4032,
-    "height": 3024,
-    "localFile": "../data/images/cc-nighttime_metro_manila_skyline_seen_from_atop_of_metrobank_center_in_taguig_city.jpg"
+    "height": 3024
   },
   {
     "sourceId": "cc-quezon_city_skyline_at_night_quezon_avenue_west_avenue_west_triangle_03",
@@ -4383,8 +2341,7 @@
     "creator": "RFNirmala",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Quezon%20City%20skyline%20at%20night%20(Quezon%20Avenue%2C%20West%20Avenue%2C%20West%20Triangle)%2003.jpg",
     "width": 4032,
-    "height": 2268,
-    "localFile": "../data/images/cc-quezon_city_skyline_at_night_quezon_avenue_west_avenue_west_triangle_03.jpg"
+    "height": 2268
   },
   {
     "sourceId": "cc-quezon_city_skyline_at_night_quezon_avenue_west_avenue_west_triangle_01",
@@ -4400,8 +2357,7 @@
     "creator": "RFNirmala",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Quezon%20City%20skyline%20at%20night%20(Quezon%20Avenue%2C%20West%20Avenue%2C%20West%20Triangle)%2001.jpg",
     "width": 4032,
-    "height": 2267,
-    "localFile": "../data/images/cc-quezon_city_skyline_at_night_quezon_avenue_west_avenue_west_triangle_01.jpg"
+    "height": 2267
   },
   {
     "sourceId": "cc-quezon_city_skyline_at_night_10sep2025",
@@ -4417,8 +2373,7 @@
     "creator": "RFNirmala",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Quezon%20City%20skyline%20at%20night%2010Sep2025.jpg",
     "width": 4032,
-    "height": 3024,
-    "localFile": "../data/images/cc-quezon_city_skyline_at_night_10sep2025.jpg"
+    "height": 3024
   },
   {
     "sourceId": "cc-portsmouthskyline",
@@ -4434,8 +2389,7 @@
     "creator": "Roquex",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:PortsmouthSkyline.jpg",
     "width": 4000,
-    "height": 530,
-    "localFile": "../data/images/cc-portsmouthskyline.jpg"
+    "height": 530
   },
   {
     "sourceId": "cc-city_of_london_skyline_from_dawson_heights_dulwich_1",
@@ -4451,8 +2405,7 @@
     "creator": "FHL2",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:City%20of%20London%20skyline%20from%20Dawson%20Heights%2C%20Dulwich%20(1).jpg",
     "width": 4000,
-    "height": 3000,
-    "localFile": "../data/images/cc-city_of_london_skyline_from_dawson_heights_dulwich_1.jpg"
+    "height": 3000
   },
   {
     "sourceId": "cc-city_of_london_skyline_from_dawson_heights_dulwich_2",
@@ -4468,8 +2421,7 @@
     "creator": "FHL2",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:City%20of%20London%20skyline%20from%20Dawson%20Heights%2C%20Dulwich%20(2).jpg",
     "width": 4000,
-    "height": 3000,
-    "localFile": "../data/images/cc-city_of_london_skyline_from_dawson_heights_dulwich_2.jpg"
+    "height": 3000
   },
   {
     "sourceId": "cc-world_financial_center_skyline_1",
@@ -4485,8 +2437,7 @@
     "creator": "Storylanding",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:World%20Financial%20Center%20skyline%201.jpg",
     "width": 2700,
-    "height": 1800,
-    "localFile": "../data/images/cc-world_financial_center_skyline_1.jpg"
+    "height": 1800
   },
   {
     "sourceId": "cc-ny_skyline_qc",
@@ -4502,8 +2453,7 @@
     "creator": "Kefalos11",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Ny-skyline-qc.JPG",
     "width": 3648,
-    "height": 2736,
-    "localFile": "../data/images/cc-ny_skyline_qc.jpg"
+    "height": 2736
   },
   {
     "sourceId": "cc-new_york_city_skyline_view_from_sandy_hook_beach_nj",
@@ -4519,8 +2469,7 @@
     "creator": "Tomwsulcer",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:New%20York%20City%20skyline%20view%20from%20Sandy%20Hook%20beach%20NJ.jpg",
     "width": 2334,
-    "height": 846,
-    "localFile": "../data/images/cc-new_york_city_skyline_view_from_sandy_hook_beach_nj.jpg"
+    "height": 846
   },
   {
     "sourceId": "cc-2014_12_25_batangas_city_skyline_015",
@@ -4536,8 +2485,7 @@
     "creator": "TagaSanPedroAko",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:2014-12-25%20Batangas%20City%20skyline%20015.jpg",
     "width": 8309,
-    "height": 1991,
-    "localFile": "../data/images/cc-2014_12_25_batangas_city_skyline_015.jpg"
+    "height": 1991
   },
   {
     "sourceId": "cc-milan_skyline_skyscrapers_of_porta_nuova_business_district",
@@ -4553,8 +2501,7 @@
     "creator": "Francesco Ungaro",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Milan%20skyline%20skyscrapers%20of%20Porta%20Nuova%20business%20district.jpg",
     "width": 4896,
-    "height": 3264,
-    "localFile": "../data/images/cc-milan_skyline_skyscrapers_of_porta_nuova_business_district.jpg"
+    "height": 3264
   },
   {
     "sourceId": "cc-city_skyline_from_above_unsplash",
@@ -4570,8 +2517,7 @@
     "creator": "Devin McGloin devinmcgloin",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:City%20Skyline%20from%20Above%20(Unsplash).jpg",
     "width": 5160,
-    "height": 3440,
-    "localFile": "../data/images/cc-city_skyline_from_above_unsplash.jpg"
+    "height": 3440
   },
   {
     "sourceId": "cc-city_skyline_with_auckland_nz_8114179424",
@@ -4587,8 +2533,7 @@
     "creator": "Bernard Spragg. NZ from Christchurch, New Zealand",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:City%20skyline%20with%20Auckland%20NZ%20(8114179424).jpg",
     "width": 2400,
-    "height": 1463,
-    "localFile": "../data/images/cc-city_skyline_with_auckland_nz_8114179424.jpg"
+    "height": 1463
   },
   {
     "sourceId": "cc-city_skyline_with_skytower_8114177896",
@@ -4604,8 +2549,7 @@
     "creator": "Bernard Spragg. NZ from Christchurch, New Zealand",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:City%20skyline%20with%20Skytower%20(8114177896).jpg",
     "width": 2400,
-    "height": 1458,
-    "localFile": "../data/images/cc-city_skyline_with_skytower_8114177896.jpg"
+    "height": 1458
   },
   {
     "sourceId": "cc-detroit_skyline_123143197",
@@ -4621,8 +2565,7 @@
     "creator": "Michael Tighe",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Detroit%20Skyline%20(123143197).jpeg",
     "width": 2048,
-    "height": 1080,
-    "localFile": "../data/images/cc-detroit_skyline_123143197.jpg"
+    "height": 1080
   },
   {
     "sourceId": "cc-taipei_city_skyline_20140721",
@@ -4638,8 +2581,7 @@
     "creator": "HO JJ from Incheon, S. Korea",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Taipei%20city%20skyline%2020140721.jpg",
     "width": 3024,
-    "height": 2016,
-    "localFile": "../data/images/cc-taipei_city_skyline_20140721.jpg"
+    "height": 2016
   },
   {
     "sourceId": "cc-manhattan_skyline_95010593",
@@ -4655,8 +2597,7 @@
     "creator": "Sushant Sakhalkar",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Manhattan%20Skyline%20(95010593).jpeg",
     "width": 2048,
-    "height": 1366,
-    "localFile": "../data/images/cc-manhattan_skyline_95010593.jpg"
+    "height": 1366
   },
   {
     "sourceId": "cc-skyline_of_saint_john_new_brunswick_in_2015",
@@ -4672,8 +2613,7 @@
     "creator": "GURENMARKV",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Skyline%20of%20Saint%20John%2C%20New%20Brunswick%20in%202015.jpg",
     "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-skyline_of_saint_john_new_brunswick_in_2015.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-skyline_of_saint_john_new_brunswick_in_2015_cropped",
@@ -4689,8 +2629,7 @@
     "creator": "GURENMARKV",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Skyline%20of%20Saint%20John%2C%20New%20Brunswick%20in%202015%20(cropped).jpg",
     "width": 5184,
-    "height": 2480,
-    "localFile": "../data/images/cc-skyline_of_saint_john_new_brunswick_in_2015_cropped.jpg"
+    "height": 2480
   },
   {
     "sourceId": "cc-jersey_city_skyline_exchange_place_waterfront_at_sunset_zoomed_out_view",
@@ -4706,8 +2645,7 @@
     "creator": "Alfred Twu",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Jersey%20City%20skyline%2C%20Exchange%20Place%20waterfront%20at%20sunset%20-%20zoomed%20out%20view.jpg",
     "width": 4608,
-    "height": 3456,
-    "localFile": "../data/images/cc-jersey_city_skyline_exchange_place_waterfront_at_sunset_zoomed_out_view.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-downtown_brooklyn_skyline_2023",
@@ -4723,8 +2661,7 @@
     "creator": "FluffballsM&Ms",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Downtown%20Brooklyn%20Skyline%202023.jpg",
     "width": 4160,
-    "height": 2340,
-    "localFile": "../data/images/cc-downtown_brooklyn_skyline_2023.jpg"
+    "height": 2340
   },
   {
     "sourceId": "cc-lincoln_city_skyline_in_2024",
@@ -4740,8 +2677,7 @@
     "creator": "DragonofBatley",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Lincoln%20City%20Skyline%20in%202024.jpg",
     "width": 4000,
-    "height": 2250,
-    "localFile": "../data/images/cc-lincoln_city_skyline_in_2024.jpg"
+    "height": 2250
   },
   {
     "sourceId": "cc-lansing_michigan_skyline_2024",
@@ -4757,8 +2693,7 @@
     "creator": "WMrapids",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Lansing%2C%20Michigan%20skyline%202024.jpg",
     "width": 3389,
-    "height": 1906,
-    "localFile": "../data/images/cc-lansing_michigan_skyline_2024.jpg"
+    "height": 1906
   },
   {
     "sourceId": "cc-manila_bayfront_skyline_from_star_city_wheeljwilz",
@@ -4774,8 +2709,7 @@
     "creator": "JWilz12345",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Manila%20bayfront%20skyline%20from%20Star%20City%20Wheeljwilz.jpg",
     "width": 4128,
-    "height": 3096,
-    "localFile": "../data/images/cc-manila_bayfront_skyline_from_star_city_wheeljwilz.jpg"
+    "height": 3096
   },
   {
     "sourceId": "cc-sao_paulo_brazil_skyline_aerial_december_2024",
@@ -4791,8 +2725,7 @@
     "creator": "Spicypepper999",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Sao%20Paulo%20Brazil%20Skyline%20Aerial%2C%20December%202024.jpg",
     "width": 3840,
-    "height": 1080,
-    "localFile": "../data/images/cc-sao_paulo_brazil_skyline_aerial_december_2024.jpg"
+    "height": 1080
   },
   {
     "sourceId": "cc-hartford_skyline_october_2025",
@@ -4808,8 +2741,7 @@
     "creator": "Wobbanight",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Hartford%20Skyline%20October%202025.jpg",
     "width": 3915,
-    "height": 2072,
-    "localFile": "../data/images/cc-hartford_skyline_october_2025.jpg"
+    "height": 2072
   },
   {
     "sourceId": "cc-financial_district_east_skyline_2025",
@@ -4825,8 +2757,7 @@
     "creator": "Julian Lupyan",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Financial%20District%20East%20Skyline%2C%202025.jpg",
     "width": 3819,
-    "height": 2335,
-    "localFile": "../data/images/cc-financial_district_east_skyline_2025.jpg"
+    "height": 2335
   },
   {
     "sourceId": "cc-skyline_of_financial_district_manhattan_2025",
@@ -4842,8 +2773,7 @@
     "creator": "Julian Lupyan",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Skyline%20of%20Financial%20District%2C%20Manhattan%2C%202025.jpg",
     "width": 3959,
-    "height": 2325,
-    "localFile": "../data/images/cc-skyline_of_financial_district_manhattan_2025.jpg"
+    "height": 2325
   },
   {
     "sourceId": "cc-philly_skyline_from_pma",
@@ -4859,8 +2789,7 @@
     "creator": "Smallbones",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Philly%20skyline%20from%20PMA.JPG",
     "width": 4320,
-    "height": 3240,
-    "localFile": "../data/images/cc-philly_skyline_from_pma.jpg"
+    "height": 3240
   },
   {
     "sourceId": "cc-nyc_skyline_empire",
@@ -4876,8 +2805,7 @@
     "creator": "Matthew Wiebe",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:NYC%20skyline%20empire.jpg",
     "width": 5395,
-    "height": 3597,
-    "localFile": "../data/images/cc-nyc_skyline_empire.jpg"
+    "height": 3597
   },
   {
     "sourceId": "cc-seattle_skyline",
@@ -4893,8 +2821,7 @@
     "creator": "http://pixabay.com/en/users/katdavis733-298996/",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Seattle%20Skyline-.jpg",
     "width": 3968,
-    "height": 2976,
-    "localFile": "../data/images/cc-seattle_skyline.jpg"
+    "height": 2976
   },
   {
     "sourceId": "cc-cloudy_london_skyline_unsplash",
@@ -4910,8 +2837,7 @@
     "creator": "Rob Bye robertbye",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Cloudy%20London%20skyline%20(Unsplash).jpg",
     "width": 4032,
-    "height": 3024,
-    "localFile": "../data/images/cc-cloudy_london_skyline_unsplash.jpg"
+    "height": 3024
   },
   {
     "sourceId": "cc-manhattan_skyline_from_brooklyn_heights_promenade_sept_2017",
@@ -4927,8 +2853,7 @@
     "creator": "Thomson200",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Manhattan%20skyline%20from%20Brooklyn%20Heights%20Promenade%2C%20Sept%202017.jpg",
     "width": 3456,
-    "height": 2304,
-    "localFile": "../data/images/cc-manhattan_skyline_from_brooklyn_heights_promenade_sept_2017.jpg"
+    "height": 2304
   },
   {
     "sourceId": "cc-brooklyn_skyline_fort_greene_park_oct_2017",
@@ -4944,8 +2869,7 @@
     "creator": "Thomson200",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn%20Skyline%2C%20Fort%20Greene%20Park%2C%20Oct%202017.jpg",
     "width": 3456,
-    "height": 2304,
-    "localFile": "../data/images/cc-brooklyn_skyline_fort_greene_park_oct_2017.jpg"
+    "height": 2304
   },
   {
     "sourceId": "cc-auckland_skyline_nz_19483632556",
@@ -4961,8 +2885,7 @@
     "creator": "Bernard Spragg. NZ from Christchurch, New Zealand",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Auckland%20Skyline.%20NZ%20(19483632556).jpg",
     "width": 3000,
-    "height": 1850,
-    "localFile": "../data/images/cc-auckland_skyline_nz_19483632556.jpg"
+    "height": 1850
   },
   {
     "sourceId": "cc-pittsburgh_skyline_261585317",
@@ -4978,8 +2901,7 @@
     "creator": "Kailash U",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Pittsburgh%20Skyline%20(261585317).jpeg",
     "width": 2048,
-    "height": 1243,
-    "localFile": "../data/images/cc-pittsburgh_skyline_261585317.jpg"
+    "height": 1243
   },
   {
     "sourceId": "cc-chicago_skyline_215488049",
@@ -4995,8 +2917,7 @@
     "creator": "Christian Stankevitz",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Chicago%20skyline%20(215488049).jpg",
     "width": 2048,
-    "height": 1367,
-    "localFile": "../data/images/cc-chicago_skyline_215488049.jpg"
+    "height": 1367
   },
   {
     "sourceId": "cc-bellevue_skyline_cougar_mountain",
@@ -5012,8 +2933,7 @@
     "creator": "CommunistSquared",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Bellevue%20Skyline%20Cougar%20Mountain.jpg",
     "width": 2304,
-    "height": 1440,
-    "localFile": "../data/images/cc-bellevue_skyline_cougar_mountain.jpg"
+    "height": 1440
   },
   {
     "sourceId": "cc-santa_fe_skyline_2017_cdmx",
@@ -5029,8 +2949,7 @@
     "creator": "Gobierno CDMX * https://www.flickr.com/photos/140660272@N07/",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Santa%20Fe%20Skyline%202017%20CDMX.jpg",
     "width": 6561,
-    "height": 2489,
-    "localFile": "../data/images/cc-santa_fe_skyline_2017_cdmx.jpg"
+    "height": 2489
   },
   {
     "sourceId": "cc-kuala_lumpur_skyline_in_the_1980s",
@@ -5046,8 +2965,7 @@
     "creator": "Department of State. Office of the Undersecretary for Manage",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Kuala%20Lumpur%20skyline%20in%20the%201980s.jpg",
     "width": 2400,
-    "height": 1663,
-    "localFile": "../data/images/cc-kuala_lumpur_skyline_in_the_1980s.jpg"
+    "height": 1663
   },
   {
     "sourceId": "cc-grand_rapids_michigan_skyline_april_2022",
@@ -5063,8 +2981,7 @@
     "creator": "WMrapids",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Grand%20Rapids%2C%20Michigan%20skyline%20April%202022.jpg",
     "width": 3802,
-    "height": 1475,
-    "localFile": "../data/images/cc-grand_rapids_michigan_skyline_april_2022.jpg"
+    "height": 1475
   },
   {
     "sourceId": "cc-grand_rapids_michigan_skyline_may_2022",
@@ -5080,8 +2997,7 @@
     "creator": "WMrapids",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Grand%20Rapids%2C%20Michigan%20skyline%20May%202022.jpg",
     "width": 4000,
-    "height": 1475,
-    "localFile": "../data/images/cc-grand_rapids_michigan_skyline_may_2022.jpg"
+    "height": 1475
   },
   {
     "sourceId": "cc-nyc_skyline_from_manhasset_ny_july_30_2023",
@@ -5097,8 +3013,7 @@
     "creator": "AITFFan1",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:NYC%20Skyline%20from%20Manhasset%2C%20NY%20July%2030%2C%202023.jpg",
     "width": 4032,
-    "height": 3024,
-    "localFile": "../data/images/cc-nyc_skyline_from_manhasset_ny_july_30_2023.jpg"
+    "height": 3024
   },
   {
     "sourceId": "cc-lower_manhattan_skyline_from_little_island",
@@ -5114,8 +3029,7 @@
     "creator": "Cornflower123",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Lower%20Manhattan%20Skyline%20from%20Little%20Island.jpg",
     "width": 2048,
-    "height": 1536,
-    "localFile": "../data/images/cc-lower_manhattan_skyline_from_little_island.jpg"
+    "height": 1536
   },
   {
     "sourceId": "cc-peterborough_city_centre_skyline_from_fletton_quays",
@@ -5131,8 +3045,7 @@
     "creator": "Dxc1an",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Peterborough%20City%20Centre%20Skyline%20from%20Fletton%20Quays.png",
     "width": 2441,
-    "height": 851,
-    "localFile": "../data/images/cc-peterborough_city_centre_skyline_from_fletton_quays.jpg"
+    "height": 851
   },
   {
     "sourceId": "cc-magnificent_view_of_the_beach_with_kuwait_city_skyline_july_2025",
@@ -5148,8 +3061,7 @@
     "creator": "Zs.84",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Magnificent%20view%20of%20the%20beach%20with%20Kuwait%20city%20skyline%20-%20July%202025.jpg",
     "width": 4032,
-    "height": 2268,
-    "localFile": "../data/images/cc-magnificent_view_of_the_beach_with_kuwait_city_skyline_july_2025.jpg"
+    "height": 2268
   },
   {
     "sourceId": "cc-san_diego_skyline_image_cropped",
@@ -5165,8 +3077,7 @@
     "creator": "Eric youtse",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:San%20Diego%20Skyline%20Image%20(cropped).jpg",
     "width": 6000,
-    "height": 953,
-    "localFile": "../data/images/cc-san_diego_skyline_image_cropped.jpg"
+    "height": 953
   },
   {
     "sourceId": "cc-long_exposition_of_the_star_trails_with_circumpolar_stars",
@@ -5182,8 +3093,7 @@
     "creator": "hjrivas",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Long%20exposition%20of%20the%20star%20trails%20with%20circumpolar%20stars.jpg",
     "width": 3600,
-    "height": 2400,
-    "localFile": "../data/images/cc-long_exposition_of_the_star_trails_with_circumpolar_stars.jpg"
+    "height": 2400
   },
   {
     "sourceId": "cc-lockett_meadow_34699966271",
@@ -5200,8 +3110,7 @@
     "creator": "Coconino National Forest",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Lockett%20Meadow%20(34699966271).jpg",
     "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-lockett_meadow_34699966271.jpg"
+    "height": 4912
   },
   {
     "sourceId": "cc-lockett_meadow_33990016554",
@@ -5218,8 +3127,7 @@
     "creator": "Coconino National Forest",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Lockett%20Meadow%20(33990016554).jpg",
     "width": 7281,
-    "height": 4859,
-    "localFile": "../data/images/cc-lockett_meadow_33990016554.jpg"
+    "height": 4859
   },
   {
     "sourceId": "cc-deep_forest_before_the_sunset_223413479",
@@ -5235,8 +3143,7 @@
     "creator": "Pavel Soro London",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Deep%20Forest%20Before%20The%20Sunset%20(223413479).jpeg",
     "width": 2048,
-    "height": 1274,
-    "localFile": "../data/images/cc-deep_forest_before_the_sunset_223413479.jpg"
+    "height": 1274
   },
   {
     "sourceId": "cc-milky_way_over_cathedral_rock",
@@ -5253,8 +3160,7 @@
     "creator": "Coconino NF Photography",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Milky%20Way%20over%20Cathedral%20Rock.jpg",
     "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-milky_way_over_cathedral_rock.jpg"
+    "height": 4912
   },
   {
     "sourceId": "cc-milky_way_over_cathedral_rock_34696079895",
@@ -5271,8 +3177,7 @@
     "creator": "Coconino NF Photography",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Milky%20Way%20over%20Cathedral%20Rock%20-%2034696079895.jpg",
     "width": 11803,
-    "height": 4591,
-    "localFile": "../data/images/cc-milky_way_over_cathedral_rock_34696079895.jpg"
+    "height": 4591
   },
   {
     "sourceId": "cc-milky_way_over_cathedral_rock_34696114225",
@@ -5289,8 +3194,7 @@
     "creator": "Coconino NF Photography",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Milky%20Way%20over%20Cathedral%20Rock%20-%2034696114225.jpg",
     "width": 7360,
-    "height": 4912,
-    "localFile": "../data/images/cc-milky_way_over_cathedral_rock_34696114225.jpg"
+    "height": 4912
   },
   {
     "sourceId": "cc-1_1_2_month_old_lahontan_cutthroat_trout_34616339205",
@@ -5306,8 +3210,7 @@
     "creator": "Pacific Southwest Region USFWS from Sacramento, US",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:1%201%202%20month%20old%20Lahontan%20cutthroat%20trout%20(34616339205).jpg",
     "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-1_1_2_month_old_lahontan_cutthroat_trout_34616339205.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-adult_lahontan_cutthroat_trout_34574669586",
@@ -5323,8 +3226,7 @@
     "creator": "Pacific Southwest Region USFWS from Sacramento, US",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Adult%20Lahontan%20cutthroat%20trout%20(34574669586).jpg",
     "width": 5184,
-    "height": 3456,
-    "localFile": "../data/images/cc-adult_lahontan_cutthroat_trout_34574669586.jpg"
+    "height": 3456
   },
   {
     "sourceId": "cc-a_western_snowy_plover_near_a_mini_exclosure_on_santa_monica_state_beach_33665022523",
@@ -5340,8 +3242,7 @@
     "creator": "Pacific Southwest Region USFWS from Sacramento, US",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20western%20snowy%20plover%20near%20a%20mini-exclosure%20on%20Santa%20Monica%20State%20Beach.%20(33665022523).jpg",
     "width": 2685,
-    "height": 1918,
-    "localFile": "../data/images/cc-a_western_snowy_plover_near_a_mini_exclosure_on_santa_monica_state_beach_33665022523.jpg"
+    "height": 1918
   },
   {
     "sourceId": "cc-a_western_snowy_plover_atop_a_nest_inside_a_mini_exclosure_on_santa_monica_state_beach_33665032393",
@@ -5357,8 +3258,7 @@
     "creator": "Pacific Southwest Region USFWS from Sacramento, US",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:A%20western%20snowy%20plover%20atop%20a%20nest%20inside%20a%20mini-exclosure%20on%20Santa%20Monica%20State%20Beach.%20(33665032393).jpg",
     "width": 2959,
-    "height": 2114,
-    "localFile": "../data/images/cc-a_western_snowy_plover_atop_a_nest_inside_a_mini_exclosure_on_santa_monica_state_beach_33665032393.jpg"
+    "height": 2114
   },
   {
     "sourceId": "cc-akun_island_basalt_sea_cave",
@@ -5374,8 +3274,7 @@
     "creator": "Steve Hillebrand/U. S. Fish and Wildlife Service",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Akun%20Island%20basalt%20sea%20cave.jpg",
     "width": 3000,
-    "height": 2000,
-    "localFile": "../data/images/cc-akun_island_basalt_sea_cave.jpg"
+    "height": 2000
   },
   {
     "sourceId": "cc-aerial_of_pelican_island_national_willdife_refuge",
@@ -5391,8 +3290,7 @@
     "creator": "Gentry, George - U.S. Fish & Wildlife Service",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aerial%20of%20Pelican%20Island%20National%20Willdife%20Refuge.jpg",
     "width": 3600,
-    "height": 2387,
-    "localFile": "../data/images/cc-aerial_of_pelican_island_national_willdife_refuge.jpg"
+    "height": 2387
   },
   {
     "sourceId": "cc-aleutian_and_snow_geese_at_san_joaquin_national_wildlife_refuge_37866270785",
@@ -5408,7 +3306,6 @@
     "creator": "Pacific Southwest Region USFWS from Sacramento, US",
     "creatorUrl": "https://commons.wikimedia.org/wiki/File:Aleutian%20and%20snow%20geese%20at%20San%20Joaquin%20National%20Wildlife%20Refuge%20(37866270785).jpg",
     "width": 5416,
-    "height": 3611,
-    "localFile": "../data/images/cc-aleutian_and_snow_geese_at_san_joaquin_national_wildlife_refuge_37866270785.jpg"
+    "height": 3611
   }
 ]
