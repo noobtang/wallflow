@@ -53,6 +53,47 @@
   走 `localFile` 零网络导入,不受影响;但若在无 `data/images` 的环境用 imageUrl 导入会失败,
   需先跑 `fetch-images.mjs` 或删除该条目的 imageUrl 只留 localFile
 
+## 图片再分发合规(热链调研,2026-08-15)
+
+> 结论先行: **运行时不对上游热链** — 图片在导入时一次性镜像到 COS(私有读 + 签名直链),
+> 与 upload.wikimedia.org 无运行时依赖,天然规避热链的三大风险(上游改图/删图/限流)。
+> 本节的合规义务全部已落地(见下),无代码改动要求。
+
+### 上游政策(primary sources,2026-08-15 核实)
+
+**Wikimedia Commons(来源: [Reusing content outside Wikimedia](https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia))**
+
+- 几乎所有内容可在遵守许可条款(部分需署名/链接许可/同许可传播)的前提下自由再使用,无需联系授权方
+- 公有领域内容不强制署名,但**推荐保留来源**(溯源与争议佐证)
+- **热链被允许但不被推荐**(来源: [Reusing content outside Wikimedia/technical](https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia/technical)): 文件可能被改/删/更名;热链同样须遵守许可(署名等)
+- 禁止"hot spider"(每次用户搜索都转发到 Wikimedia);逐条复制或联系基金会申请 live feed
+
+**CC0 1.0(来源: [CC0 Deed](https://creativecommons.org/publicdomain/zero/1.0/deed.en))**
+
+- 可复制/修改/分发/商用,无需请求许可;**不强制署名**(产品保留来源仅为溯源)
+
+**CC BY 4.0(来源: [CC BY 4.0 Deed](https://creativecommons.org/licenses/by/4.0/deed.en)) + [Wikipedia: Creative Commons license](https://en.wikipedia.org/wiki/Creative_Commons_license)**
+
+- 可复制/修改/商用,但**必须署名**(作者 + 许可链接)+ **声明是否修改**(4.0 起)
+- BY 是唯一必选要素;SA/NC/ND 不在本清单白名单内(manifest schema 已排除)
+
+### 本产品的合规落点(与上述对照)
+
+| 上游要求 | 产品现状 | 状态 |
+|----------|----------|------|
+| 不热链(推荐下载复用) | 导入时下载 → COS 镜像,运行时签名直链 | ✅ 已满足 |
+| 禁 hot spider | 导入限速(1.5s/请求 + 退避),逐条复制 | ✅ 已满足 |
+| CC0 可无署名 | 详情页保留来源说明(溯源非义务) | ✅ 已满足 |
+| CC BY 署名(作者+许可链接) | `utils/attribution.ts` 输出标题/作者/许可 URI,一键复制 | ✅ 已满足 |
+| CC BY 修改声明 | `MODIFICATION_NOTE`(压缩/缩放 ≤2560px 声明) | ✅ 已满足 |
+| 缓存策略 | COS 对象 `Cache-Control: public, max-age=86400` + 签名 URL 过期刷新(~1h) | ✅ 已满足 |
+
+### 若未来改为直链上游(不推荐)需注意
+
+1. 只能用 `Special:FilePath?width=N` 通道(官方建议),且遵守每张图的许可署名要求
+2. 高频访问会被 429 限流 — 需本地缓存 + 退避,且不能做"搜索即转发"的 hot spider 模式
+3. 上游改图/删图会直接影响产品 — 建议仍是镜像到自有存储
+
 ## 二次加工前的字段说明
 
 | 字段 | 说明 |
