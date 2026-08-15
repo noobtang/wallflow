@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import sharp from 'sharp';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
@@ -8,6 +9,7 @@ import { RateLimitedDownloader } from '../../src/jobs/downloader';
 import { ImportJob, type Logger } from '../../src/jobs/import.job';
 import { WallpaperRepository } from '../../src/repositories/wallpaper.repository';
 import { CuratedImport, readManifestFile } from '../../src/sources/curated.import';
+import type { Manifest } from '../../src/sources/manifest.schema';
 import { MockObjectStorage, originalKey, thumbnailKey } from '../../src/storage/object-storage';
 import { createTestPool, runMigrations, truncateAll } from '../helpers/db';
 
@@ -135,5 +137,48 @@ describe('真实 manifest 导入(#12 CI 断言覆盖)', () => {
     const resumed = await job.run(new CuratedImport(), subset, { resume: true });
     expect(resumed).toMatchObject({ total: 3, resumed: 3, imported: 0 });
     expect(storage.objects.size).toBe(firstUploads); // 没有新增上传
+  });
+
+  it('localFile 损坏/缺失 → 单条失败跳过,其余继续导入(容错)', async () => {
+    // 取真实清单一条作为「正常」基准(含有效 localFile),再复制两条改坏
+    const base = readManifestFile(manifestPath)[0];
+    expect(base.localFile).toBeTruthy();
+
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'wf-corrupt-'));
+    try {
+      // 损坏: 文件存在但内容不是图片(sharp 解析元数据会抛错)
+      const corruptPath = path.join(tmpDir, 'corrupt.jpg');
+      fs.writeFileSync(corruptPath, Buffer.from('this is definitely not an image'));
+      // 缺失: localFile 指向不存在的文件(fs.readFile ENOENT)
+      const missingPath = path.join(tmpDir, 'missing.jpg');
+
+      const corruptEntry = { ...base, sourceId: 'cc-corrupt-bad', localFile: corruptPath };
+      const missingEntry = { ...base, sourceId: 'cc-missing-bad', localFile: missingPath };
+      const goodEntry = { ...base, sourceId: 'cc-corrupt-good', localFile: base.localFile };
+
+      const storage = new MockObjectStorage();
+      const job = makeJob(storage);
+      const summary = await job.run(new CuratedImport(), [corruptEntry, missingEntry, goodEntry] as Manifest);
+
+      // 两条坏条目计数为 failed,正常条目照常导入;整批不中断
+      expect(summary).toMatchObject({ total: 3, imported: 1, failed: 2, blocked: 0 });
+      // 告警里能定位到具体 sourceId(排查依据)
+      expect(summary.warnings.some((w) => w.includes('cc-corrupt-bad'))).toBe(true);
+      expect(summary.warnings.some((w) => w.includes('cc-missing-bad'))).toBe(true);
+
+      // 坏条目不落库、不占存储
+      expect(await repo.findBySourceAndSourceId('curated', 'cc-corrupt-bad')).toBeNull();
+      expect(await repo.findBySourceAndSourceId('curated', 'cc-missing-bad')).toBeNull();
+      expect(storage.objects.has(originalKey('cc-corrupt-bad'))).toBe(false);
+      expect(storage.objects.has(originalKey('cc-missing-bad'))).toBe(false);
+
+      // 正常条目正常入库 + 上传(容错不误伤)
+      const good = await repo.findBySourceAndSourceId('curated', 'cc-corrupt-good');
+      expect(good?.status).toBe('active');
+      expect(storage.objects.has(originalKey('cc-corrupt-good'))).toBe(true);
+      expect(storage.objects.has(thumbnailKey('cc-corrupt-good'))).toBe(true);
+    } finally {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
   });
 });
