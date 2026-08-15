@@ -102,6 +102,41 @@ export class FileObjectStorage implements ObjectStorage {
   }
 }
 
+export interface DiskStorageOptions {
+  /** 对象落盘根目录(生产: 挂载到 nginx 的共享卷,见 deploy/docker-compose.prod.yml) */
+  dir: string;
+  /** 公网访问前缀(自有服务器域名,如 https://images.example.com;nginx 静态服务对应 location) */
+  baseUrl: string;
+}
+
+/**
+ * 自有服务器对象存储(2026-08-15,用户选择: 图片走自己服务器 + 域名,COS 降为第二选项)。
+ * - 上传字节落盘到本地目录(导入时一次性写入;同 key 幂等重跑直接覆盖)
+ * - getSignedUrl 返回 {baseUrl}/{key}(内容为 CC0/CC-BY 公开图片,nignx 静态服务公开读 + 缓存头)
+ * - 生产部署: API 与 nginx 共享同一目录(compose named volume `images`),nginx 以
+ *   `/images/*` location 服务;无需私有读签名(与 mock 的 API 层语义对等,免去签名基础设施)
+ */
+export class DiskObjectStorage implements ObjectStorage {
+  private readonly dir: string;
+  private readonly baseUrl: string;
+
+  constructor(options: DiskStorageOptions) {
+    this.dir = options.dir;
+    this.baseUrl = options.baseUrl.replace(/\/+$/, '');
+  }
+
+  async uploadObject(key: string, data: Buffer, _contentType: string): Promise<UploadResult> {
+    const file = path.join(this.dir, key);
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, data);
+    return { key, url: `${this.baseUrl}/${key}` };
+  }
+
+  getSignedUrl(key: string, _expiresSeconds?: number): string {
+    return `${this.baseUrl}/${key}`;
+  }
+}
+
 export interface CosConfig {
   secretId: string;
   secretKey: string;
@@ -189,13 +224,19 @@ export class CosObjectStorage implements ObjectStorage {
 }
 
 /**
- * 存储工厂(#9 切换真实 COS)。
- * - 完整凭证(COS_BUCKET + COS_SECRET_ID + COS_SECRET_KEY)→ CosObjectStorage
- * - 配了 COS_BUCKET 但缺凭证: 生产 → 硬失败(绝不静默落 mock 假 URL);非生产 → 告警降级 mock
- * - 未配置 → MockObjectStorage
+ * 存储工厂(#9 切换真实 COS;2026-08-15 自有服务器存储优先)。
+ * 优先级:
+ *   1. 自有服务器存储(SELF_HOST_STORAGE_DIR + SELF_HOST_BASE_URL)→ DiskObjectStorage
+ *      图片字节落盘本地目录,nginx 静态服务公网直出 — 首选(用户选择: 自己服务器 + 域名)
+ *   2. 完整 COS 凭证(COS_BUCKET + COS_SECRET_ID + COS_SECRET_KEY)→ CosObjectStorage(第二选项)
+ *   3. 配了 COS_BUCKET 但缺凭证: 生产 → 硬失败(绝不静默落 mock 假 URL);非生产 → 告警降级 mock
+ *   4. dev(无以上配置)→ FileObjectStorage(本机 /dev-storage 静态服务,微信开发者工具可真实加载)
+ *   5. 其余 → MockObjectStorage
  */
 export function createObjectStorage(
   config: {
+    SELF_HOST_STORAGE_DIR?: string;
+    SELF_HOST_BASE_URL?: string;
     COS_BUCKET?: string;
     COS_SECRET_ID?: string;
     COS_SECRET_KEY?: string;
@@ -207,6 +248,25 @@ export function createObjectStorage(
   },
   logger: { warn: (msg: string) => void } = console,
 ): ObjectStorage {
+  // 1. 自有服务器存储(首选): 需要目录 + 公网域名,缺任一 → 生产硬失败
+  const hasSelfHost = Boolean(config.SELF_HOST_STORAGE_DIR || config.SELF_HOST_BASE_URL);
+  if (hasSelfHost) {
+    if (!config.SELF_HOST_STORAGE_DIR || !config.SELF_HOST_BASE_URL) {
+      if (config.NODE_ENV === 'production') {
+        throw new Error(
+          '自有存储配置不完整: SELF_HOST_STORAGE_DIR 与 SELF_HOST_BASE_URL 需同时配置;生产环境禁止静默降级 mock(会写入假 URL)',
+        );
+      }
+      logger.warn('[object-storage] 自有存储配置不完整(缺 SELF_HOST_STORAGE_DIR 或 SELF_HOST_BASE_URL),本次使用 mock');
+    } else {
+      return new DiskObjectStorage({
+        dir: config.SELF_HOST_STORAGE_DIR,
+        baseUrl: config.SELF_HOST_BASE_URL,
+      });
+    }
+  }
+
+  // 2. COS(第二选项): 完整凭证才启用
   const hasBucket = Boolean(config.COS_BUCKET);
   const hasCreds = Boolean(config.COS_SECRET_ID && config.COS_SECRET_KEY);
   if (hasBucket && hasCreds) {
@@ -225,7 +285,7 @@ export function createObjectStorage(
   if (hasBucket) {
     logger.warn('[object-storage] COS_BUCKET 已配置但缺少凭证,本次使用 mock 存储(生产环境会硬失败)');
   }
-  // dev: 文件存储(图片字节落盘 + 本机 /dev-storage 静态服务),微信开发者工具可真实加载
+  // 4. dev: 文件存储(图片字节落盘 + 本机 /dev-storage 静态服务),微信开发者工具可真实加载
   if (!hasBucket && config.NODE_ENV === 'development') {
     return new FileObjectStorage({
       dir: config.DEV_STORAGE_DIR || path.resolve(process.cwd(), '.dev-storage'),
@@ -233,5 +293,6 @@ export function createObjectStorage(
         config.DEV_STORAGE_BASE_URL || `http://127.0.0.1:${config.PORT ?? 3000}`,
     });
   }
+  // 5. 其余 → mock
   return new MockObjectStorage();
 }

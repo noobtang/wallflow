@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 import {
   CosObjectStorage,
   createObjectStorage,
+  DiskObjectStorage,
   FileObjectStorage,
   MockObjectStorage,
   originalKey,
@@ -107,6 +108,56 @@ describe('对象存储(#4 key 约定 #8/#9)', () => {
     const cos = fakeCos({ getObjectUrl: () => undefined });
     const s = new CosObjectStorage(COS_CFG, { cos });
     expect(() => s.getSignedUrl('wallpapers/cc-f.jpg')).toThrow(/未返回 URL/);
+  });
+
+  it('DiskObjectStorage: 上传落盘到 dir,getSignedUrl 返回 {baseUrl}/{key}(自有服务器存储)', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'wf-diskstore-'));
+    const s = new DiskObjectStorage({ dir, baseUrl: 'https://images.example.com' });
+    const r = await s.uploadObject(originalKey('cc-self'), Buffer.from('self-host-bytes'), 'image/jpeg');
+    expect(r.key).toBe('wallpapers/cc-self.jpg');
+    expect(r.url).toBe('https://images.example.com/wallpapers/cc-self.jpg');
+    expect(fs.readFileSync(path.join(dir, 'wallpapers', 'cc-self.jpg'))).toEqual(
+      Buffer.from('self-host-bytes'),
+    );
+    expect(s.getSignedUrl('wallpapers/cc-self.jpg', 3600)).toBe(
+      'https://images.example.com/wallpapers/cc-self.jpg',
+    );
+    // 同 key 幂等重跑: 覆盖不报错
+    await s.uploadObject(originalKey('cc-self'), Buffer.from('v2'), 'image/jpeg');
+    expect(fs.readFileSync(path.join(dir, 'wallpapers', 'cc-self.jpg'))).toEqual(Buffer.from('v2'));
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('createObjectStorage: 自有存储配置完整 → DiskObjectStorage(优先级高于 COS)', () => {
+    const s = createObjectStorage({
+      NODE_ENV: 'production',
+      SELF_HOST_STORAGE_DIR: '/data/wallflow/images',
+      SELF_HOST_BASE_URL: 'https://images.example.com',
+      COS_BUCKET: 'wf-1250000000',
+      COS_SECRET_ID: 'sid',
+      COS_SECRET_KEY: 'skey',
+    });
+    expect(s).toBeInstanceOf(DiskObjectStorage);
+    expect(s.getSignedUrl('wallpapers/cc-x.jpg')).toBe('https://images.example.com/wallpapers/cc-x.jpg');
+  });
+
+  it('createObjectStorage: 生产自有存储配置不完整 → 硬失败(绝不静默落 mock)', () => {
+    expect(() =>
+      createObjectStorage({ NODE_ENV: 'production', SELF_HOST_STORAGE_DIR: '/data/wallflow/images' }),
+    ).toThrow(/SELF_HOST_STORAGE_DIR 与 SELF_HOST_BASE_URL 需同时配置/);
+    expect(() =>
+      createObjectStorage({ NODE_ENV: 'production', SELF_HOST_BASE_URL: 'https://images.example.com' }),
+    ).toThrow(/SELF_HOST_STORAGE_DIR 与 SELF_HOST_BASE_URL 需同时配置/);
+  });
+
+  it('createObjectStorage: 非生产自有存储配置不完整 → mock + 告警', () => {
+    const warns: string[] = [];
+    const s = createObjectStorage(
+      { NODE_ENV: 'test', SELF_HOST_STORAGE_DIR: '/tmp/x' },
+      { warn: (m) => warns.push(m) },
+    );
+    expect(s).toBeInstanceOf(MockObjectStorage);
+    expect(warns.some((m) => m.includes('自有存储配置不完整'))).toBe(true);
   });
 
   it('FileObjectStorage: 上传落盘到 dir 并返回 /dev-storage URL(#10 联调)', async () => {

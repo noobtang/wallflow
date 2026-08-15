@@ -22,7 +22,7 @@ labels: [devops, p0]
 1. 购买 + 域名 ICP 备案(必备,1-2 周提前量)
 2. Docker Compose 部署: app + postgres + caddy
 3. Caddy 自动 HTTPS(Let's Encrypt)
-4. **第一步**: 开通腾讯云 COS + 子账号密钥;本地/服务器跑通 上传→签名→下载 联调(原 Wikimedia 可达性承重墙已随 COS 方案消除)
+4. **第一步(2026-08-15 修正)**: 自有服务器图片存储优先 — 配 `SELF_HOST_STORAGE_DIR` + `SELF_HOST_BASE_URL`(图片域名),nginx `/images/*` 静态直出;COS 为第二选项(完整凭证才启用)。跑通 上传→直链下载 联调(原 Wikimedia 可达性承重墙已消除)
 
 **微信侧**:
 - 注册小程序账号(主体资格核实: 个人 vs 企业/个体户,影响流量主)
@@ -36,7 +36,7 @@ labels: [devops, p0]
 - 生产环境变量: 全部走服务器 env,不入仓库
 
 **上线前清单**(对照 TODOS.md Pre-launch checklist):
-- [ ] COS bucket 开通 + 密钥配置 + 上传/签名联调 ✅/❌
+- [ ] 图片存储联调 ✅/❌: 自有存储(SELF_HOST_STORAGE_DIR + SELF_HOST_BASE_URL)或 COS bucket + 密钥,上传→直链下载 200
 - [ ] 精选 ≥100 张壁纸 + 中文分类
 - [ ] 内容安全检测联调通过
 - [ ] 微信审核提交流程完成

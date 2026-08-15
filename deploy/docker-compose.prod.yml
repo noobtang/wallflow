@@ -42,6 +42,11 @@ services:
     environment:
       NODE_ENV: production
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      # 自有服务器存储(2026-08-15): 图片写入共享卷,nginx 静态直出;SELF_HOST_BASE_URL 例: https://images.example.com
+      SELF_HOST_STORAGE_DIR: /data/wallflow/images
+      SELF_HOST_BASE_URL: ${SELF_HOST_BASE_URL}
+    volumes:
+      - images:/data/wallflow/images
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -65,9 +70,12 @@ services:
       - ./nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
       # acme.sh 证书放 deploy/nginx/certs/(fullchain.pem / privkey.pem)
       - ./nginx/certs:/etc/nginx/certs:ro
+      # 自有存储图片卷: nginx 以 /images/* 静态服务(与 api 共享)
+      - images:/data/wallflow/images:ro
     depends_on:
       api:
         condition: service_healthy
 
 volumes:
   pgdata:
+  images:
