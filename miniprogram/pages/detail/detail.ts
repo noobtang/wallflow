@@ -1,6 +1,8 @@
 import { ApiError, request } from '../../utils/api';
+import { buildAttribution, needsModificationNote } from '../../utils/attribution';
 import { ensureLogin } from '../../utils/auth';
 import { badgeClassFor, licenseDescription } from '../../utils/badge';
+import { watchRewardedAd } from '../../utils/rewarded-ad';
 import { saveWallpaper } from '../../utils/save';
 import { currentThemeClass, refreshThemeClass } from '../../utils/theme';
 import { track } from '../../utils/track';
@@ -105,6 +107,28 @@ Page({
     if (!detail || this.data.saveState === 'saving') return;
     track('download_click', { wallpaperId: detail.id });
     this.setData({ saveState: 'saving' });
+
+    // 激励视频(#12 广告组件接入): 已开通流量主(adUnitId 非空)时,看完广告才算解锁;
+    // 未开通 → watchRewardedAd 直接 completed(MVP 全免费)。看完才调 /unlock + 保存。
+    const adOutcome = await watchRewardedAd();
+    if (adOutcome !== 'completed') {
+      this.setData({ saveState: 'idle' });
+      if (adOutcome === 'error') {
+        wx.showToast({ title: '广告加载失败,请稍后再试', icon: 'none' });
+      }
+      return; // canceled: 中途关闭不解锁不保存
+    }
+    try {
+      await ensureLogin();
+      await request<{ unlocked: boolean }>({
+        path: '/unlock',
+        method: 'POST',
+        data: { wallpaper_id: detail.id },
+      });
+    } catch {
+      // 解锁失败不阻断保存(解锁是权益记录,保存本身仍可用)
+    }
+
     const outcome = await saveWallpaper(
       {
         getSetting: () =>
@@ -248,6 +272,29 @@ Page({
       content: licenseDescription(detail.license),
       showCancel: false,
       confirmText: '知道了',
+    });
+  },
+
+  // ---- 完整署名(#12): CC BY 需 title/author/license URI/修改声明;一键复制便于二次使用保留署名 ----
+  onAttributionTap() {
+    const detail = this.data.detail;
+    if (!detail) return;
+    const attribution = buildAttribution(detail);
+    const modified = needsModificationNote(detail.license);
+    wx.showModal({
+      title: '署名信息',
+      content: attribution + (modified ? '\n\n(已修改: 本图经压缩处理)' : ''),
+      showCancel: true,
+      cancelText: '关闭',
+      confirmText: '复制署名',
+      success: (res) => {
+        if (res.confirm) {
+          wx.setClipboardData({
+            data: attribution,
+            success: () => wx.showToast({ title: '署名已复制', icon: 'success' }),
+          });
+        }
+      },
     });
   },
 

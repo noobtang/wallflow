@@ -136,6 +136,26 @@
   color: var(--primary);
 }
 
+/* 完整署名(#12): 点击查看 + 复制 */
+.attr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12rpx;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid var(--border);
+}
+
+.attr__text {
+  font-size: 24rpx;
+  color: var(--text2);
+}
+
+.attr__arrow {
+  font-size: 28rpx;
+  color: var(--text3);
+}
+
 /* 相似推荐 */
 .similar {
   margin-top: 28rpx;

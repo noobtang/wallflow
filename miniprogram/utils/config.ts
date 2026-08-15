@@ -20,3 +20,13 @@ export const SEARCH_HISTORY_KEY = 'wallflow_search_history';
 
 /** 搜索历史条数上限 */
 export const SEARCH_HISTORY_LIMIT = 10;
+
+/**
+ * 激励视频广告位 ID(流量主开通后填写,空 = 广告功能关闭,解锁直接免费)。
+ * ⚠️ 个人主体无流量主资格,需个体户/企业主体 + 微信公众平台「流量主」开通后才能拿到。
+ * 开通前留空: 保存流程走 MVP 全免费解锁(与后端 /unlock 一致),不影响功能。
+ */
+export const REWARDED_AD_UNIT_ID = '';
+
+/** 激励视频广告是否启用(adUnitId 非空即启用) */
+export const REWARDED_AD_ENABLED = REWARDED_AD_UNIT_ID.length > 0;

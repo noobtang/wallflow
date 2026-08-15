@@ -46,6 +46,12 @@
         <text class="meta__license">查看许可协议 ›</text>
       </view>
 
+      <!-- 完整署名(#12): 点击查看 + 一键复制(CC BY 保留署名) -->
+      <view class="attr" bindtap="onAttributionTap">
+        <text class="attr__text">📋 署名与许可(复制)</text>
+        <text class="attr__arrow">›</text>
+      </view>
+
       <!-- 相似推荐 -->
       <view wx:if="{{similar.length > 0}}" class="similar">
         <text class="similar__title">更多同风格</text>
